@@ -52,13 +52,19 @@ export default function Showcase() {
   }, { scope: containerRef });
 
   const skipDown = () => {
-    const target = document.getElementById('philosophy-target');
-    if(target) target.scrollIntoView({ behavior: 'smooth' });
+    if(window.lenis) {
+      window.lenis.scrollTo('#philosophy-target', { offset: 0, duration: 1.5 });
+    } else {
+      document.getElementById('philosophy-target')?.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const skipUp = () => {
-    const target = document.getElementById('hero-target');
-    if(target) target.scrollIntoView({ behavior: 'smooth' });
+    if(window.lenis) {
+      window.lenis.scrollTo('#hero-target', { offset: 0, duration: 1.5 });
+    } else {
+      document.getElementById('hero-target')?.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -79,7 +85,7 @@ export default function Showcase() {
             </div>
             
             <div className="absolute bottom-20 md:bottom-32 left-8 md:left-32 z-20">
-              <p className="font-mono text-xs tracking-widest text-[#D4AF37] mb-2">0{proj.id} — PROJECT</p>
+              <p className="font-mono text-xs tracking-widest text-[#D4AF37] mb-2">0{proj.id} â€” PROJECT</p>
               <h2 className="text-4xl md:text-7xl font-serif uppercase tracking-widest text-white drop-shadow-2xl">{proj.title}</h2>
               <p className="font-light text-white/70 max-w-md mt-4">{proj.subtitle}</p>
             </div>
@@ -93,13 +99,13 @@ export default function Showcase() {
           onClick={skipUp}
           className="font-mono text-[10px] tracking-[0.3em] text-white/50 hover:text-white uppercase transition-colors"
         >
-          ↑ Skip to Hero
+          â†‘ Skip to Hero
         </button>
         <button 
           onClick={skipDown}
           className="font-mono text-[10px] tracking-[0.3em] text-[#D4AF37] hover:text-white uppercase transition-colors"
         >
-          Skip Showcase ↓
+          Skip Showcase â†“
         </button>
       </div>
     </section>
