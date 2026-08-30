@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Aggressively Hide Scrollbars */
+::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+* {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+/* Aggressively Hide Default Cursor Everywhere */
+* {
+  cursor: none !important;
+}
+
+/* Allow interaction on standard elements, but keep cursor hidden */
+a, button, input, textarea, select {
+  cursor: none !important; 
+}
+
+/* Base Styles */
+body {
+  background-color: #050505;
+  color: #F9F9F7;
+  overflow-x: hidden;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+@keyframes scroll-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.animate-scroll-line {
+  animation: scroll-line 2s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+}
+
+/* HIDE SCROLLBAR GLOBALLY */
+::-webkit-scrollbar { display: none; }
+* { scrollbar-width: none; }
