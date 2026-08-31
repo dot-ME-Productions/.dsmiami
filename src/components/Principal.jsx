@@ -52,7 +52,7 @@ export default function Principal() {
         <div className="w-full md:w-1/2 flex flex-col justify-center">
           <p className="principal-text font-mono text-[10px] tracking-[0.4em] uppercase text-[#D4AF37] mb-8">The Mind Behind The Atmosphere</p>
           
-          <h2 className="principal-text text-3xl md:text-5xl font-serif uppercase tracking-tight leading-tight mb-12">
+          <h2 className="principal-text text-3xl md:text-[3.5rem] font-serif italic font-light tracking-wide leading-snug mb-12 text-white/90">
             "We don't do cookie-cutter.<br/> We design for legacy."
           </h2>
 
@@ -61,7 +61,7 @@ export default function Principal() {
               With over 20 years of experience shaping the architectural skyline of Miami, Luciana Fragali has built a reputation on rejecting the expected. Across more than 400 bespoke luxury projects, her approach remains ruthlessly dedicated to the psychology of space.
             </p>
             <p>
-              Drawing heavy inspiration from European travelâ€”particularly the coastal light of Capriâ€”Luciana engineers environments that feel both globally informed and intimately rooted. Her daily meditation practice serves as the foundation for her design philosophy: a clear mind produces absolute, uncompromising spaces.
+              Drawing heavy inspiration from European travel&mdash;particularly the coastal light of Capri&mdash;Luciana engineers environments that feel both globally informed and intimately rooted. Her daily meditation practice serves as the foundation for her design philosophy: a clear mind produces absolute, uncompromising spaces.
             </p>
           </div>
           
