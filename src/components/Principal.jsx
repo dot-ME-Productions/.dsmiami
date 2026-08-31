@@ -25,19 +25,26 @@ export default function Principal() {
     <section ref={containerRef} className="w-full bg-[#050505] text-[#F9F9F7] py-32 md:py-48 px-6 md:px-16 overflow-hidden relative z-20 border-t border-white/5">
       <div className="max-w-[1600px] mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-32">
         
-        {/* The Architect Profile Image */}
-        <div className="w-full md:w-1/2 aspect-[3/4] relative overflow-hidden group">
+        {/* The Architect Profile Video Teaser (DeepSeek Upgrade 5) */}
+        <div className="w-full md:w-1/2 aspect-[3/4] relative overflow-hidden group cursor-pointer">
           <Image 
             src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2776&auto=format&fit=crop" 
             alt="Luciana Fragali - Principal Architect" 
             fill 
-            className="principal-img object-cover" 
+            className="principal-img object-cover group-hover:scale-110 transition-transform duration-1000" 
           />
-          {/* Subtle gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-          <div className="absolute bottom-8 left-8">
-             <p className="font-serif text-3xl md:text-5xl uppercase tracking-tighter">Luciana Fragali</p>
-             <p className="font-mono text-[10px] tracking-widest text-[#D4AF37] uppercase mt-2">Principal CEO & Lead Architect</p>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+          
+          {/* Play Button Overlay */}
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 bg-black/30 backdrop-blur-sm">
+             <div className="w-20 h-20 rounded-full border border-white/50 flex items-center justify-center backdrop-blur-md">
+                <div className="w-0 h-0 border-t-8 border-b-8 border-l-[14px] border-transparent border-l-white ml-1"></div>
+             </div>
+          </div>
+
+          <div className="absolute bottom-8 left-8 z-20 pointer-events-none">
+             <p className="font-serif text-3xl md:text-5xl uppercase tracking-tighter group-hover:text-[#D4AF37] transition-colors duration-500">Luciana Fragali</p>
+             <p className="font-mono text-[10px] tracking-widest text-white/50 uppercase mt-2">Watch Principal Film [1:00]</p>
           </div>
         </div>
 
@@ -54,7 +61,7 @@ export default function Principal() {
               With over 20 years of experience shaping the architectural skyline of Miami, Luciana Fragali has built a reputation on rejecting the expected. Across more than 400 bespoke luxury projects, her approach remains ruthlessly dedicated to the psychology of space.
             </p>
             <p>
-              Drawing heavy inspiration from European travel—particularly the coastal light of Capri—Luciana engineers environments that feel both globally informed and intimately rooted. Her daily meditation practice serves as the foundation for her design philosophy: a clear mind produces absolute, uncompromising spaces.
+              Drawing heavy inspiration from European travelâ€”particularly the coastal light of Capriâ€”Luciana engineers environments that feel both globally informed and intimately rooted. Her daily meditation practice serves as the foundation for her design philosophy: a clear mind produces absolute, uncompromising spaces.
             </p>
           </div>
           

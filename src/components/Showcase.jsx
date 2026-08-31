@@ -9,44 +9,36 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   { 
-    id: 1, 
-    title: 'THE GLASS HOUSE', 
-    subtitle: 'Where light is treated as the primary architectural material.', 
+    id: 1, title: 'THE GLASS HOUSE', subtitle: 'Where light is treated as the primary architectural material.', 
     img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2940&auto=format&fit=crop',
-    client: 'Private Tech Executive',
-    year: '2025',
-    materials: 'Obsidian Glass, Italian Marble, Brushed Bronze',
-    desc: 'An ambitious cantilevered structure that floats above the Miami coastline. The entire eastern facade is built from seamless structural glass, allowing the sunrise to physically dictate the internal temperature and mood of the space. We stripped away all internal non-load-bearing walls to create a completely fluid atmospheric experience.'
+    client: 'Private Tech Executive', year: '2025', 
+    materials: ['Obsidian Glass', 'Italian Marble', 'Brushed Bronze'], sqft: '12,500 sq ft', timeline: '18 Months',
+    challenge: 'The client required a massive cantilevered structure that could withstand Category 5 hurricanes without obstructing the panoramic ocean views.',
+    solution: 'We engineered a seamless structural glass facade using marine-grade obsidian glazing, completely eliminating internal non-load-bearing walls for fluid atmospheric flow.'
   },
   { 
-    id: 2, 
-    title: 'OBSIDIAN VILLA', 
-    subtitle: 'A brutalist monolith carved into the Miami coastline.', 
+    id: 2, title: 'OBSIDIAN VILLA', subtitle: 'A brutalist monolith carved into the Miami coastline.', 
     img: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2900&auto=format&fit=crop',
-    client: 'Anonymous Gallery Owner',
-    year: '2024',
-    materials: 'Board-Formed Concrete, Smoked Oak, Raw Steel',
-    desc: 'Designed as a physical fortress for a massive private art collection. The brutalist concrete shell protects the delicate pieces from the Florida sun, while precisely engineered skylights wash the walls in soft, diffuse light. It is less of a home and more of a private museum.'
+    client: 'Anonymous Gallery Owner', year: '2024', 
+    materials: ['Board-Formed Concrete', 'Smoked Oak', 'Raw Steel'], sqft: '9,200 sq ft', timeline: '24 Months',
+    challenge: 'Designing a fortress capable of protecting a  private art collection from UV degradation while maintaining an open, breathable residential feel.',
+    solution: 'We poured massive brutalist concrete shells to block direct light, utilizing precisely engineered zenithal skylights to wash the walls in soft, diffuse, UV-filtered light.'
   },
   { 
-    id: 3, 
-    title: 'CASA DEL SOL', 
-    subtitle: 'Redefining tropical modernism through organic textures.', 
+    id: 3, title: 'CASA DEL SOL', subtitle: 'Redefining tropical modernism through organic textures.', 
     img: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2940&auto=format&fit=crop',
-    client: 'International Athlete',
-    year: '2023',
-    materials: 'Travertine, Teak, Woven Cane',
-    desc: 'A complete rejection of stark, cold modernism. We utilized heavily textured, organic materials sourced directly from South America to create a space that feels deeply rooted in the earth, despite being located in the heart of the city.'
+    client: 'International Athlete', year: '2023', 
+    materials: ['Travertine', 'Teak', 'Woven Cane'], sqft: '14,000 sq ft', timeline: '14 Months',
+    challenge: 'The client found stark modernism too cold and sterile, but despised traditional ornate design.',
+    solution: 'We utilized heavily textured, porous organic materials sourced directly from South America. The raw tactile feedback grounds the space in the earth, rejecting sterile perfection.'
   },
   { 
-    id: 4, 
-    title: 'LUMINA ESTATE', 
-    subtitle: 'Turnkey perfection down to the finest micro-detail.', 
+    id: 4, title: 'LUMINA ESTATE', subtitle: 'Turnkey perfection down to the finest micro-detail.', 
     img: 'https://images.unsplash.com/photo-1600210491369-e753d80a41f3?q=80&w=2874&auto=format&fit=crop',
-    client: 'Venture Capital Firm (Corporate Retreat)',
-    year: '2024',
-    materials: 'Limestone, Platinum, Polished Plaster',
-    desc: 'An extreme exercise in turnkey luxury. We did not just design the architecture; we selected the bed linens, curated the library, and stocked the wine cellar. When the client turned the key for the first time, every single variable had been calculated and perfected.'
+    client: 'Venture Capital Firm', year: '2024', 
+    materials: ['Limestone', 'Platinum', 'Polished Plaster'], sqft: '18,500 sq ft', timeline: '32 Months',
+    challenge: 'An extreme exercise in turnkey luxury for a corporate retreat that required immediate occupancy with zero client friction.',
+    solution: 'We controlled every variable: architecture, custom furniture fabrication, curating the library, and stocking the wine cellar. Absolute, total atmospheric control.'
   },
 ];
 
@@ -217,24 +209,51 @@ export default function Showcase() {
                  <p className="font-mono text-xs tracking-[0.4em] text-[#D4AF37] mb-4 mt-8 md:mt-0">PROJECT DETAILS</p>
                  <h2 className="text-4xl md:text-6xl font-serif uppercase tracking-tighter mb-8 leading-none">{activeProject.title}</h2>
                  
-                 <div className="grid grid-cols-2 gap-8 mb-8 border-y border-white/10 py-8">
+                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8 border-y border-white/10 py-8">
                     <div>
                       <p className="font-mono text-[0.65rem] tracking-widest text-white/40 uppercase mb-2">Client</p>
-                      <p className="font-serif text-sm md:text-lg">{activeProject.client}</p>
+                      <p className="font-serif text-sm md:text-base">{activeProject.client}</p>
                     </div>
                     <div>
-                      <p className="font-mono text-[0.65rem] tracking-widest text-white/40 uppercase mb-2">Completion Year</p>
-                      <p className="font-serif text-sm md:text-lg">{activeProject.year}</p>
+                      <p className="font-mono text-[0.65rem] tracking-widest text-white/40 uppercase mb-2">Footprint</p>
+                      <p className="font-serif text-sm md:text-base">{activeProject.sqft}</p>
                     </div>
-                    <div className="col-span-2">
-                      <p className="font-mono text-[0.65rem] tracking-widest text-white/40 uppercase mb-2">Primary Materials</p>
-                      <p className="font-serif text-sm md:text-lg text-[#D4AF37]">{activeProject.materials}</p>
+                    <div>
+                      <p className="font-mono text-[0.65rem] tracking-widest text-white/40 uppercase mb-2">Timeline</p>
+                      <p className="font-serif text-sm md:text-base">{activeProject.timeline}</p>
+                    </div>
+                    <div>
+                      <p className="font-mono text-[0.65rem] tracking-widest text-white/40 uppercase mb-2">Completion</p>
+                      <p className="font-serif text-sm md:text-base">{activeProject.year}</p>
                     </div>
                  </div>
 
-                 <p className="font-light text-white/60 leading-relaxed text-sm md:text-lg mb-12">
-                   {activeProject.desc}
-                 </p>
+                 <div className="space-y-6 mb-12">
+                   <div>
+                     <p className="font-mono text-[0.65rem] tracking-widest text-[#D4AF37] uppercase mb-2">01 / The Challenge</p>
+                     <p className="font-light text-white/80 leading-relaxed text-sm md:text-base">{activeProject.challenge}</p>
+                   </div>
+                   <div>
+                     <p className="font-mono text-[0.65rem] tracking-widest text-[#D4AF37] uppercase mb-2">02 / The Solution</p>
+                     <p className="font-light text-white/80 leading-relaxed text-sm md:text-base">{activeProject.solution}</p>
+                   </div>
+                 </div>
+
+                 {/* Material Palette (DeepSeek Upgrade 2) */}
+                 <div className="mb-12 p-6 bg-white/5 border border-white/10 rounded-sm">
+                   <p className="font-mono text-[10px] tracking-[0.2em] text-white/50 uppercase mb-4">Material Palette Explorer</p>
+                   <div className="flex flex-wrap gap-4">
+                     {activeProject.materials.map((mat, i) => (
+                       <div key={i} className="flex items-center gap-3 group cursor-pointer">
+                         <div className="w-6 h-6 rounded-full bg-[#111] border border-white/20 group-hover:border-[#D4AF37] group-hover:scale-110 transition-all flex items-center justify-center overflow-hidden">
+                            {/* Fake material texture simulation */}
+                            <div className="w-full h-full opacity-50 bg-gradient-to-br from-white/20 to-transparent group-hover:opacity-100 transition-opacity"></div>
+                         </div>
+                         <span className="font-mono text-xs text-white/70 group-hover:text-white transition-colors">{mat}</span>
+                       </div>
+                     ))}
+                   </div>
+                 </div>
 
                  <div className="flex flex-col xl:flex-row justify-between items-start xl:items-center gap-8 mt-auto">
                    <button className="w-fit px-8 py-4 border border-[#D4AF37] text-[#D4AF37] font-mono text-xs tracking-widest uppercase hover:bg-[#D4AF37] hover:text-[#050505] transition-colors duration-300">
