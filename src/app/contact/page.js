@@ -78,41 +78,28 @@ export default function Contact() {
                     </div>
                   )}
 
-                  {/* STEP 2: Free Budget Selection (DeepSeek Upgrade) */}
+                                    {/* STEP 2: Free Budget Selection (Text Input) */}
                   {step === 2 && (
                     <div className="flex flex-col gap-6">
                       <button onClick={() => setStep(1)} className="text-left font-mono text-[10px] tracking-widest uppercase text-white/40 hover:text-white mb-4 w-fit">&#8592; Back</button>
                       <p className="font-mono text-[10px] tracking-widest uppercase text-[#D4AF37]">02 / Investment</p>
                       <h2 className="text-2xl font-serif mb-4">What is your anticipated design budget?</h2>
                       
-                      <div className="flex flex-col gap-8 py-8 border-y border-white/10 my-4">
-                        <div className="flex justify-between items-end">
-                           <span className="text-4xl md:text-6xl font-serif tracking-tighter text-white">
-                             {new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(budgetSlider)}
-                             {budgetSlider >= 10000000 ? '+' : ''}
-                           </span>
-                           <span className="font-mono text-[10px] tracking-widest text-white/40 uppercase mb-2">USD</span>
-                        </div>
-                        
+                      <div className="flex flex-col gap-8 py-8 border-y border-white/10 my-4 relative">
                         <input 
-                          type="range" 
-                          min="100000" 
-                          max="10000000" 
-                          step="50000"
-                          value={budgetSlider}
-                          onChange={(e) => setBudgetSlider(Number(e.target.value))}
-                          className="w-full h-1 bg-white/20 rounded-full appearance-none cursor-pointer accent-[#D4AF37]"
+                          type="text" 
+                          placeholder="e.g. $2M - $5M"
+                          value={formData.budget}
+                          onChange={(e) => setFormData(prev => ({ ...prev, budget: e.target.value }))}
+                          className="w-full bg-transparent border-none outline-none text-4xl md:text-6xl font-serif tracking-tighter text-white placeholder:text-white/20"
+                          autoFocus
                         />
-                        
-                        <div className="flex justify-between font-mono text-[10px] tracking-widest text-white/30 uppercase mt-[-1rem]">
-                           <span></span>
-                           <span>+</span>
-                        </div>
+                        <span className="absolute right-0 bottom-12 font-mono text-[10px] tracking-widest text-white/40 uppercase mb-2 pointer-events-none">USD</span>
                       </div>
 
                       <button 
-                        onClick={() => handleSelection('budget', $M)}
-                        className="w-fit flex items-center justify-center p-6 border border-[#D4AF37] text-[#D4AF37] font-mono text-xs tracking-widest uppercase rounded-full hover:bg-[#D4AF37] hover:text-black transition-all group mt-4"
+                        onClick={() => { if(formData.budget) setStep(3) }}
+                        className={w-fit flex items-center justify-center p-6 border text-xs font-mono tracking-widest uppercase rounded-full transition-all group mt-4 }
                       >
                         Confirm Budget <span className="ml-2 group-hover:translate-x-1 transition-transform">&#8594;</span>
                       </button>
