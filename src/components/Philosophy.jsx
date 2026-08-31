@@ -85,7 +85,7 @@ export default function Philosophy() {
       });
       gsap.fromTo('.chap2-light-beam', 
         { opacity: 0, scaleX: 0 },
-        { opacity: 1, scaleX: 1, ease: "power2.inOut", scrollTrigger: { trigger: containerRef.current, start: "+=50%", end: "+=150%", scrub: 1 } }
+        { opacity: 1, scaleX: 1.5, ease: "power4.out", scrollTrigger: { trigger: containerRef.current, start: "+=10%", end: "+=80%", scrub: 1 } }
       );
 
       if (!prefersReduced) {
@@ -148,9 +148,9 @@ export default function Philosophy() {
           
           {/* DeepSeek Visual Metaphor: Tension & Light physical split */}
           <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden flex items-center justify-center">
-             {/* The underlying blinding light beam - optimized for 60fps */}
-             <div className="chap2-light-beam absolute h-[150vh] w-1 bg-white shadow-[0_0_50px_10px_rgba(255,255,255,0.8)] will-change-transform"></div>
-             <div className="chap2-light-beam absolute h-[150vh] w-[20vw] bg-gradient-to-r from-transparent via-white/30 to-transparent will-change-transform"></div>
+             {/* The underlying blinding light beam - optimized for 60fps but massively amplified */}
+             <div className="chap2-light-beam absolute h-[150vh] w-2 bg-white shadow-[0_0_80px_20px_rgba(255,255,255,1)] will-change-transform"></div>
+             <div className="chap2-light-beam absolute h-[150vh] w-[40vw] bg-gradient-to-r from-transparent via-white/80 to-transparent will-change-transform blur-md"></div>
              
              {/* The heavy brutalist walls pulling apart in tension - added will-change */}
              <div className="chap2-tension-left absolute top-0 left-0 w-[50.1%] h-full bg-[#030303] border-r border-white/10 z-10 will-change-transform"></div>
