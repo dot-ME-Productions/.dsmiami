@@ -64,6 +64,8 @@ const archiveData = [
 ];
 
 export default function Archive() {
+  // TOGGLE THIS TO FALSE TO REVERT TO THE OLD RECTANGULAR FRAMES
+  const usePremiumArchFrames = true;
   const containerRef = useRef(null);
 
   useGSAP(() => {
@@ -130,7 +132,7 @@ export default function Archive() {
             <div key={index} className="relative w-full max-w-[90vw] md:max-w-[65vw] aspect-[16/9] flex items-center justify-center">
               
               {/* Image Container with hidden overflow */}
-              <div className="absolute inset-0 w-full h-full overflow-hidden">
+              <div className={`absolute inset-0 w-full h-full overflow-hidden ${usePremiumArchFrames ? "rounded-t-[40vw] md:rounded-t-[20vw]" : "rounded-none"}`}>
                 <Image 
                   src={item.url} 
                   alt={item.title}

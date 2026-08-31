@@ -143,21 +143,37 @@ export default function Showcase() {
         </div>
 
         {/* Skip Navigation Interface - Rewritten as native unbreakable HTML anchors */}
+        
+        {/* Skip Navigation Interface - Ultra Smooth Lenis Integration */}
         <div className="hidden md:flex absolute bottom-8 left-0 w-full justify-center items-center gap-8 z-50 pointer-events-auto">
-          <a 
-            href="#hero-target"
+          <button 
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              const target = document.getElementById("hero-target");
+              if (target && window.lenis) {
+                window.lenis.scrollTo(target, { duration: 1.5, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+              }
+            }}
             aria-label="Skip up to Hero section"
             className="font-mono text-[10px] tracking-[0.3em] text-white/50 hover:text-white uppercase transition-colors"
           >
             &#8593; Skip to Hero
-          </a>
-          <a 
-            href="#philosophy-target"
+          </button>
+          <button 
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              const target = document.getElementById("philosophy-target");
+              if (target && window.lenis) {
+                window.lenis.scrollTo(target, { duration: 1.5, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+              }
+            }}
             aria-label="Skip down to Philosophy section"
             className="font-mono text-[10px] tracking-[0.3em] text-[#D4AF37] hover:text-white uppercase transition-colors"
           >
             Skip Showcase &#8595;
-          </a>
+          </button>
         </div>
       </section>
 
