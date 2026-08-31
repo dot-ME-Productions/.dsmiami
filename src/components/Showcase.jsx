@@ -152,7 +152,8 @@ export default function Showcase() {
               e.stopPropagation();
               const target = document.getElementById("hero-target");
               if (target && window.lenis) {
-                window.lenis.scrollTo(target, { duration: 1.5, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+                // Slower duration (2.5s) and gentle easeInOut curve for cinematic feel
+                window.lenis.scrollTo(target, { duration: 2.5, easing: (t) => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2 });
               }
             }}
             aria-label="Skip up to Hero section"
@@ -166,7 +167,7 @@ export default function Showcase() {
               e.stopPropagation();
               const target = document.getElementById("philosophy-target");
               if (target && window.lenis) {
-                window.lenis.scrollTo(target, { duration: 1.5, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+                window.lenis.scrollTo(target, { duration: 2.5, easing: (t) => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2 });
               }
             }}
             aria-label="Skip down to Philosophy section"
