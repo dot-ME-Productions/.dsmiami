@@ -95,6 +95,17 @@ export default function Archive() {
       });
     });
 
+    // Progress Bar Sync
+    gsap.to(".progress-fill", {
+      height: "100%",
+      ease: "none",
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true
+      }
+    });
   }, { scope: containerRef });
 
   return (
