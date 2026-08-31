@@ -1,5 +1,5 @@
 'use client';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -13,25 +13,25 @@ gsap.registerPlugin(ScrollTrigger);
 const servicesList = [
   {
     number: "01",
-    title: "Interior Architecture",
+    title: "INTERIOR ARCHITECTURE",
     desc: "We alter spatial volumes, pushing walls and pulling ceilings to discover the ultimate flow and geometry of your environment.",
     img: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2874&auto=format&fit=crop"
   },
   {
     number: "02",
-    title: "Bespoke Furnishings",
+    title: "BESPOKE FURNISHINGS",
     desc: "Custom monolithic pieces designed exclusively for the scale and physics of your specific room, crafted in Italy.",
     img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2900&auto=format&fit=crop"
   },
   {
     number: "03",
-    title: "Turnkey Curation",
+    title: "TURNKEY CURATION",
     desc: "From the initial blueprint to the final fold of the linen, we control every variable of the execution.",
     img: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2940&auto=format&fit=crop"
   },
   {
     number: "04",
-    title: "Lighting Design",
+    title: "LIGHTING DESIGN",
     desc: "Treating photons as a tangible material to shape mood, shadow, and architectural depth across all hours.",
     img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2940&auto=format&fit=crop"
   }
@@ -39,86 +39,110 @@ const servicesList = [
 
 export default function Services() {
   const containerRef = useRef(null);
+  const followerRef = useRef(null);
+  const [activeImg, setActiveImg] = useState(servicesList[0].img);
 
   useGSAP(() => {
-    // Reveal titles on scroll
-    const rows = gsap.utils.toArray('.service-row');
-    
-    rows.forEach((row) => {
-      const title = row.querySelector('.service-title');
-      const img = row.querySelector('.service-img');
-      const text = row.querySelector('.service-text');
-      
-      gsap.fromTo([title, text], 
-        { y: 100, opacity: 0 },
-        {
-          y: 0, opacity: 1,
-          duration: 1.2,
-          ease: "power4.out",
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: row,
-            start: "top 80%",
-          }
-        }
-      );
+    // 1. Initial Page Load Text Reveal
+    gsap.fromTo('.intro-text', 
+      { y: 100, opacity: 0 }, 
+      { y: 0, opacity: 1, duration: 1.5, ease: 'power4.out', stagger: 0.1 }
+    );
 
-      gsap.fromTo(img, 
-        { scale: 1.2, opacity: 0, rotation: 5 },
+    // 2. The List Row Scroll Stagger
+    const rows = gsap.utils.toArray('.service-row');
+    rows.forEach((row) => {
+      gsap.fromTo(row, 
+        { opacity: 0, x: -50 },
         {
-          scale: 1, opacity: 1, rotation: 0,
-          duration: 1.5,
-          ease: "expo.out",
-          scrollTrigger: {
-            trigger: row,
-            start: "top 70%",
-          }
+          opacity: 1, x: 0,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: { trigger: row, start: "top 90%" }
         }
       );
     });
 
+    // 3. Mouse Follower Engine for Images (Desktop Only)
+    let mm = gsap.matchMedia();
+    mm.add("(min-width: 768px)", () => {
+      const xTo = gsap.quickTo(followerRef.current, "x", { duration: 0.4, ease: "power3.out" });
+      const yTo = gsap.quickTo(followerRef.current, "y", { duration: 0.4, ease: "power3.out" });
+
+      const moveFollower = (e) => {
+        xTo(e.clientX);
+        yTo(e.clientY);
+      };
+      
+      window.addEventListener("mousemove", moveFollower);
+      return () => window.removeEventListener("mousemove", moveFollower);
+    });
   }, { scope: containerRef });
+
+  const handleMouseEnter = (img) => {
+    setActiveImg(img);
+    gsap.to(followerRef.current, { scale: 1, opacity: 1, rotation: 5, duration: 0.5, ease: "back.out(1.5)" });
+  };
+
+  const handleMouseLeave = () => {
+    gsap.to(followerRef.current, { scale: 0.5, opacity: 0, rotation: -5, duration: 0.4, ease: "power2.in" });
+  };
 
   return (
     <SmoothScroll>
       <CustomCursor />
       <Navigation />
       
-      <main ref={containerRef} className="w-full bg-[#050505] text-[#F9F9F7] pt-40 pb-32">
+      {/* Absolute Mouse Follower (Image Reveal) */}
+      <div 
+        ref={followerRef} 
+        className="hidden md:block fixed top-0 left-0 w-[400px] h-[500px] pointer-events-none z-[50] opacity-0 scale-50 -translate-x-1/2 -translate-y-1/2 overflow-hidden shadow-2xl"
+      >
+        <img src={activeImg} alt="Service preview" className="w-full h-full object-cover" />
+      </div>
+
+      <main ref={containerRef} className="w-full min-h-screen bg-[#050505] text-[#F9F9F7] pt-40 pb-32">
         
         {/* Intro Header */}
-        <div className="w-full px-8 md:px-16 mb-40">
-          <p className="font-mono text-xs tracking-[0.4em] uppercase text-[#D4AF37] mb-8">Our Capabilities</p>
-          <h1 className="text-5xl md:text-8xl lg:text-[10vw] font-serif leading-[0.85] tracking-tighter uppercase max-w-7xl">
-            Precision in <br/>
-            <span className="italic text-white/50">every dimension.</span>
-          </h1>
+        <div className="w-full px-8 md:px-16 mb-32 overflow-hidden">
+          <p className="intro-text font-mono text-xs tracking-[0.4em] uppercase text-[#D4AF37] mb-8">Our Capabilities</p>
+          <div className="overflow-hidden">
+            <h1 className="intro-text text-5xl md:text-8xl lg:text-[10vw] font-serif leading-[0.85] tracking-tighter uppercase max-w-7xl">
+              Precision in
+            </h1>
+          </div>
+          <div className="overflow-hidden">
+            <h1 className="intro-text text-5xl md:text-8xl lg:text-[10vw] font-serif leading-[0.85] tracking-tighter uppercase max-w-7xl italic text-white/50">
+              every dimension.
+            </h1>
+          </div>
         </div>
 
-        {/* Services List */}
-        <div className="w-full flex flex-col gap-32 md:gap-48 px-8 md:px-16">
+        {/* Massive Typographical List (Hover Triggers) */}
+        <div className="w-full flex flex-col px-4 md:px-16">
+          <div className="border-t border-white/10 w-full"></div>
+          
           {servicesList.map((srv, index) => (
-            <div key={index} className="service-row w-full flex flex-col md:flex-row items-center gap-12 md:gap-24">
+            <div 
+              key={index} 
+              onMouseEnter={() => handleMouseEnter(srv.img)}
+              onMouseLeave={handleMouseLeave}
+              className="service-row group w-full py-12 md:py-20 border-b border-white/10 flex flex-col md:flex-row justify-between items-start md:items-center cursor-pointer transition-colors duration-500 hover:bg-white/5 px-4"
+            >
               
-              {/* Left Side: Number & Image */}
-              <div className="w-full md:w-1/2 relative">
-                <span className="absolute -top-12 -left-4 md:-left-12 text-[15vw] md:text-[10vw] font-serif opacity-10 text-white z-0 pointer-events-none mix-blend-screen">
+              <div className="flex items-start gap-8 md:gap-16">
+                <span className="font-mono text-sm md:text-lg text-[#D4AF37] mt-2 group-hover:-translate-y-2 transition-transform duration-500">
                   {srv.number}
                 </span>
-                <div className="relative z-10 w-full aspect-[4/5] md:aspect-square overflow-hidden rounded-sm">
-                  <img src={srv.img} alt={srv.title} className="service-img w-full h-full object-cover hover:scale-105 transition-all duration-700" />
-                </div>
-              </div>
-
-              {/* Right Side: Title & Desc */}
-              <div className="w-full md:w-1/2 flex flex-col justify-center">
-                <h2 className="service-title text-4xl md:text-7xl lg:text-[5vw] font-serif uppercase tracking-tight mb-8">
+                <h2 className="text-4xl md:text-7xl lg:text-[6vw] font-serif uppercase tracking-tighter group-hover:pl-8 transition-all duration-700 ease-out">
                   {srv.title}
                 </h2>
-                <p className="service-text text-lg md:text-2xl font-light text-white/60 max-w-xl leading-relaxed">
+              </div>
+
+              <div className="mt-8 md:mt-0 md:w-1/3 overflow-hidden">
+                <p className="font-light text-white/50 text-sm md:text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
                   {srv.desc}
                 </p>
-                <div className="service-text mt-12 w-12 h-[1px] bg-[#D4AF37]"></div>
               </div>
 
             </div>
