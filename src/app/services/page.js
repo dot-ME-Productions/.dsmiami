@@ -7,6 +7,7 @@ import SmoothScroll from '@/components/SmoothScroll';
 import Navigation from '@/components/Navigation';
 import CustomCursor from '@/components/CustomCursor';
 import NextGenFooter from '@/components/NextGenFooter';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -98,7 +99,7 @@ export default function Services() {
         ref={followerRef} 
         className="hidden md:block fixed top-0 left-0 w-[400px] h-[500px] pointer-events-none z-[50] opacity-0 scale-50 -translate-x-1/2 -translate-y-1/2 overflow-hidden shadow-2xl"
       >
-        <img src={activeImg} alt="Service preview" className="w-full h-full object-cover" />
+        <Image src={activeImg} alt="Service preview" fill sizes="400px" className="object-cover" priority />
       </div>
 
       <main ref={containerRef} className="w-full min-h-screen bg-[#050505] text-[#F9F9F7] pt-40 pb-32">

@@ -1,6 +1,8 @@
 'use client';
+import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import Image from 'next/image';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -47,11 +49,7 @@ export default function SelectedWorks() {
         {projects.map((proj, idx) => (
           <div key={idx} className="relative w-[70vw] md:w-[40vw] h-full flex-shrink-0 group cursor-pointer overflow-hidden">
             <div className="w-full h-full overflow-hidden">
-              <img 
-                src={proj.img} 
-                alt={proj.name} 
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-              />
+              <Image src={proj.img} alt={proj.name} fill className="object-cover w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
             </div>
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
               <h3 className="text-3xl font-serif">{proj.name}</h3>

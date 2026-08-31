@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import Image from 'next/image';
 
 const menuData = [
   { 
@@ -153,7 +154,7 @@ export default function Navigation() {
                 >
                   {data.images.map((imgSrc, i) => (
                     <div key={i} className="overflow-hidden bg-[#111] aspect-square w-full h-full">
-                      <img src={imgSrc} alt="Preview" className="w-full h-full object-cover grayscale mix-blend-screen opacity-60" />
+                      <Image src={imgSrc} alt="Preview" fill sizes="200px" className="object-cover grayscale mix-blend-screen opacity-60" />
                     </div>
                   ))}
                 </div>

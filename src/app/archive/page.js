@@ -6,6 +6,7 @@ import { useGSAP } from '@gsap/react';
 import SmoothScroll from '@/components/SmoothScroll';
 import Navigation from '@/components/Navigation';
 import CustomCursor from '@/components/CustomCursor';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -130,10 +131,12 @@ export default function Archive() {
               
               {/* Image Container with hidden overflow */}
               <div className="absolute inset-0 w-full h-full overflow-hidden">
-                <img 
+                <Image 
                   src={item.url} 
                   alt={item.title}
-                  className="archive-image w-full h-[140%] object-cover transform translate-y-[20%]"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 65vw"
+                  className="archive-image object-cover transform translate-y-[20%]"
                 />
               </div>
 

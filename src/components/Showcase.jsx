@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -108,7 +109,7 @@ export default function Showcase() {
         {projects.map((proj, i) => (
           <div key={proj.id} className="showcase-panel w-full md:w-screen md:h-full flex flex-col justify-center items-center relative px-4 md:px-20">
             <div className="cursor-explore w-full max-w-5xl aspect-[4/5] md:aspect-[21/9] relative overflow-hidden group rounded-sm md:rounded-none">
-              <img src={proj.img} alt={proj.title} className="proj-img w-full h-full object-cover transform md:scale-110 opacity-100 transition-all duration-700" />
+              <Image src={proj.img} alt={proj.title} fill sizes="(max-width: 768px) 100vw, 80vw" priority={i === 0} className="proj-img object-cover transform md:scale-110 opacity-100 transition-all duration-700" />
             </div>
             
             <div className="relative mt-6 md:mt-0 md:absolute md:bottom-32 md:left-32 z-20 w-full text-center md:text-left">

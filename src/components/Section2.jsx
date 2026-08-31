@@ -1,7 +1,10 @@
 'use client';
+import Image from 'next/image';
 import { useRef } from 'react';
 import gsap from 'gsap';
+import Image from 'next/image';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -90,11 +93,7 @@ export default function Section2() {
             )}
 
             <div className="w-full h-full overflow-hidden relative border border-[#F9F9F7]/10 group-hover:scale-[1.02] transition-transform duration-1000 ease-[cubic-bezier(0.7,0,0.3,1)]">
-              <img 
-                src={proj.img} 
-                alt={proj.title} 
-                className="proj-img w-[120%] h-full object-cover -left-[10%] relative opacity-60 group-hover:opacity-100 transition-all duration-1000 ease-out"
-              />
+              <Image src={proj.img} alt={proj.title} fill className="object-cover proj-img w-[120%] h-full object-cover -left-[10%] relative opacity-60 group-hover:opacity-100 transition-all duration-1000 ease-out" />
               <div className="absolute inset-0 bg-[#050505]/40 group-hover:bg-transparent transition-colors duration-1000"></div>
             </div>
 
