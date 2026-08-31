@@ -112,7 +112,7 @@ export default function Navigation() {
       {/* Top Header Bar */}
       <header className="fixed top-0 left-0 w-full z-40 bg-transparent py-5 px-6 md:px-16 flex justify-between items-center mix-blend-difference pointer-events-none">
         <Link href="/" onClick={() => setIsOpen(false)} className="flex flex-col uppercase group pointer-events-auto text-[#F9F9F7]">
-          <div className="text-xl md:text-2xl font-serif tracking-[0.2em] font-medium flex items-center gap-1 group-hover:text-[#D4AF37] group-hover:italic transition-all duration-500">
+          <div className="text-xl md:text-2xl font-serif tracking-[0.2em] font-medium flex items-center gap-1 group-hover:text-[#C5A880] group-hover:italic transition-all duration-500">
             <span>DESIGN</span>
             <span className="opacity-40 font-light text-2xl mx-1 not-italic">/</span>
             <span>SOLUTIONS</span>
@@ -131,7 +131,7 @@ export default function Navigation() {
       <div 
         ref={overlayRef} 
         onMouseMove={handleMouseMove}
-        className="fixed inset-0 z-[60] bg-[#050505]/95 backdrop-blur-2xl text-[#F9F9F7] flex flex-col justify-center overflow-hidden pointer-events-none" 
+        className="fixed inset-0 z-[60] bg-[#0C0F12]/95 backdrop-blur-2xl text-[#F9F9F7] flex flex-col justify-center overflow-hidden pointer-events-none" 
         style={{ clipPath: 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)' }}
       >
         
@@ -170,7 +170,7 @@ export default function Navigation() {
                   href={link.path} 
                   onClick={() => setIsOpen(false)} 
                   ref={el => linksRef.current[idx] = el} 
-                  className="inline-block text-[14vw] md:text-[9vw] font-serif uppercase leading-[0.85] tracking-tighter hover:italic hover:text-[#D4AF37] transition-all duration-300"
+                  className="inline-block text-[14vw] md:text-[9vw] font-serif uppercase leading-[0.85] tracking-tighter hover:italic hover:text-[#C5A880] transition-all duration-300"
                 >
                   {link.name}
                 </Link>
@@ -187,7 +187,7 @@ export default function Navigation() {
                     href={link.path} 
                     onClick={() => setIsOpen(false)} 
                     ref={el => subLinksRef.current[idx] = el} 
-                    className="text-xs md:text-sm font-mono tracking-widest uppercase opacity-50 hover:opacity-100 hover:text-[#D4AF37] transition-colors"
+                    className="text-xs md:text-sm font-mono tracking-widest uppercase opacity-50 hover:opacity-100 hover:text-[#C5A880] transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -196,8 +196,8 @@ export default function Navigation() {
             </nav>
 
             <div className="flex flex-col font-mono text-[10px] md:text-[0.6rem] tracking-[0.3em] uppercase opacity-40 text-left md:text-right w-full md:w-auto">
-              <a href="mailto:info@designsolutionsmiami.com" className="hover:text-[#D4AF37] transition-colors mb-1">hello@designsolutions.com</a>
-              <a href="tel:+17862244923" className="hover:text-[#D4AF37] transition-colors">+1 (786) 224-4923</a>
+              <a href="mailto:info@designsolutionsmiami.com" className="hover:text-[#C5A880] transition-colors mb-1">hello@designsolutions.com</a>
+              <a href="tel:+17862244923" className="hover:text-[#C5A880] transition-colors">+1 (786) 224-4923</a>
             </div>
 
           </div>

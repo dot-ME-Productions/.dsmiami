@@ -44,7 +44,7 @@ export default function SmoothScroll({ children }) {
     <>
       <div 
         ref={progressRef}
-        className="fixed top-0 left-0 w-full h-[3px] bg-[#D4AF37] z-[9999] origin-left pointer-events-none mix-blend-difference"
+        className="fixed top-0 left-0 w-full h-[3px] bg-[#C5A880] z-[9999] origin-left pointer-events-none mix-blend-difference"
         style={{ scaleX: 0 }}
       ></div>
       {children}

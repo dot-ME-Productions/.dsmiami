@@ -102,11 +102,11 @@ export default function Services() {
         <Image src={activeImg} alt="Service preview" fill sizes="400px" className="object-cover" priority />
       </div>
 
-      <main ref={containerRef} className="w-full min-h-screen bg-[#050505] text-[#F9F9F7] pt-40 pb-32">
+      <main ref={containerRef} className="w-full min-h-screen bg-[#0C0F12] text-[#F9F9F7] pt-40 pb-32">
         
         {/* Intro Header */}
         <div className="w-full px-8 md:px-16 mb-32 overflow-hidden">
-          <p className="intro-text font-mono text-xs tracking-[0.4em] uppercase text-[#D4AF37] mb-8">Our Capabilities</p>
+          <p className="intro-text font-mono text-xs tracking-[0.4em] uppercase text-[#C5A880] mb-8">Our Capabilities</p>
           <div className="overflow-hidden">
             <h1 className="intro-text text-5xl md:text-8xl lg:text-[10vw] font-serif leading-[0.85] tracking-tighter uppercase max-w-7xl">
               Precision in
@@ -132,7 +132,7 @@ export default function Services() {
             >
               
               <div className="flex items-start gap-8 md:gap-16">
-                <span className="font-mono text-sm md:text-lg text-[#D4AF37] mt-2 group-hover:-translate-y-2 transition-transform duration-500">
+                <span className="font-mono text-sm md:text-lg text-[#C5A880] mt-2 group-hover:-translate-y-2 transition-transform duration-500">
                   {srv.number}
                 </span>
                 <h2 className="text-4xl md:text-7xl lg:text-[6vw] font-serif uppercase tracking-tighter group-hover:pl-8 transition-all duration-700 ease-out">

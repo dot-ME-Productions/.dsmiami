@@ -89,7 +89,7 @@ export default function Philosophy() {
       );
 
       if (!prefersReduced) {
-        gsap.to(breatheTextRef.current, { scale: 1.05, color: "#D4AF37", duration: 3, repeat: -1, yoyo: true, ease: "sine.inOut" });
+        gsap.to(breatheTextRef.current, { scale: 1.05, color: "#C5A880", duration: 3, repeat: -1, yoyo: true, ease: "sine.inOut" });
       }
     });
 
@@ -121,10 +121,10 @@ export default function Philosophy() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative w-full md:h-screen bg-[#030303] text-[#F9F9F7] overflow-hidden z-20">
+    <section ref={containerRef} className="relative w-full md:h-screen bg-[#0A0D10] text-[#F9F9F7] overflow-hidden z-20">
       
       <div className="absolute inset-0 z-0 pointer-events-none opacity-40 overflow-hidden mix-blend-screen">
-        <div ref={bgGlow1} className="absolute top-[-20%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-[#D4AF37]/10 blur-[120px]"></div>
+        <div ref={bgGlow1} className="absolute top-[-20%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-[#C5A880]/10 blur-[120px]"></div>
         <div ref={bgGlow2} className="absolute bottom-[-20%] right-[-10%] w-[70vw] h-[70vw] rounded-full bg-[#ffffff]/5 blur-[120px]"></div>
       </div>
 
@@ -132,7 +132,7 @@ export default function Philosophy() {
         
         {/* Chapter 1 */}
         <div className="w-screen h-full flex flex-col justify-center px-10 md:px-20 lg:px-32">
-          <p className="font-mono text-xs tracking-[0.4em] uppercase text-[#D4AF37] mb-8">Manifesto . 01</p>
+          <p className="font-mono text-xs tracking-[0.4em] uppercase text-[#C5A880] mb-8">Manifesto . 01</p>
           {/* Responsive Typography bounds and Reactive Mouse Triggers */}
           <h2 
             ref={el => reactiveRefs.current[0] = el}
@@ -153,11 +153,11 @@ export default function Philosophy() {
              <div className="chap2-light-beam absolute h-[150vh] w-[40vw] bg-gradient-to-r from-transparent via-white/80 to-transparent will-change-transform blur-md"></div>
              
              {/* The heavy brutalist walls pulling apart in tension - added will-change */}
-             <div className="chap2-tension-left absolute top-0 left-0 w-[50.1%] h-full bg-[#030303] border-r border-white/10 z-10 will-change-transform"></div>
-             <div className="chap2-tension-right absolute top-0 right-0 w-[50.1%] h-full bg-[#030303] border-l border-white/10 z-10 will-change-transform"></div>
+             <div className="chap2-tension-left absolute top-0 left-0 w-[50.1%] h-full bg-[#0A0D10] border-r border-white/10 z-10 will-change-transform"></div>
+             <div className="chap2-tension-right absolute top-0 right-0 w-[50.1%] h-full bg-[#0A0D10] border-l border-white/10 z-10 will-change-transform"></div>
           </div>
 
-          <p className="absolute top-1/4 left-10 md:left-20 lg:left-32 font-mono text-xs tracking-[0.4em] uppercase text-[#D4AF37] z-20">Manifesto . 02</p>
+          <p className="absolute top-1/4 left-10 md:left-20 lg:left-32 font-mono text-xs tracking-[0.4em] uppercase text-[#C5A880] z-20">Manifesto . 02</p>
           
           <h2 
             ref={el => inverseRefs.current[0] = el}
@@ -181,7 +181,7 @@ export default function Philosophy() {
 
         {/* Chapter 3 */}
         <div className="w-screen h-full flex flex-col items-center justify-center text-center px-10 md:px-20 lg:px-32">
-          <p className="font-mono text-xs tracking-[0.4em] uppercase text-[#D4AF37] mb-12">Manifesto . 03</p>
+          <p className="font-mono text-xs tracking-[0.4em] uppercase text-[#C5A880] mb-12">Manifesto . 03</p>
           <h2 
             ref={el => reactiveRefs.current[2] = el}
             className="text-[5vw] lg:text-[3vw] xl:text-[2.5vw] font-serif uppercase leading-[1.1] tracking-tight max-w-[90vw]"
@@ -197,24 +197,24 @@ export default function Philosophy() {
       {/* MOBILE */}
       <div className="md:hidden w-full flex flex-col py-32 px-6 gap-32 relative z-10">
         <div className="mobile-chapter">
-          <p className="font-mono text-[10px] tracking-[0.4em] uppercase text-[#D4AF37] mb-6">Manifesto . 01</p>
+          <p className="font-mono text-[10px] tracking-[0.4em] uppercase text-[#C5A880] mb-6">Manifesto . 01</p>
           <h2 className="text-5xl font-serif leading-none uppercase tracking-tighter w-full max-w-full break-words">
             We Reject<br/><span className="italic text-white/50">The Ordinary.</span>
           </h2>
         </div>
 
         <div className="mobile-chapter text-right">
-          <p className="font-mono text-[10px] tracking-[0.4em] uppercase text-[#D4AF37] mb-6">Manifesto . 02</p>
+          <p className="font-mono text-[10px] tracking-[0.4em] uppercase text-[#C5A880] mb-6">Manifesto . 02</p>
           <h2 className="text-5xl font-serif leading-none uppercase tracking-tighter">
             We Sculpt<br/><span className="italic text-white/50">Tension</span><br/>& Light.
           </h2>
         </div>
 
         <div className="mobile-chapter text-center">
-          <p className="font-mono text-[10px] tracking-[0.4em] uppercase text-[#D4AF37] mb-6">Manifesto . 03</p>
+          <p className="font-mono text-[10px] tracking-[0.4em] uppercase text-[#C5A880] mb-6">Manifesto . 03</p>
           <h2 className="text-3xl font-serif uppercase leading-tight tracking-tight">
             And dictate the precise<br/>
-            <span className="italic text-[#D4AF37] text-4xl mt-2 block">psychological weight</span>
+            <span className="italic text-[#C5A880] text-4xl mt-2 block">psychological weight</span>
             of every room.
           </h2>
         </div>

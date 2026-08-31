@@ -17,7 +17,7 @@ export default function AwardsMarquee() {
   }, { scope: marqueeRef });
 
   return (
-    <section ref={marqueeRef} className="w-full py-12 md:py-24 bg-[#050505] text-[#D4AF37] overflow-hidden flex flex-col justify-center border-t border-white/5 relative z-10">
+    <section ref={marqueeRef} className="w-full py-12 md:py-24 bg-[#0C0F12] text-[#C5A880] overflow-hidden flex flex-col justify-center border-t border-white/5 relative z-10">
       
       <div className="w-full px-8 md:px-16 mb-8 flex items-end gap-4">
         <h2 className="font-serif text-xl md:text-3xl font-bold tracking-[0.2em] uppercase text-white">
@@ -31,32 +31,32 @@ export default function AwardsMarquee() {
       <div className="flex w-[200vw] text-4xl md:text-6xl font-serif uppercase tracking-widest whitespace-nowrap">
         <div className="marquee-content flex gap-12 px-6">
           <span>ARCHITECTURAL DIGEST AD100</span>
-          <span className="opacity-30">•</span>
+          <span className="opacity-30">â€¢</span>
           <span>AIA MIAMI WINNER</span>
-          <span className="opacity-30">•</span>
+          <span className="opacity-30">â€¢</span>
           <span>ELLE DECOR A-LIST</span>
-          <span className="opacity-30">•</span>
+          <span className="opacity-30">â€¢</span>
           <span>DEZEEN SHORTLISTED</span>
-          <span className="opacity-30">•</span>
+          <span className="opacity-30">â€¢</span>
           <span>LUXE RED AWARDS</span>
-          <span className="opacity-30">•</span>
+          <span className="opacity-30">â€¢</span>
           <span>WORLD ARCHITECTURE FESTIVAL</span>
-          <span className="opacity-30">•</span>
+          <span className="opacity-30">â€¢</span>
         </div>
         {/* Duplicate for seamless looping */}
         <div className="marquee-content flex gap-12 px-6">
           <span>ARCHITECTURAL DIGEST AD100</span>
-          <span className="opacity-30">•</span>
+          <span className="opacity-30">â€¢</span>
           <span>AIA MIAMI WINNER</span>
-          <span className="opacity-30">•</span>
+          <span className="opacity-30">â€¢</span>
           <span>ELLE DECOR A-LIST</span>
-          <span className="opacity-30">•</span>
+          <span className="opacity-30">â€¢</span>
           <span>DEZEEN SHORTLISTED</span>
-          <span className="opacity-30">•</span>
+          <span className="opacity-30">â€¢</span>
           <span>LUXE RED AWARDS</span>
-          <span className="opacity-30">•</span>
+          <span className="opacity-30">â€¢</span>
           <span>WORLD ARCHITECTURE FESTIVAL</span>
-          <span className="opacity-30">•</span>
+          <span className="opacity-30">â€¢</span>
         </div>
       </div>
     </section>

@@ -73,13 +73,13 @@ export default function Preloader({ setIsLoaded }) {
     <div ref={containerRef} className="fixed inset-0 z-[10000] overflow-hidden pointer-events-none flex items-center justify-center">
       
       {/* Split Doors for the final reveal */}
-      <div ref={leftDoorRef} className="absolute top-0 left-0 w-1/2 h-full bg-[#050505]"></div>
-      <div ref={rightDoorRef} className="absolute top-0 right-0 w-1/2 h-full bg-[#050505]"></div>
+      <div ref={leftDoorRef} className="absolute top-0 left-0 w-1/2 h-full bg-[#0C0F12]"></div>
+      <div ref={rightDoorRef} className="absolute top-0 right-0 w-1/2 h-full bg-[#0C0F12]"></div>
 
       {/* The Morphing Geometry */}
       <div 
         ref={dotRef} 
-        className="absolute bg-[#D4AF37] rounded-full z-10"
+        className="absolute bg-[#C5A880] rounded-full z-10"
         style={{ width: '4px', height: '4px', scale: 0 }}
       ></div>
 

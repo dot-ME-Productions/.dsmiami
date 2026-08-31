@@ -22,7 +22,7 @@ export default function Principal() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="w-full bg-[#050505] text-[#F9F9F7] py-32 md:py-48 px-6 md:px-16 overflow-hidden relative z-20 border-t border-white/5">
+    <section ref={containerRef} className="w-full bg-[#0C0F12] text-[#F9F9F7] py-32 md:py-48 px-6 md:px-16 overflow-hidden relative z-20 border-t border-white/5">
       <div className="max-w-[1600px] mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-32">
         
         {/* The Architect Profile Video Teaser (DeepSeek Upgrade 5) */}
@@ -43,14 +43,14 @@ export default function Principal() {
           </div>
 
           <div className="absolute bottom-8 left-8 z-20 pointer-events-none">
-             <p className="font-serif text-3xl md:text-5xl uppercase tracking-tighter group-hover:text-[#D4AF37] transition-colors duration-500">Luciana Fragali</p>
+             <p className="font-serif text-3xl md:text-5xl uppercase tracking-tighter group-hover:text-[#C5A880] transition-colors duration-500">Luciana Fragali</p>
              <p className="font-mono text-[10px] tracking-widest text-white/50 uppercase mt-2">Watch Principal Film [1:00]</p>
           </div>
         </div>
 
         {/* The Intel / Bio */}
         <div className="w-full md:w-1/2 flex flex-col justify-center">
-          <p className="principal-text font-mono text-[10px] tracking-[0.4em] uppercase text-[#D4AF37] mb-8">The Mind Behind The Atmosphere</p>
+          <p className="principal-text font-mono text-[10px] tracking-[0.4em] uppercase text-[#C5A880] mb-8">The Mind Behind The Atmosphere</p>
           
           <h2 className="principal-text text-3xl md:text-[3.5rem] font-serif italic font-light tracking-wide leading-snug mb-12 text-white/90">
             "We don't do cookie-cutter.<br/> We design for legacy."
@@ -67,11 +67,11 @@ export default function Principal() {
           
           <div className="principal-text mt-16 grid grid-cols-2 gap-8 border-t border-white/10 pt-8 max-w-xl">
             <div>
-              <p className="text-4xl md:text-6xl font-serif text-[#D4AF37]">20+</p>
+              <p className="text-4xl md:text-6xl font-serif text-[#C5A880]">20+</p>
               <p className="font-mono text-[10px] tracking-widest uppercase text-white/50 mt-2">Years Experience</p>
             </div>
             <div>
-              <p className="text-4xl md:text-6xl font-serif text-[#D4AF37]">400+</p>
+              <p className="text-4xl md:text-6xl font-serif text-[#C5A880]">400+</p>
               <p className="font-mono text-[10px] tracking-widest uppercase text-white/50 mt-2">Projects Delivered</p>
             </div>
           </div>

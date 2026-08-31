@@ -80,7 +80,7 @@ export default function CustomCursor() {
       ref={cursorRef}
       className="hidden md:flex fixed top-0 left-0 w-3 h-3 bg-[#F9F9F7] rounded-full pointer-events-none z-[999999] mix-blend-difference -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden"
     >
-      <span ref={textRef} className="text-[10px] font-mono tracking-widest text-[#050505] opacity-0 scale-0 font-bold">
+      <span ref={textRef} className="text-[10px] font-mono tracking-widest text-[#0C0F12] opacity-0 scale-0 font-bold">
         EXPLORE
       </span>
     </div>

@@ -79,14 +79,14 @@ export default function Archive() {
       <CustomCursor />
       <Navigation />
       
-      <main ref={containerRef} className="w-full min-h-screen bg-[#050505] text-[#F9F9F7] pt-40 pb-32">
+      <main ref={containerRef} className="w-full min-h-screen bg-[#0C0F12] text-[#F9F9F7] pt-40 pb-32">
         
         {/* Intro Header */}
         <div className="w-full flex flex-col items-center justify-center text-center px-8 mb-32">
           <h1 className="text-[15vw] md:text-[12vw] font-serif leading-none tracking-tighter uppercase mix-blend-difference z-20">
             The Archive
           </h1>
-          <p className="font-mono text-xs tracking-[0.4em] uppercase text-[#D4AF37] mt-8">Selected Legacy Interventions</p>
+          <p className="font-mono text-xs tracking-[0.4em] uppercase text-[#C5A880] mt-8">Selected Legacy Interventions</p>
         </div>
 
         {/* Massive Spaced Velocity Gallery */}
@@ -110,7 +110,7 @@ export default function Archive() {
                 <h2 className="text-5xl md:text-8xl lg:text-[8vw] font-serif uppercase tracking-widest text-white leading-none whitespace-nowrap">
                   {item.title}
                 </h2>
-                <p className="font-mono text-xs md:text-sm tracking-[0.4em] uppercase text-[#D4AF37] mt-4 opacity-80">
+                <p className="font-mono text-xs md:text-sm tracking-[0.4em] uppercase text-[#C5A880] mt-4 opacity-80">
                   {item.award}
                 </p>
               </div>

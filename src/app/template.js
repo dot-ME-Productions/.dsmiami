@@ -24,7 +24,7 @@ export default function Template({ children }) {
     <>
       <div 
         ref={curtainRef} 
-        className="fixed inset-0 bg-[#050505] z-[5000] pointer-events-none"
+        className="fixed inset-0 bg-[#0C0F12] z-[5000] pointer-events-none"
       ></div>
       {children}
     </>

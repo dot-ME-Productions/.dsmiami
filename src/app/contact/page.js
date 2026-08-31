@@ -16,7 +16,7 @@ function LiveClock({ timeZone, label }) {
     const interval = setInterval(updateTime, 1000);
     return () => clearInterval(interval);
   }, [timeZone, label]);
-  return <span className="font-mono text-sm tracking-widest text-[#D4AF37] tabular-nums">{time || '00:00:00 ...'}</span>;
+  return <span className="font-mono text-sm tracking-widest text-[#C5A880] tabular-nums">{time || '00:00:00 ...'}</span>;
 }
 
 export default function Contact() {
@@ -40,7 +40,7 @@ export default function Contact() {
       <CustomCursor />
       <Navigation />
       
-      <main className="min-h-screen w-full bg-[#050505] text-[#F9F9F7] flex flex-col pt-32 pb-24 px-8 md:px-16 lg:px-24">
+      <main className="min-h-screen w-full bg-[#0C0F12] text-[#F9F9F7] flex flex-col pt-32 pb-24 px-8 md:px-16 lg:px-24">
         <div className="w-full max-w-[1400px] mx-auto flex flex-col lg:flex-row justify-between gap-16 lg:gap-32 mt-8 md:mt-16">
           
           {/* Left Column: Concierge Form */}
@@ -63,13 +63,13 @@ export default function Contact() {
                   {/* STEP 1 */}
                   {step === 1 && (
                     <div className="flex flex-col gap-6">
-                      <p className="font-mono text-[10px] tracking-widest uppercase text-[#D4AF37]">01 / Project Category</p>
+                      <p className="font-mono text-[10px] tracking-widest uppercase text-[#C5A880]">01 / Project Category</p>
                       <h2 className="text-2xl font-serif mb-8">What is the nature of your space?</h2>
                       {['Residential Estate', 'Commercial HQ', 'Luxury Hospitality'].map(type => (
                         <button 
                           key={type}
                           onClick={() => handleSelection('type', type)}
-                          className="w-full text-left p-6 border border-white/10 hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all group flex justify-between items-center"
+                          className="w-full text-left p-6 border border-white/10 hover:border-[#C5A880] hover:text-[#C5A880] transition-all group flex justify-between items-center"
                         >
                           <span className="font-serif text-xl tracking-tight">{type}</span>
                           <span className="font-mono text-xs opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest">&#8594;</span>
@@ -82,7 +82,7 @@ export default function Contact() {
                   {step === 2 && (
                     <div className="flex flex-col gap-6">
                       <button onClick={() => setStep(1)} className="text-left font-mono text-[10px] tracking-widest uppercase text-white/40 hover:text-white mb-4 w-fit">&#8592; Back</button>
-                      <p className="font-mono text-[10px] tracking-widest uppercase text-[#D4AF37]">02 / Investment</p>
+                      <p className="font-mono text-[10px] tracking-widest uppercase text-[#C5A880]">02 / Investment</p>
                       <h2 className="text-2xl font-serif mb-4">What is your anticipated design budget?</h2>
                       
                       <div className="flex flex-col gap-8 py-8 border-y border-white/10 my-4 relative">
@@ -99,7 +99,7 @@ export default function Contact() {
 
                                             <button 
                         onClick={() => { if(formData.budget) setStep(3) }}
-                        className={`w-fit flex items-center justify-center p-6 border text-xs font-mono tracking-widest uppercase rounded-full transition-all group mt-4 ${formData.budget ? 'border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black cursor-pointer' : 'border-white/10 text-white/20 cursor-not-allowed'}`}
+                        className={`w-fit flex items-center justify-center p-6 border text-xs font-mono tracking-widest uppercase rounded-full transition-all group mt-4 ${formData.budget ? 'border-[#C5A880] text-[#C5A880] hover:bg-[#C5A880] hover:text-black cursor-pointer' : 'border-white/10 text-white/20 cursor-not-allowed'}`}
                       >
                         Confirm Budget <span className="ml-2 group-hover:translate-x-1 transition-transform">&#8594;</span>
                       </button>
@@ -110,24 +110,24 @@ export default function Contact() {
                   {step === 3 && (
                     <form onSubmit={handleSubmit} className="flex flex-col gap-8">
                       <button type="button" onClick={() => setStep(2)} className="text-left font-mono text-[10px] tracking-widest uppercase text-white/40 hover:text-white mb-4 w-fit">&#8592; Back</button>
-                      <p className="font-mono text-[10px] tracking-widest uppercase text-[#D4AF37]">03 / The Details</p>
+                      <p className="font-mono text-[10px] tracking-widest uppercase text-[#C5A880]">03 / The Details</p>
                       
                       <div className="relative border-b border-white/20 pb-2">
-                        <input type="text" required placeholder=" " className="peer w-full bg-transparent outline-none text-xl font-serif pt-4 pb-2 text-white placeholder-transparent focus:border-[#D4AF37]" />
-                        <label className="absolute left-0 top-0 text-white/40 font-mono text-xs tracking-widest uppercase transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-placeholder-shown:font-serif peer-focus:top-0 peer-focus:text-xs peer-focus:font-mono peer-focus:text-[#D4AF37]">Full Name</label>
+                        <input type="text" required placeholder=" " className="peer w-full bg-transparent outline-none text-xl font-serif pt-4 pb-2 text-white placeholder-transparent focus:border-[#C5A880]" />
+                        <label className="absolute left-0 top-0 text-white/40 font-mono text-xs tracking-widest uppercase transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-placeholder-shown:font-serif peer-focus:top-0 peer-focus:text-xs peer-focus:font-mono peer-focus:text-[#C5A880]">Full Name</label>
                       </div>
 
                       <div className="relative border-b border-white/20 pb-2">
-                        <input type="email" required placeholder=" " className="peer w-full bg-transparent outline-none text-xl font-serif pt-4 pb-2 text-white placeholder-transparent focus:border-[#D4AF37]" />
-                        <label className="absolute left-0 top-0 text-white/40 font-mono text-xs tracking-widest uppercase transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-placeholder-shown:font-serif peer-focus:top-0 peer-focus:text-xs peer-focus:font-mono peer-focus:text-[#D4AF37]">Email Address</label>
+                        <input type="email" required placeholder=" " className="peer w-full bg-transparent outline-none text-xl font-serif pt-4 pb-2 text-white placeholder-transparent focus:border-[#C5A880]" />
+                        <label className="absolute left-0 top-0 text-white/40 font-mono text-xs tracking-widest uppercase transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-placeholder-shown:font-serif peer-focus:top-0 peer-focus:text-xs peer-focus:font-mono peer-focus:text-[#C5A880]">Email Address</label>
                       </div>
 
                       <div className="relative border-b border-white/20 pb-2 mt-4">
-                        <textarea required rows="3" placeholder=" " className="peer w-full bg-transparent outline-none text-xl font-serif pt-4 pb-2 text-white placeholder-transparent focus:border-[#D4AF37] resize-none"></textarea>
-                        <label className="absolute left-0 top-0 text-white/40 font-mono text-xs tracking-widest uppercase transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-placeholder-shown:font-serif peer-focus:top-0 peer-focus:text-xs peer-focus:font-mono peer-focus:text-[#D4AF37]">Briefly describe your vision</label>
+                        <textarea required rows="3" placeholder=" " className="peer w-full bg-transparent outline-none text-xl font-serif pt-4 pb-2 text-white placeholder-transparent focus:border-[#C5A880] resize-none"></textarea>
+                        <label className="absolute left-0 top-0 text-white/40 font-mono text-xs tracking-widest uppercase transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-placeholder-shown:font-serif peer-focus:top-0 peer-focus:text-xs peer-focus:font-mono peer-focus:text-[#C5A880]">Briefly describe your vision</label>
                       </div>
 
-                      <button type="submit" className="mt-8 w-fit flex items-center justify-center p-8 bg-[#D4AF37] text-black font-mono text-xs tracking-widest uppercase rounded-full hover:scale-105 transition-transform">
+                      <button type="submit" className="mt-8 w-fit flex items-center justify-center p-8 bg-[#C5A880] text-black font-mono text-xs tracking-widest uppercase rounded-full hover:scale-105 transition-transform">
                         Submit Inquiry
                       </button>
                     </form>
@@ -139,7 +139,7 @@ export default function Contact() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="flex flex-col items-center justify-center flex-1 text-center py-20 border border-white/10"
                 >
-                  <p className="font-mono text-xs tracking-widest text-[#D4AF37] mb-6">TRANSMISSION RECEIVED</p>
+                  <p className="font-mono text-xs tracking-widest text-[#C5A880] mb-6">TRANSMISSION RECEIVED</p>
                   <h2 className="text-3xl font-serif mb-6">We will review your brief.</h2>
                   <p className="text-white/50 font-light max-w-sm">Our principal team will reach out within 24 hours to schedule your private consultation.</p>
                 </motion.div>
@@ -173,7 +173,7 @@ export default function Contact() {
 
             <div>
               <p className="font-mono text-[10px] tracking-widest uppercase text-white/40 mb-6">Direct Inquiries</p>
-              <a href="mailto:info@designsolutionsmiami.com" className="block text-xl font-serif hover:text-[#D4AF37] transition-colors mb-2">
+              <a href="mailto:info@designsolutionsmiami.com" className="block text-xl font-serif hover:text-[#C5A880] transition-colors mb-2">
                 studio@dsmiami.com
               </a>
               <a href="tel:+17862244923" className="block font-mono text-sm tracking-widest text-white/60 hover:text-white transition-colors">

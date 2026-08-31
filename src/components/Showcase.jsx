@@ -118,7 +118,7 @@ export default function Showcase() {
 
   return (
     <>
-      <section ref={containerRef} className="relative md:h-screen w-full bg-[#050505] text-[#F9F9F7] md:overflow-hidden flex items-center py-20 md:py-0">
+      <section ref={containerRef} className="relative md:h-screen w-full bg-[#0C0F12] text-[#F9F9F7] md:overflow-hidden flex items-center py-20 md:py-0">
         
         {/* Massive Background Watermark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
@@ -142,7 +142,7 @@ export default function Showcase() {
               </div>
               
               <div className="relative mt-6 md:mt-0 md:absolute md:bottom-32 md:left-32 z-20 w-full text-center md:text-left pointer-events-none">
-                <p className="font-mono text-[10px] md:text-xs tracking-widest text-[#D4AF37] mb-2">0{proj.id} &#8212; PROJECT</p>
+                <p className="font-mono text-[10px] md:text-xs tracking-widest text-[#C5A880] mb-2">0{proj.id} &#8212; PROJECT</p>
                 <h2 className="text-3xl md:text-7xl font-serif uppercase tracking-widest text-white drop-shadow-2xl">{proj.title}</h2>
                 <p className="font-light text-white/70 max-w-md mt-4 mx-auto md:mx-0">{proj.subtitle}</p>
               </div>
@@ -179,7 +179,7 @@ export default function Showcase() {
               }
             }}
             aria-label="Skip down to Philosophy section"
-            className="font-mono text-[10px] tracking-[0.3em] text-[#D4AF37] hover:text-white uppercase transition-colors"
+            className="font-mono text-[10px] tracking-[0.3em] text-[#C5A880] hover:text-white uppercase transition-colors"
           >
             Skip Showcase &#8595;
           </button>
@@ -188,12 +188,12 @@ export default function Showcase() {
 
       {/* Project Details Modal */}
       {activeProject && (
-        <div className="fixed inset-0 z-[99999] bg-[#050505]/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-12 animate-in fade-in duration-500">
+        <div className="fixed inset-0 z-[99999] bg-[#0C0F12]/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-12 animate-in fade-in duration-500">
           <div className="w-full max-w-[1400px] h-full max-h-[90vh] bg-[#0A0A0A] border border-white/10 flex flex-col md:flex-row relative overflow-hidden shadow-2xl">
             
             <button 
               onClick={() => setActiveProject(null)} 
-              className="absolute top-6 right-6 text-white/50 hover:text-[#D4AF37] font-mono text-xs tracking-widest z-50 transition-colors bg-[#0A0A0A] p-2 rounded-full md:bg-transparent"
+              className="absolute top-6 right-6 text-white/50 hover:text-[#C5A880] font-mono text-xs tracking-widest z-50 transition-colors bg-[#0A0A0A] p-2 rounded-full md:bg-transparent"
             >
               CLOSE [X]
             </button>
@@ -206,7 +206,7 @@ export default function Showcase() {
             {/* Right: Data */}
             <div className="w-full md:w-[45%] h-[60vh] md:h-full p-8 md:p-16 overflow-y-auto">
                <div className="flex flex-col min-h-full justify-start md:justify-center py-4">
-                 <p className="font-mono text-xs tracking-[0.4em] text-[#D4AF37] mb-4 mt-8 md:mt-0">PROJECT DETAILS</p>
+                 <p className="font-mono text-xs tracking-[0.4em] text-[#C5A880] mb-4 mt-8 md:mt-0">PROJECT DETAILS</p>
                  <h2 className="text-4xl md:text-6xl font-serif uppercase tracking-tighter mb-8 leading-none">{activeProject.title}</h2>
                  
                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8 border-y border-white/10 py-8">
@@ -230,11 +230,11 @@ export default function Showcase() {
 
                  <div className="space-y-6 mb-12">
                    <div>
-                     <p className="font-mono text-[0.65rem] tracking-widest text-[#D4AF37] uppercase mb-2">01 / The Challenge</p>
+                     <p className="font-mono text-[0.65rem] tracking-widest text-[#C5A880] uppercase mb-2">01 / The Challenge</p>
                      <p className="font-light text-white/80 leading-relaxed text-sm md:text-base">{activeProject.challenge}</p>
                    </div>
                    <div>
-                     <p className="font-mono text-[0.65rem] tracking-widest text-[#D4AF37] uppercase mb-2">02 / The Solution</p>
+                     <p className="font-mono text-[0.65rem] tracking-widest text-[#C5A880] uppercase mb-2">02 / The Solution</p>
                      <p className="font-light text-white/80 leading-relaxed text-sm md:text-base">{activeProject.solution}</p>
                    </div>
                  </div>
@@ -245,7 +245,7 @@ export default function Showcase() {
                    <div className="flex flex-wrap gap-4">
                      {activeProject.materials.map((mat, i) => (
                        <div key={i} className="flex items-center gap-3 group cursor-pointer">
-                         <div className="w-6 h-6 rounded-full bg-[#111] border border-white/20 group-hover:border-[#D4AF37] group-hover:scale-110 transition-all flex items-center justify-center overflow-hidden">
+                         <div className="w-6 h-6 rounded-full bg-[#111] border border-white/20 group-hover:border-[#C5A880] group-hover:scale-110 transition-all flex items-center justify-center overflow-hidden">
                             {/* Fake material texture simulation */}
                             <div className="w-full h-full opacity-50 bg-gradient-to-br from-white/20 to-transparent group-hover:opacity-100 transition-opacity"></div>
                          </div>
@@ -256,16 +256,16 @@ export default function Showcase() {
                  </div>
 
                  <div className="flex flex-col xl:flex-row justify-between items-start xl:items-center gap-8 mt-auto">
-                   <button className="w-fit px-8 py-4 border border-[#D4AF37] text-[#D4AF37] font-mono text-xs tracking-widest uppercase hover:bg-[#D4AF37] hover:text-[#050505] transition-colors duration-300">
+                   <button className="w-fit px-8 py-4 border border-[#C5A880] text-[#C5A880] font-mono text-xs tracking-widest uppercase hover:bg-[#C5A880] hover:text-[#0C0F12] transition-colors duration-300">
                      Request Case Study
                    </button>
                    
                    {/* Next/Prev Navigation */}
                    <div className="flex items-center gap-4">
-                     <button onClick={handlePrev} className="p-4 border border-white/20 hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all rounded-full flex items-center justify-center group">
+                     <button onClick={handlePrev} className="p-4 border border-white/20 hover:border-[#C5A880] hover:text-[#C5A880] transition-all rounded-full flex items-center justify-center group">
                        <span className="font-mono text-xs tracking-widest uppercase group-hover:-translate-x-1 transition-transform">&#8592; PREV</span>
                      </button>
-                     <button onClick={handleNext} className="p-4 border border-white/20 hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all rounded-full flex items-center justify-center group">
+                     <button onClick={handleNext} className="p-4 border border-white/20 hover:border-[#C5A880] hover:text-[#C5A880] transition-all rounded-full flex items-center justify-center group">
                        <span className="font-mono text-xs tracking-widest uppercase group-hover:translate-x-1 transition-transform">NEXT &#8594;</span>
                      </button>
                    </div>

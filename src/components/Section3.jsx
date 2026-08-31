@@ -48,7 +48,7 @@ export default function Section3() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative h-[120vh] w-full bg-[#050505] overflow-hidden flex items-center justify-center border-t border-white/10 cursor-none">
+    <section ref={containerRef} className="relative h-[120vh] w-full bg-[#0C0F12] overflow-hidden flex items-center justify-center border-t border-white/10 cursor-none">
       
       {/* Hidden Architectural Blueprint Layer - Made brighter */}
       <div className="absolute inset-0 opacity-40 pointer-events-none" style={{
@@ -69,13 +69,13 @@ export default function Section3() {
         }}
       ></div>
       {/* Mobile fallback */}
-      <div className="absolute inset-0 bg-[#050505]/80 md:hidden z-10 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[#0C0F12]/80 md:hidden z-10 pointer-events-none"></div>
 
       {/* Profound Typography */}
       <div ref={textRef} className="relative z-20 w-[80vw] md:w-[60vw] text-center mix-blend-difference pointer-events-none">
         <h2 className="text-[6vw] md:text-[4vw] font-serif leading-[1.1] text-[#F9F9F7] tracking-tight">
           We do not decorate spaces. <br/>
-          <span className="italic text-[#D4AF37]">We architect emotional resonance.</span>
+          <span className="italic text-[#C5A880]">We architect emotional resonance.</span>
         </h2>
         <p className="mt-8 text-xs md:text-sm tracking-[0.2em] uppercase font-mono opacity-50 text-[#F9F9F7]">
           The Philosophy behind 400+ Masterpieces

@@ -23,7 +23,7 @@ export default function Home() {
     // Dynamic Background Color Shift (Black to Cream)
     gsap.to(mainRef.current, {
       backgroundColor: "#F9F9F7",
-      color: "#050505",
+      color: "#0C0F12",
       scrollTrigger: {
         trigger: "#philosophy-target",
         start: "top 60%",
@@ -41,7 +41,7 @@ export default function Home() {
       {/* Film Grain Noise Global Overlay */}
       
 
-      <main ref={mainRef} className="relative bg-[#050505] text-[#F9F9F7]">
+      <main ref={mainRef} className="relative bg-[#0C0F12] text-[#F9F9F7]">
         <Navigation />
         <div id="hero-target"><Hero /></div>
         
