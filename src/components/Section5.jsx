@@ -1,9 +1,9 @@
-'use client';
-import { useRef, useEffect } from 'react';
-import Link from 'next/link';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
+&apos;use client&apos;;
+import { useRef, useEffect } from &apos;react&apos;;
+import Link from &apos;next/link&apos;;
+import gsap from &apos;gsap&apos;;
+import { ScrollTrigger } from &apos;gsap/ScrollTrigger&apos;;
+import { useGSAP } from &apos;@gsap/react&apos;;
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,7 +50,7 @@ export default function Section5() {
     <footer ref={containerRef} className="h-screen w-full bg-[#050505] text-[#F9F9F7] flex flex-col items-center justify-center relative overflow-hidden border-t border-[#F9F9F7]/10 cursor-none">
       
       <div className="absolute inset-0 flex flex-col items-center justify-center opacity-10 pointer-events-none w-[120vw] -left-[10vw]">
-        <h1 ref={text1Ref} className="text-[25vw] font-serif leading-none tracking-tighter w-full text-center">LET'S</h1>
+        <h1 ref={text1Ref} className="text-[25vw] font-serif leading-none tracking-tighter w-full text-center">LET&apos;S</h1>
         <h1 ref={text2Ref} className="text-[25vw] font-serif leading-none tracking-tighter -mt-[10vw] text-[#D4AF37] w-full text-center">TALK</h1>
       </div>
       
@@ -73,7 +73,7 @@ export default function Section5() {
       
       <div className="absolute bottom-0 w-full px-8 md:px-16 py-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[0.55rem] tracking-widest font-mono uppercase opacity-50 z-20">
         <div className="flex gap-8">
-          <span>© 2026 DESIGN SOLUTIONS MIAMI</span>
+          <span>Â© 2026 DESIGN SOLUTIONS MIAMI</span>
         </div>
         <div className="flex gap-8 pointer-events-auto">
           <a href="#" className="hover:text-[#D4AF37] transition-colors">INSTAGRAM</a>
