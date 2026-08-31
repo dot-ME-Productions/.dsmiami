@@ -77,7 +77,7 @@ export default function Hero({ isLoaded = true }) {
   }, [isLoaded]);
 
   return (
-    <section ref={sectionRef} className="relative h-screen w-full bg-[#050505] flex flex-col items-center justify-center overflow-hidden">
+    <section ref={sectionRef} className="relative h-screen w-full bg-[#F9F9F7] flex flex-col items-center justify-center overflow-hidden">
       
       {/* 1. GPU Accelerated Shutter Image (Back Layer) */}
       <div 
@@ -111,8 +111,8 @@ export default function Hero({ isLoaded = true }) {
       </div>
 
       <div className="absolute top-32 left-8 md:left-16 z-20 text-[#050505] mix-blend-difference text-[0.55rem] tracking-[0.4em] uppercase opacity-60 font-mono text-[#F9F9F7]">
-        <p>LAT 25.7617ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â° N</p>
-        <p>LONG 80.1918ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â° W</p>
+        <p>LAT 25.7617&deg; N</p>
+        <p>LONG 80.1918&deg; W</p>
       </div>
       <div className="absolute bottom-12 right-8 md:right-16 z-20 mix-blend-difference text-[0.55rem] tracking-[0.4em] uppercase opacity-60 font-mono text-right text-[#F9F9F7]">
         <p>SCALE 1:100</p>

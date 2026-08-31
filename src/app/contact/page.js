@@ -23,6 +23,7 @@ export default function Contact() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({ type: '', budget: '', name: '', email: '', details: '' });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [budgetSlider, setBudgetSlider] = useState(1000000);
 
   const handleSelection = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -77,22 +78,44 @@ export default function Contact() {
                     </div>
                   )}
 
-                  {/* STEP 2 */}
+                  {/* STEP 2: Free Budget Selection (DeepSeek Upgrade) */}
                   {step === 2 && (
                     <div className="flex flex-col gap-6">
-                      <button onClick={() => setStep(1)} className="text-left font-mono text-[10px] tracking-widest uppercase text-white/40 hover:text-white mb-4">&#8592; Back</button>
+                      <button onClick={() => setStep(1)} className="text-left font-mono text-[10px] tracking-widest uppercase text-white/40 hover:text-white mb-4 w-fit">&#8592; Back</button>
                       <p className="font-mono text-[10px] tracking-widest uppercase text-[#D4AF37]">02 / Investment</p>
-                      <h2 className="text-2xl font-serif mb-8">What is your anticipated design budget?</h2>
-                      {['$250k - $500k', '$500k - $2M', '$2M - $5M', '$5M+ (Turnkey Legacy)'].map(budget => (
-                        <button 
-                          key={budget}
-                          onClick={() => handleSelection('budget', budget)}
-                          className="w-full text-left p-6 border border-white/10 hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all group flex justify-between items-center"
-                        >
-                          <span className="font-serif text-xl tracking-tight">{budget}</span>
-                          <span className="font-mono text-xs opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest">&#8594;</span>
-                        </button>
-                      ))}
+                      <h2 className="text-2xl font-serif mb-4">What is your anticipated design budget?</h2>
+                      
+                      <div className="flex flex-col gap-8 py-8 border-y border-white/10 my-4">
+                        <div className="flex justify-between items-end">
+                           <span className="text-4xl md:text-6xl font-serif tracking-tighter text-white">
+                             {new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(budgetSlider)}
+                             {budgetSlider >= 10000000 ? '+' : ''}
+                           </span>
+                           <span className="font-mono text-[10px] tracking-widest text-white/40 uppercase mb-2">USD</span>
+                        </div>
+                        
+                        <input 
+                          type="range" 
+                          min="100000" 
+                          max="10000000" 
+                          step="50000"
+                          value={budgetSlider}
+                          onChange={(e) => setBudgetSlider(Number(e.target.value))}
+                          className="w-full h-1 bg-white/20 rounded-full appearance-none cursor-pointer accent-[#D4AF37]"
+                        />
+                        
+                        <div className="flex justify-between font-mono text-[10px] tracking-widest text-white/30 uppercase mt-[-1rem]">
+                           <span></span>
+                           <span>+</span>
+                        </div>
+                      </div>
+
+                      <button 
+                        onClick={() => handleSelection('budget', $M)}
+                        className="w-fit flex items-center justify-center p-6 border border-[#D4AF37] text-[#D4AF37] font-mono text-xs tracking-widest uppercase rounded-full hover:bg-[#D4AF37] hover:text-black transition-all group mt-4"
+                      >
+                        Confirm Budget <span className="ml-2 group-hover:translate-x-1 transition-transform">&#8594;</span>
+                      </button>
                     </div>
                   )}
 
