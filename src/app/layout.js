@@ -41,7 +41,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning className={`${playfair.variable} ${inter.variable}`}>
-      <body suppressHydrationWarning className="bg-[#050505] text-[#F9F9F7] font-sans antialiased selection:bg-[#D4AF37] selection:text-[#050505] overflow-x-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#D4AF37]">
+      <body suppressHydrationWarning className="overflow-x-hidden bg-[#050505] text-[#F9F9F7] font-sans antialiased selection:bg-[#D4AF37] selection:text-[#050505] overflow-x-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#D4AF37]">
         {children}
       </body>
     </html>

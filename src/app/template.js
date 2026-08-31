@@ -4,28 +4,27 @@ import gsap from 'gsap';
 import { usePathname } from 'next/navigation';
 
 export default function Template({ children }) {
-  const overlayRef = useRef(null);
-  const pathname = usePathname();
+  const curtainRef = useRef(null);
+  const path = usePathname();
 
   useEffect(() => {
-    // When the route changes, sweep the curtain UP to reveal the new page
-    window.scrollTo(0, 0);
-
-    if (overlayRef.current) {
-      gsap.fromTo(overlayRef.current, 
-        { yPercent: 0 }, 
-        { yPercent: -100, duration: 1.2, ease: 'power4.inOut' }
-      );
-    }
-  }, [pathname]);
+    // The preloader is z-[9999]. This curtain is z-[5000].
+    // On the very first load, this runs underneath the preloader and is invisible.
+    // On every subsequent route click, this acts as a beautiful page transition.
+    const tl = gsap.timeline();
+    
+    tl.set(curtainRef.current, { transformOrigin: "top" });
+    tl.fromTo(curtainRef.current, 
+      { scaleY: 1 }, 
+      { scaleY: 0, duration: 1.2, ease: "power4.inOut" }
+    );
+  }, [path]);
 
   return (
     <>
-      {/* Route Change Curtain (Black Overlay) */}
       <div 
-        ref={overlayRef} 
-        className="fixed inset-0 bg-[#050505] z-[9999] pointer-events-none"
-        style={{ yPercent: 0 }}
+        ref={curtainRef} 
+        className="fixed inset-0 bg-[#050505] z-[5000] pointer-events-none"
       ></div>
       {children}
     </>

@@ -101,7 +101,7 @@ export default function Showcase() {
       <div ref={scrollWrapperRef} className="flex flex-col md:flex-row md:h-full w-full md:w-[400vw] relative z-10 gap-20 md:gap-0">
         {projects.map((proj, i) => (
           <div key={proj.id} className="showcase-panel w-full md:w-screen md:h-full flex flex-col justify-center items-center relative px-4 md:px-20">
-            <div className="w-full max-w-5xl aspect-[4/5] md:aspect-[21/9] relative overflow-hidden group rounded-sm md:rounded-none">
+            <div className="cursor-explore w-full max-w-5xl aspect-[4/5] md:aspect-[21/9] relative overflow-hidden group rounded-sm md:rounded-none">
               <img src={proj.img} alt={proj.title} className="proj-img w-full h-full object-cover transform md:scale-110 opacity-100 transition-all duration-700" />
             </div>
             
