@@ -97,9 +97,9 @@ export default function Contact() {
                         <span className="absolute right-0 bottom-12 font-mono text-[10px] tracking-widest text-white/40 uppercase mb-2 pointer-events-none">USD</span>
                       </div>
 
-                      <button 
+                                            <button 
                         onClick={() => { if(formData.budget) setStep(3) }}
-                        className={w-fit flex items-center justify-center p-6 border text-xs font-mono tracking-widest uppercase rounded-full transition-all group mt-4 }
+                        className={`w-fit flex items-center justify-center p-6 border text-xs font-mono tracking-widest uppercase rounded-full transition-all group mt-4 ${formData.budget ? 'border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black cursor-pointer' : 'border-white/10 text-white/20 cursor-not-allowed'}`}
                       >
                         Confirm Budget <span className="ml-2 group-hover:translate-x-1 transition-transform">&#8594;</span>
                       </button>
