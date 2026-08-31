@@ -64,7 +64,7 @@ export default function NextGenFooter() {
         <div className="flex justify-between items-start mt-32">
           <div className="flex flex-col gap-4">
             <h3 className="font-serif text-4xl md:text-6xl uppercase tracking-widest text-[#D4AF37]">
-              Start a Dialogue
+              COMMISSION A PROJECT
             </h3>
             <a href="mailto:hello@designsolutions.com" className="font-mono text-sm tracking-[0.2em] text-white hover:text-[#D4AF37] transition-colors">
               hello@designsolutions.com
@@ -85,7 +85,7 @@ export default function NextGenFooter() {
           <Link href="/contact" ref={buttonRef} className="group relative inline-flex items-center justify-center px-24 py-12 border border-[#D4AF37] rounded-full overflow-hidden cursor-pointer">
             <div className="absolute inset-0 bg-[#D4AF37] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"></div>
             <span ref={textRef} className="relative z-10 font-serif text-3xl tracking-[0.2em] text-[#D4AF37] group-hover:text-[#050505] uppercase transition-colors duration-500 pointer-events-none">
-              Contact Us
+              INITIATE
             </span>
           </Link>
         </div>

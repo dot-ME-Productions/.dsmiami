@@ -58,9 +58,11 @@ export default function Philosophy() {
         <h2 ref={textRef} className="text-5xl md:text-8xl lg:text-[8vw] font-serif uppercase tracking-tighter leading-[0.85] transform-gpu">
           We do not <br/>
           <span className="italic text-[#D4AF37]">decorate spaces.</span> <br/>
-          We architect <br/>
-          <span className="line-through opacity-40">atmospheres.</span> <br/>
-          EMOTIONS.
+          We engineer tension, <br/>
+          manipulate light, <br/>
+          <span className="opacity-40">& dictate the precise</span> <br/>
+          PSYCHOLOGICAL WEIGHT <br/>
+          <span className="italic">of every room.</span>
         </h2>
       </div>
 
