@@ -154,7 +154,7 @@ export default function Navigation() {
                 >
                   {data.images.map((imgSrc, i) => (
                     <div key={i} className="overflow-hidden bg-[#111] aspect-square w-full h-full">
-                      <Image src={imgSrc} alt="Preview" fill sizes="200px" className="object-cover grayscale mix-blend-screen opacity-60" />
+                      <Image src={imgSrc} alt="Preview" fill sizes="300px" className="object-cover opacity-90" />
                     </div>
                   ))}
                 </div>
