@@ -88,7 +88,8 @@ export default function Contact() {
                   whileTap={{ scale: 0.98 }}
                   className="bg-[#D4AF37] text-[#050505] px-10 py-5 rounded-full font-bold text-xs tracking-[0.2em] uppercase flex items-center gap-3 hover:bg-[#F9F9F7] transition-colors duration-300"
                 >
-                  Submit Inquiry â†—
+                  Submit Inquiry
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
                 </motion.button>
               </div>
 
@@ -109,39 +110,24 @@ export default function Contact() {
             <div className="flex flex-col gap-12">
               
               {/* Office 1 */}
-              <div className="flex flex-col sm:flex-row justify-between sm:items-end border-b border-white/10 pb-8 gap-4">
+              <div className="flex flex-col sm:flex-row justify-between sm:items-end border-b border-white/10 pb-8 gap-4 group">
                 <div className="flex flex-col">
-                  <h4 className="text-xl md:text-2xl font-bold uppercase mb-2">Miami</h4>
+                  <h4 className="text-xl md:text-2xl font-bold uppercase mb-2">Miami HQ</h4>
                   <p className="text-sm text-white/40 font-light leading-relaxed">
-                    120 Design District<br/>
+                    Miami Design District<br/>
                     FL 33137, USA
                   </p>
+                  <a 
+                    href="https://maps.google.com/?q=Miami+Design+District" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="mt-4 flex items-center gap-2 text-xs font-mono tracking-widest text-[#D4AF37] opacity-60 group-hover:opacity-100 transition-opacity uppercase"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    Open in Maps
+                  </a>
                 </div>
                 <LiveClock timeZone="America/New_York" label="EST" />
-              </div>
-
-              {/* Office 2 */}
-              <div className="flex flex-col sm:flex-row justify-between sm:items-end border-b border-white/10 pb-8 gap-4">
-                <div className="flex flex-col">
-                  <h4 className="text-xl md:text-2xl font-bold uppercase mb-2">London</h4>
-                  <p className="text-sm text-white/40 font-light leading-relaxed">
-                    100 Bishopsgate<br/>
-                    London EC2M 1GT, UK
-                  </p>
-                </div>
-                <LiveClock timeZone="Europe/London" label="GMT" />
-              </div>
-
-              {/* Office 3 */}
-              <div className="flex flex-col sm:flex-row justify-between sm:items-end border-b border-white/10 pb-8 gap-4">
-                <div className="flex flex-col">
-                  <h4 className="text-xl md:text-2xl font-bold uppercase mb-2">Tokyo</h4>
-                  <p className="text-sm text-white/40 font-light leading-relaxed">
-                    Shibuya Scramble Square<br/>
-                    Tokyo 150-6139, Japan
-                  </p>
-                </div>
-                <LiveClock timeZone="Asia/Tokyo" label="JST" />
               </div>
 
             </div>

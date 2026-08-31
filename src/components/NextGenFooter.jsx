@@ -76,8 +76,7 @@ export default function NextGenFooter() {
 
           <div className="flex flex-col gap-2 font-mono text-xs tracking-widest uppercase text-right text-white/50">
             <p>Miami</p>
-            <p>London</p>
-            <p>Tokyo</p>
+            
           </div>
         </div>
 
