@@ -61,7 +61,7 @@ export default function Philosophy() {
         { y: 150, rotateX: -90, opacity: 0 },
         { 
           y: 0, rotateX: 0, opacity: 1, stagger: 0.02, duration: 1.5, ease: "expo.out",
-          scrollTrigger: { trigger: containerRef.current, start: "top 60%" }
+          scrollTrigger: { trigger: containerRef.current, start: "top 60%", toggleActions: "play none none reverse" }
         }
       );
 
@@ -95,7 +95,7 @@ export default function Philosophy() {
 
     mm.add("(max-width: 767px)", () => {
       gsap.utils.toArray('.mobile-chapter').forEach((chap) => {
-        gsap.fromTo(chap, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1, ease: "power3.out", scrollTrigger: { trigger: chap, start: "top 80%" } });
+        gsap.fromTo(chap, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1, ease: "power3.out", scrollTrigger: { trigger: chap, start: "top 80%", toggleActions: "play none none reverse" } });
       });
     });
 

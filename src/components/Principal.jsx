@@ -17,7 +17,7 @@ export default function Principal() {
     );
     gsap.fromTo(".principal-text", 
       { opacity: 0, y: 50 }, 
-      { opacity: 1, y: 0, stagger: 0.2, duration: 1, ease: "power3.out", scrollTrigger: { trigger: containerRef.current, start: "top 60%" } }
+      { opacity: 1, y: 0, stagger: 0.2, duration: 1, ease: "power3.out", scrollTrigger: { trigger: containerRef.current, start: "top 60%", toggleActions: "play none none reverse" } }
     );
   }, { scope: containerRef });
 
