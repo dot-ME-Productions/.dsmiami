@@ -39,6 +39,12 @@ export default function Philosophy() {
     }
 
     mm.add("(min-width: 768px)", () => {
+      // DeepSeek Upgrade: Cinematic Curtain Reveal
+      gsap.fromTo(containerRef.current, 
+        { clipPath: "inset(15% 15% 15% 15% round 30px)", filter: "brightness(0.5)" },
+        { clipPath: "inset(0% 0% 0% 0% round 0px)", filter: "brightness(1)", ease: "power2.inOut", scrollTrigger: { trigger: containerRef.current, start: "top bottom", end: "top top", scrub: 1 }}
+      );
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -66,6 +72,20 @@ export default function Philosophy() {
           opacity: 1, x: 0, scale: 1, stagger: 0.3, duration: 1.2, ease: "power3.out",
           scrollTrigger: { trigger: containerRef.current, start: "top top", end: "+=100%", scrub: 1 }
         }
+      );
+
+      // DeepSeek Upgrade: Physical Tension & Light Split Animation
+      gsap.to('.chap2-tension-left', {
+        xPercent: -30, ease: "none",
+        scrollTrigger: { trigger: containerRef.current, start: "top top", end: "+=200%", scrub: 1 }
+      });
+      gsap.to('.chap2-tension-right', {
+        xPercent: 30, ease: "none",
+        scrollTrigger: { trigger: containerRef.current, start: "top top", end: "+=200%", scrub: 1 }
+      });
+      gsap.fromTo('.chap2-light-beam', 
+        { opacity: 0, scaleX: 0 },
+        { opacity: 1, scaleX: 1, ease: "power2.inOut", scrollTrigger: { trigger: containerRef.current, start: "+=50%", end: "+=150%", scrub: 1 } }
       );
 
       if (!prefersReduced) {
@@ -124,24 +144,36 @@ export default function Philosophy() {
         </div>
 
         {/* Chapter 2 */}
-        <div className="w-screen h-full relative px-10 md:px-20 lg:px-32">
-          <p className="absolute top-1/4 left-10 md:left-20 lg:left-32 font-mono text-xs tracking-[0.4em] uppercase text-[#D4AF37]">Manifesto . 02</p>
+        <div className="w-screen h-full relative px-10 md:px-20 lg:px-32 flex items-center justify-center">
+          
+          {/* DeepSeek Visual Metaphor: Tension & Light physical split */}
+          <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden flex items-center justify-center">
+             {/* The underlying blinding light beam */}
+             <div className="chap2-light-beam absolute h-[150vh] w-[2px] bg-white shadow-[0_0_100px_30px_#ffffff] blur-[1px]"></div>
+             <div className="chap2-light-beam absolute h-[150vh] w-[10vw] bg-white/20 blur-[80px]"></div>
+             
+             {/* The heavy brutalist walls pulling apart in tension */}
+             <div className="chap2-tension-left absolute top-0 left-0 w-[50.1%] h-full bg-[#030303] border-r border-white/10 z-10"></div>
+             <div className="chap2-tension-right absolute top-0 right-0 w-[50.1%] h-full bg-[#030303] border-l border-white/10 z-10"></div>
+          </div>
+
+          <p className="absolute top-1/4 left-10 md:left-20 lg:left-32 font-mono text-xs tracking-[0.4em] uppercase text-[#D4AF37] z-20">Manifesto . 02</p>
           
           <h2 
             ref={el => inverseRefs.current[0] = el}
-            className="chap2-word absolute top-[25%] lg:top-[30%] left-[10%] lg:left-[20%] text-[9vw] lg:text-[6vw] xl:text-[5vw] font-serif uppercase leading-none"
+            className="chap2-word absolute z-20 top-[25%] lg:top-[30%] left-[10%] lg:left-[20%] text-[9vw] lg:text-[6vw] xl:text-[5vw] font-serif uppercase leading-none"
           >
             We Sculpt
           </h2>
           <h2 
             ref={el => reactiveRefs.current[1] = el}
-            className="chap2-word absolute top-[45%] lg:top-[50%] right-[15%] lg:right-[30%] text-[9vw] lg:text-[6vw] xl:text-[5vw] font-serif uppercase leading-none italic text-white/50"
+            className="chap2-word absolute z-20 top-[45%] lg:top-[50%] right-[15%] lg:right-[30%] text-[9vw] lg:text-[6vw] xl:text-[5vw] font-serif uppercase leading-none italic text-white/50"
           >
             Tension
           </h2>
           <h2 
             ref={el => inverseRefs.current[1] = el}
-            className="chap2-word absolute bottom-[25%] lg:bottom-[20%] right-10 md:right-20 lg:right-32 text-[9vw] lg:text-[6vw] xl:text-[5vw] font-serif uppercase leading-none"
+            className="chap2-word absolute z-20 bottom-[25%] lg:bottom-[20%] right-10 md:right-20 lg:right-32 text-[9vw] lg:text-[6vw] xl:text-[5vw] font-serif uppercase leading-none"
           >
             & Light.
           </h2>
