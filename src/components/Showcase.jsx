@@ -110,6 +110,20 @@ export default function Showcase() {
 
   }, { scope: containerRef });
 
+    const handleNext = (e) => {
+    e.stopPropagation();
+    if(!activeProject) return;
+    const idx = projects.findIndex(p => p.id === activeProject.id);
+    setActiveProject(projects[(idx + 1) % projects.length]);
+  };
+
+  const handlePrev = (e) => {
+    e.stopPropagation();
+    if(!activeProject) return;
+    const idx = projects.findIndex(p => p.id === activeProject.id);
+    setActiveProject(projects[(idx - 1 + projects.length) % projects.length]);
+  };
+
   return (
     <>
       <section ref={containerRef} className="relative md:h-screen w-full bg-[#050505] text-[#F9F9F7] md:overflow-hidden flex items-center py-20 md:py-0">
@@ -196,32 +210,46 @@ export default function Showcase() {
             </div>
             
             {/* Right: Data */}
-            <div className="w-full md:w-[45%] h-[60vh] md:h-full p-8 md:p-16 flex flex-col justify-center overflow-y-auto">
-               <p className="font-mono text-xs tracking-[0.4em] text-[#D4AF37] mb-4">PROJECT DETAILS</p>
-               <h2 className="text-4xl md:text-6xl font-serif uppercase tracking-tighter mb-8 leading-none">{activeProject.title}</h2>
-               
-               <div className="grid grid-cols-2 gap-8 mb-12 border-y border-white/10 py-8">
-                  <div>
-                    <p className="font-mono text-[0.65rem] tracking-widest text-white/40 uppercase mb-2">Client</p>
-                    <p className="font-serif text-sm md:text-lg">{activeProject.client}</p>
-                  </div>
-                  <div>
-                    <p className="font-mono text-[0.65rem] tracking-widest text-white/40 uppercase mb-2">Completion Year</p>
-                    <p className="font-serif text-sm md:text-lg">{activeProject.year}</p>
-                  </div>
-                  <div className="col-span-2">
-                    <p className="font-mono text-[0.65rem] tracking-widest text-white/40 uppercase mb-2">Primary Materials</p>
-                    <p className="font-serif text-sm md:text-lg text-[#D4AF37]">{activeProject.materials}</p>
-                  </div>
+            <div className="w-full md:w-[45%] h-[60vh] md:h-full p-8 md:p-16 overflow-y-auto">
+               <div className="flex flex-col min-h-full justify-start md:justify-center py-4">
+                 <p className="font-mono text-xs tracking-[0.4em] text-[#D4AF37] mb-4 mt-8 md:mt-0">PROJECT DETAILS</p>
+                 <h2 className="text-4xl md:text-6xl font-serif uppercase tracking-tighter mb-8 leading-none">{activeProject.title}</h2>
+                 
+                 <div className="grid grid-cols-2 gap-8 mb-8 border-y border-white/10 py-8">
+                    <div>
+                      <p className="font-mono text-[0.65rem] tracking-widest text-white/40 uppercase mb-2">Client</p>
+                      <p className="font-serif text-sm md:text-lg">{activeProject.client}</p>
+                    </div>
+                    <div>
+                      <p className="font-mono text-[0.65rem] tracking-widest text-white/40 uppercase mb-2">Completion Year</p>
+                      <p className="font-serif text-sm md:text-lg">{activeProject.year}</p>
+                    </div>
+                    <div className="col-span-2">
+                      <p className="font-mono text-[0.65rem] tracking-widest text-white/40 uppercase mb-2">Primary Materials</p>
+                      <p className="font-serif text-sm md:text-lg text-[#D4AF37]">{activeProject.materials}</p>
+                    </div>
+                 </div>
+
+                 <p className="font-light text-white/60 leading-relaxed text-sm md:text-lg mb-12">
+                   {activeProject.desc}
+                 </p>
+
+                 <div className="flex flex-col xl:flex-row justify-between items-start xl:items-center gap-8 mt-auto">
+                   <button className="w-fit px-8 py-4 border border-[#D4AF37] text-[#D4AF37] font-mono text-xs tracking-widest uppercase hover:bg-[#D4AF37] hover:text-[#050505] transition-colors duration-300">
+                     Request Case Study
+                   </button>
+                   
+                   {/* Next/Prev Navigation */}
+                   <div className="flex items-center gap-4">
+                     <button onClick={handlePrev} className="p-4 border border-white/20 hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all rounded-full flex items-center justify-center group">
+                       <span className="font-mono text-xs tracking-widest uppercase group-hover:-translate-x-1 transition-transform">&#8592; PREV</span>
+                     </button>
+                     <button onClick={handleNext} className="p-4 border border-white/20 hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all rounded-full flex items-center justify-center group">
+                       <span className="font-mono text-xs tracking-widest uppercase group-hover:translate-x-1 transition-transform">NEXT &#8594;</span>
+                     </button>
+                   </div>
+                 </div>
                </div>
-
-               <p className="font-light text-white/60 leading-relaxed text-sm md:text-lg">
-                 {activeProject.desc}
-               </p>
-
-               <button className="mt-12 w-fit px-8 py-4 border border-[#D4AF37] text-[#D4AF37] font-mono text-xs tracking-widest uppercase hover:bg-[#D4AF37] hover:text-[#050505] transition-colors duration-300">
-                 Request Full Case Study
-               </button>
             </div>
 
           </div>
