@@ -145,6 +145,8 @@ export default function Showcase() {
                 className="cursor-explore w-full max-w-5xl aspect-[4/5] md:aspect-[21/9] relative overflow-hidden group rounded-sm md:rounded-none"
               >
                 <Image src={proj.img} alt={proj.title} fill sizes="(max-width: 768px) 100vw, 80vw" priority={i === 0} className="proj-img object-cover transform md:scale-110 opacity-100 transition-all duration-700" />
+                {/* Accessibility Fix: Gradient overlay to ensure text contrast (DeepSeek Flaw #2) */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10 pointer-events-none"></div>
               </div>
               
               <div className="relative mt-6 md:mt-0 md:absolute md:bottom-32 md:left-32 z-20 w-full text-center md:text-left pointer-events-none">

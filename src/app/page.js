@@ -10,6 +10,7 @@ import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import Showcase from '@/components/Showcase';
 import Philosophy from '@/components/Philosophy';
+import Principal from '@/components/Principal';
 import NextGenFooter from '@/components/NextGenFooter';
 import AwardsMarquee from '@/components/AwardsMarquee';
 
@@ -49,6 +50,8 @@ export default function Home() {
         {/* Anchor for Skip Button and Background Color trigger */}
         <div id="philosophy-target">
           <Philosophy />
+      {/* DeepSeek Flaw #5: Team Transparency & Principal Profile */}
+      <Principal />
         </div>
         
         <AwardsMarquee />

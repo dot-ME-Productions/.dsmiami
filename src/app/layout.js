@@ -43,7 +43,18 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning className={`${playfair.variable} ${inter.variable}`}>
       <body suppressHydrationWarning className="overflow-x-hidden bg-[#050505] text-[#F9F9F7] font-sans antialiased selection:bg-[#D4AF37] selection:text-[#050505] overflow-x-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#D4AF37]">
         {children}
-        <div className="fixed inset-0 pointer-events-none z-50 opacity-[0.03] mix-blend-difference" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/stardust.png')" }}></div>
+                <div className="fixed inset-0 pointer-events-none z-50 opacity-[0.03] mix-blend-difference" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/stardust.png')" }}></div>
+        
+        {/* DeepSeek Flaw #3: Lead Capture Mechanism */}
+        <a 
+          href="https://calendly.com/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[80] bg-[#D4AF37] text-[#050505] px-6 py-4 rounded-full font-mono text-[10px] tracking-[0.2em] uppercase font-bold hover:bg-[#F9F9F7] hover:scale-105 transition-all duration-300 shadow-2xl flex items-center gap-2 group"
+        >
+          <span>Book Consultation</span>
+          <span className="group-hover:translate-x-1 transition-transform">&#8594;</span>
+        </a>
       </body>
     </html>
   );

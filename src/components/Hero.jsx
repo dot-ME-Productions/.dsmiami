@@ -111,8 +111,8 @@ export default function Hero({ isLoaded = true }) {
       </div>
 
       <div className="absolute top-32 left-8 md:left-16 z-20 text-[#050505] mix-blend-difference text-[0.55rem] tracking-[0.4em] uppercase opacity-60 font-mono text-[#F9F9F7]">
-        <p>LAT 25.7617Ã‚Â° N</p>
-        <p>LONG 80.1918Ã‚Â° W</p>
+        <p>LAT 25.7617Ãƒâ€šÃ‚Â° N</p>
+        <p>LONG 80.1918Ãƒâ€šÃ‚Â° W</p>
       </div>
       <div className="absolute bottom-12 right-8 md:right-16 z-20 mix-blend-difference text-[0.55rem] tracking-[0.4em] uppercase opacity-60 font-mono text-right text-[#F9F9F7]">
         <p>SCALE 1:100</p>

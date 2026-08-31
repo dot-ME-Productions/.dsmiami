@@ -1,5 +1,5 @@
 'use client';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -11,62 +11,25 @@ import Image from 'next/image';
 gsap.registerPlugin(ScrollTrigger);
 
 const archiveData = [
-  {
-    url: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2940&auto=format&fit=crop',
-    title: 'THE VILLA BIANCA',
-    award: 'WINNER - AIA MIAMI 2020',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2900&auto=format&fit=crop',
-    title: 'OBSIDIAN PENTHOUSE',
-    award: 'NOMINEE - WORLD ARCHITECTURE FESTIVAL',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2940&auto=format&fit=crop',
-    title: 'CASA DEL SOL',
-    award: 'WINNER - ELLE DECOR A-LIST 2021',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2874&auto=format&fit=crop',
-    title: 'THE BRUTALIST LOFT',
-    award: 'SHORTLISTED - DEZEEN AWARDS 2022',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1600210491369-e753d80a41f3?q=80&w=2874&auto=format&fit=crop',
-    title: 'LUMINA RESIDENCE',
-    award: 'WINNER - AD100 2023',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2940&auto=format&fit=crop',
-    title: 'ECLIPSE PAVILION',
-    award: 'WINNER - LUXE RED AWARDS 2023',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2940&auto=format&fit=crop',
-    title: 'THE GLASS SANCTUARY',
-    award: 'HONOREE - INTERIOR DESIGN BOY 2024',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=2927&auto=format&fit=crop',
-    title: 'MONOLITH HOUSE',
-    award: 'NOMINEE - ARCHDAILY BUILDING OF THE YEAR',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=2874&auto=format&fit=crop',
-    title: 'SILVER SCREEN ESTATE',
-    award: 'WINNER - FLORIDA DESIGN AWARDS 2024',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?q=80&w=2874&auto=format&fit=crop',
-    title: 'NEO-CLASSIC RETREAT',
-    award: 'SHORTLISTED - THE INTERNATIONAL ARCHITECTURE AWARDS',
-  }
+  { url: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2940&auto=format&fit=crop', title: 'THE VILLA BIANCA', award: 'WINNER - AIA MIAMI 2020', category: 'Residential' },
+  { url: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2900&auto=format&fit=crop', title: 'OBSIDIAN PENTHOUSE', award: 'NOMINEE - WORLD ARCHITECTURE FESTIVAL', category: 'Commercial' },
+  { url: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2940&auto=format&fit=crop', title: 'CASA DEL SOL', award: 'WINNER - ELLE DECOR A-LIST 2021', category: 'Hospitality' },
+  { url: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2874&auto=format&fit=crop', title: 'THE BRUTALIST LOFT', award: 'SHORTLISTED - DEZEEN AWARDS 2022', category: 'Residential' },
+  { url: 'https://images.unsplash.com/photo-1600210491369-e753d80a41f3?q=80&w=2874&auto=format&fit=crop', title: 'LUMINA RESIDENCE', award: 'WINNER - AD100 2023', category: 'Residential' },
+  { url: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2940&auto=format&fit=crop', title: 'ECLIPSE PAVILION', award: 'WINNER - LUXE RED AWARDS 2023', category: 'Commercial' },
+  { url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2940&auto=format&fit=crop', title: 'THE GLASS SANCTUARY', award: 'HONOREE - INTERIOR DESIGN BOY 2024', category: 'Hospitality' },
+  { url: 'https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=2927&auto=format&fit=crop', title: 'MONOLITH HOUSE', award: 'NOMINEE - ARCHDAILY BUILDING OF THE YEAR', category: 'Residential' },
+  { url: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=2874&auto=format&fit=crop', title: 'SILVER SCREEN ESTATE', award: 'WINNER - FLORIDA DESIGN AWARDS 2024', category: 'Commercial' },
+  { url: 'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?q=80&w=2874&auto=format&fit=crop', title: 'NEO-CLASSIC RETREAT', award: 'SHORTLISTED - THE INTERNATIONAL ARCHITECTURE AWARDS', category: 'Hospitality' }
 ];
 
 export default function Archive() {
   // TOGGLE THIS TO FALSE TO REVERT TO THE OLD RECTANGULAR FRAMES
   const usePremiumArchFrames = true;
   const containerRef = useRef(null);
+  const [filter, setFilter] = useState('All');
+  
+  const filteredData = filter === 'All' ? archiveData : archiveData.filter(d => d.category === filter);
 
   useGSAP(() => {
     // Insane Velocity Skew + Parallax Gallery
