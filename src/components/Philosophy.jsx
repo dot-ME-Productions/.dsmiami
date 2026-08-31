@@ -8,64 +8,60 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Philosophy() {
   const containerRef = useRef(null);
-  const tensionRef = useRef(null);
-  const lightRef = useRef(null);
-  const weightRef = useRef(null);
+  const s1Ref = useRef(null);
+  const s2Ref = useRef(null);
+  const s3Ref = useRef(null);
 
   useGSAP(() => {
+    // The "Highlight Reading" scrub effect
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top 70%",
-        end: "bottom 90%",
-        scrub: 1.5,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 1,
       }
     });
 
-    // 1. ENGINEER TENSION (Starts completely squished/tense, expands out)
-    tl.fromTo(tensionRef.current, 
-      { letterSpacing: "-0.15em", opacity: 0, scale: 0.95 },
-      { letterSpacing: "0.02em", opacity: 1, scale: 1, duration: 1, ease: "power2.out" }
-    );
-
-    // 2. MANIPULATE LIGHT (Text is pitch black, illuminates brilliantly with a golden aura)
-    tl.fromTo(lightRef.current, 
-      { color: "#0A0A0A", textShadow: "0px 0px 0px rgba(212,175,55,0)" },
-      { color: "#F9F9F7", textShadow: "0px 0px 60px rgba(212,175,55,0.8)", duration: 1, ease: "none" }
-    );
-
-    // 3. PSYCHOLOGICAL WEIGHT (Starts crushed down under gravity, rises up and breathes)
-    tl.fromTo(weightRef.current,
-      { y: 150, scaleY: 0.4, opacity: 0, transformOrigin: "bottom" },
-      { y: 0, scaleY: 1, opacity: 1, duration: 1.5, ease: "back.out(1.2)" }
-    );
+    // Statement 1 illuminates, then dims
+    tl.to(s1Ref.current, { color: "#050505", opacity: 1, duration: 1 })
+      .to(s1Ref.current, { color: "rgba(5, 5, 5, 0.15)", opacity: 1, duration: 0.5 })
+    // Statement 2 illuminates, then dims
+      .to(s2Ref.current, { color: "#050505", opacity: 1, duration: 1 })
+      .to(s2Ref.current, { color: "rgba(5, 5, 5, 0.15)", opacity: 1, duration: 0.5 })
+    // Statement 3 illuminates and stays
+      .to(s3Ref.current, { color: "#050505", opacity: 1, duration: 1.5 });
 
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="relative w-full min-h-[150vh] flex flex-col items-center justify-center bg-[#050505] py-32 overflow-hidden">
+    <section ref={containerRef} className="relative w-full h-[250vh] bg-[#F9F9F7] rounded-t-[5vw] z-20 shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
       
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-16 flex flex-col items-center text-center gap-16 md:gap-32">
+      {/* Sticky Text Container */}
+      <div className="sticky top-0 w-full h-screen flex flex-col items-center justify-center px-6 md:px-16 text-center">
         
-        <p className="font-mono text-xs md:text-sm tracking-[0.5em] uppercase text-[#D4AF37] mb-8">
-          The Architecture of Emotion
+        <p className="font-mono text-[10px] md:text-xs tracking-[0.5em] uppercase text-[#050505] mb-16 border-b border-[#050505] pb-4">
+          The Manifesto
         </p>
         
-        <h2 ref={tensionRef} className="text-4xl md:text-7xl lg:text-[7vw] font-serif uppercase leading-none text-[#F9F9F7] whitespace-nowrap">
-          We Engineer Tension.
-        </h2>
+        <div className="flex flex-col gap-6 md:gap-10 items-center justify-center w-full max-w-7xl">
+            <h2 ref={s1Ref} className="text-4xl md:text-[6vw] font-serif uppercase leading-none text-[#050505] opacity-20 transition-colors">
+              We Reject The Ordinary.
+            </h2>
 
-        <h2 ref={lightRef} className="text-4xl md:text-7xl lg:text-[7vw] font-serif uppercase leading-none text-[#0A0A0A] whitespace-nowrap">
-          We Manipulate Light.
-        </h2>
+            <h2 ref={s2Ref} className="text-4xl md:text-[6vw] font-serif uppercase leading-none text-[#050505] opacity-20 transition-colors">
+              We Sculpt Volume & Light.
+            </h2>
 
-        <h2 ref={weightRef} className="text-3xl md:text-6xl lg:text-[5vw] font-serif uppercase leading-[1.1] text-[#F9F9F7] max-w-5xl mt-12">
-          And dictate the precise <br/>
-          <span className="italic text-[#D4AF37]">psychological weight</span> <br/>
-          of every room.
-        </h2>
+            <h2 ref={s3Ref} className="text-3xl md:text-[5vw] font-serif uppercase leading-[1.1] text-[#050505] opacity-20 transition-colors mt-8">
+              And dictate the precise <br/>
+              <span className="italic font-light">psychological weight</span> <br/>
+              of every room.
+            </h2>
+        </div>
 
       </div>
+      
     </section>
   );
 }
