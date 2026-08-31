@@ -9,95 +9,92 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Philosophy() {
   const containerRef = useRef(null);
-  const text1Ref = useRef(null);
-  const text2Ref = useRef(null);
-  const maskRef = useRef(null);
-  const bgImageRef = useRef(null);
+  const line1Ref = useRef(null);
+  const line2Ref = useRef(null);
+  const line3Ref = useRef(null);
+  const line4Ref = useRef(null);
+  const imageRef = useRef(null);
 
   useGSAP(() => {
-    // Awwwards-tier Infinite Zoom Mask Timeline
+    // High-Performance Awwwards Timeline (No blend modes, purely hardware accelerated transforms)
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top top",
-        end: "+=500%", // 5 screens of scrolling for a massive, slow cinematic effect
+        end: "+=300%", // 3 full screens of scrubbing
         pin: true,
-        scrub: 1,
+        scrub: 1.5,
       }
     });
 
-    // 1. "We reject the ordinary"
-    tl.to(text1Ref.current, { opacity: 1, scale: 1, duration: 1, ease: "power2.out" })
-      .to(text1Ref.current, { opacity: 0, scale: 1.1, duration: 1, ease: "power2.in" })
-      
-    // 2. "We sculpt volume"
-      .to(text2Ref.current, { opacity: 1, scale: 1, duration: 1, ease: "power2.out" })
-      .to(text2Ref.current, { opacity: 0, scale: 1.1, duration: 1, ease: "power2.in" })
-      
-    // 3. The Infinite Mask Zoom Reveal
-      .to(maskRef.current, { opacity: 1, duration: 0.5 }) // Flash the white mask on
-      .to(maskRef.current, { 
-        scale: 250, 
-        duration: 5, 
-        ease: "power4.in",
-        transformOrigin: "center center"
-      }, "+=0.2") // Wait a beat, then accelerate the infinite zoom
-      .to(bgImageRef.current, { 
+    // 1. Massive Horizontal Typographic Parallax (Text splits apart)
+    tl.to(line1Ref.current, { xPercent: -60, ease: "none" }, 0)
+      .to(line2Ref.current, { xPercent: 60, ease: "none" }, 0)
+      .to(line3Ref.current, { xPercent: -60, ease: "none" }, 0)
+      .to(line4Ref.current, { xPercent: 60, ease: "none" }, 0);
+
+    // 2. Cinematic Iris Reveal (Image starts as a tiny circle, explodes to fill the screen)
+    tl.fromTo(imageRef.current,
+      { 
+        clipPath: "circle(0% at 50% 50%)", 
+        scale: 1.5,
+        filter: "brightness(0.3) grayscale(1)"
+      },
+      { 
+        clipPath: "circle(150% at 50% 50%)", 
         scale: 1, 
-        duration: 5, 
-        ease: "power2.out" 
-      }, "<"); // While zooming through the text, pull the image back to normal scale
+        filter: "brightness(1) grayscale(0)",
+        ease: "power2.inOut" 
+      }, 
+      0 // Runs perfectly parallel with the text splitting
+    );
 
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="relative w-full h-screen bg-[#050505] overflow-hidden z-20 shadow-[0_-20px_50px_rgba(0,0,0,0.8)]">
+    <section ref={containerRef} className="relative w-full h-screen bg-[#050505] overflow-hidden flex items-center justify-center z-20">
       
-      {/* 
-        Background Image 
-        Starts scaled up (1.5x) so we can pull it out cinematically as we zoom through the text
-      */}
-      <div className="absolute inset-0 w-full h-full z-0">
-        <Image 
-          ref={bgImageRef}
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2940&auto=format&fit=crop" 
-          alt="Atmosphere" 
-          fill 
-          priority
-          className="object-cover scale-[1.5]"
-        />
-        {/* Slight gradient overlay so the image isn't too bright */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+      {/* The Central Iris Image */}
+      <div className="absolute inset-0 w-full h-full z-10 flex items-center justify-center pointer-events-none">
+        <div ref={imageRef} className="relative w-full h-full will-change-transform">
+          <Image 
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2874&auto=format&fit=crop" 
+            alt="Interior Architecture" 
+            fill 
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/20"></div>
+        </div>
       </div>
 
-      {/* 
-        The Blend Mode Mask (MIND-BLOWING EFFECT)
-        White background stays white. Black text becomes transparent (window to the image).
-      */}
-      <div 
-        ref={maskRef} 
-        className="absolute inset-0 z-10 bg-white flex items-center justify-center opacity-0 pointer-events-none will-change-transform"
-        style={{ mixBlendMode: 'screen' }}
-      >
-        <h2 className="text-[#000000] font-serif text-[18vw] leading-none uppercase tracking-tighter whitespace-nowrap text-center drop-shadow-2xl">
-          ATMO<span className="tracking-[0.1em]">S</span>PHERE
-        </h2>
-      </div>
+      {/* The Massive Split Typography */}
+      <div className="relative z-20 w-full h-full flex flex-col items-center justify-center pointer-events-none mix-blend-difference text-[#F9F9F7]">
+        
+        <div className="w-full flex justify-center overflow-hidden">
+          <h2 ref={line1Ref} className="text-[12vw] md:text-[9vw] font-serif uppercase leading-[0.9] tracking-tighter whitespace-nowrap will-change-transform">
+            WE REJECT
+          </h2>
+        </div>
 
-      {/* Standard Text Statements */}
-      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center pointer-events-none px-4 text-center">
-        <h2 
-          ref={text1Ref} 
-          className="text-4xl md:text-7xl lg:text-[6vw] font-serif uppercase text-[#F9F9F7] opacity-0 scale-95 absolute"
-        >
-          We reject the ordinary.
-        </h2>
-        <h2 
-          ref={text2Ref} 
-          className="text-4xl md:text-7xl lg:text-[6vw] font-serif uppercase text-[#F9F9F7] opacity-0 scale-95 absolute"
-        >
-          We sculpt volume.
-        </h2>
+        <div className="w-full flex justify-center overflow-hidden">
+          <h2 ref={line2Ref} className="text-[12vw] md:text-[9vw] font-serif uppercase leading-[0.9] tracking-tighter whitespace-nowrap will-change-transform italic text-[#D4AF37]">
+            THE ORDINARY.
+          </h2>
+        </div>
+
+        <div className="w-full flex justify-center overflow-hidden mt-4 md:mt-8">
+          <h2 ref={line3Ref} className="text-[12vw] md:text-[9vw] font-serif uppercase leading-[0.9] tracking-tighter whitespace-nowrap will-change-transform">
+            WE ENGINEER
+          </h2>
+        </div>
+
+        <div className="w-full flex justify-center overflow-hidden">
+          <h2 ref={line4Ref} className="text-[12vw] md:text-[9vw] font-serif uppercase leading-[0.9] tracking-tighter whitespace-nowrap will-change-transform">
+            ATMOSPHERE.
+          </h2>
+        </div>
+
       </div>
 
     </section>
