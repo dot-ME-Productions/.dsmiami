@@ -38,7 +38,7 @@ export default function Home() {
       <CustomCursor />
       
       {/* Film Grain Noise Global Overlay */}
-      <div className="fixed inset-0 pointer-events-none z-50 opacity-[0.03]" style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/stardust.png")' }}></div>
+      
 
       <main ref={mainRef} className="relative bg-[#050505] text-[#F9F9F7]">
         <Navigation />

@@ -43,6 +43,7 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning className={`${playfair.variable} ${inter.variable}`}>
       <body suppressHydrationWarning className="overflow-x-hidden bg-[#050505] text-[#F9F9F7] font-sans antialiased selection:bg-[#D4AF37] selection:text-[#050505] overflow-x-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#D4AF37]">
         {children}
+        <div className="fixed inset-0 pointer-events-none z-50 opacity-[0.03] mix-blend-difference" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/stardust.png')" }}></div>
       </body>
     </html>
   );

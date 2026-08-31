@@ -74,7 +74,10 @@ export default function Showcase() {
 
   const skipDown = () => {
     if(window.lenis) {
-      window.lenis.scrollTo('#philosophy-target', { offset: 0, duration: 1.5 });
+      const target = document.getElementById('philosophy-target');
+      if (target) {
+        window.lenis.scrollTo(target.offsetTop, { duration: 1.5 });
+      }
     } else {
       document.getElementById('philosophy-target')?.scrollIntoView({ behavior: 'smooth' });
     }
@@ -82,7 +85,10 @@ export default function Showcase() {
 
   const skipUp = () => {
     if(window.lenis) {
-      window.lenis.scrollTo('#hero-target', { offset: 0, duration: 1.5 });
+      const target = document.getElementById('hero-target');
+      if (target) {
+        window.lenis.scrollTo(target.offsetTop, { duration: 1.5 });
+      }
     } else {
       document.getElementById('hero-target')?.scrollIntoView({ behavior: 'smooth' });
     }
