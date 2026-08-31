@@ -39,10 +39,10 @@ export default function Philosophy() {
     }
 
     mm.add("(min-width: 768px)", () => {
-      // DeepSeek Upgrade: Cinematic Curtain Reveal
-      gsap.fromTo(containerRef.current, 
-        { clipPath: "inset(15% 15% 15% 15% round 30px)", filter: "brightness(0.5)" },
-        { clipPath: "inset(0% 0% 0% 0% round 0px)", filter: "brightness(1)", ease: "power2.inOut", scrollTrigger: { trigger: containerRef.current, start: "top bottom", end: "top top", scrub: 1 }}
+      // Performance Fix: Butter-smooth Cinematic Scale & Fade Entrance
+      gsap.fromTo(trackRef.current, 
+        { scale: 0.85, opacity: 0 },
+        { scale: 1, opacity: 1, ease: "power2.out", scrollTrigger: { trigger: containerRef.current, start: "top bottom", end: "top top", scrub: 1 }}
       );
 
       const tl = gsap.timeline({
@@ -148,13 +148,13 @@ export default function Philosophy() {
           
           {/* DeepSeek Visual Metaphor: Tension & Light physical split */}
           <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden flex items-center justify-center">
-             {/* The underlying blinding light beam */}
-             <div className="chap2-light-beam absolute h-[150vh] w-[2px] bg-white shadow-[0_0_100px_30px_#ffffff] blur-[1px]"></div>
-             <div className="chap2-light-beam absolute h-[150vh] w-[10vw] bg-white/20 blur-[80px]"></div>
+             {/* The underlying blinding light beam - optimized for 60fps */}
+             <div className="chap2-light-beam absolute h-[150vh] w-1 bg-white shadow-[0_0_50px_10px_rgba(255,255,255,0.8)] will-change-transform"></div>
+             <div className="chap2-light-beam absolute h-[150vh] w-[20vw] bg-gradient-to-r from-transparent via-white/30 to-transparent will-change-transform"></div>
              
-             {/* The heavy brutalist walls pulling apart in tension */}
-             <div className="chap2-tension-left absolute top-0 left-0 w-[50.1%] h-full bg-[#030303] border-r border-white/10 z-10"></div>
-             <div className="chap2-tension-right absolute top-0 right-0 w-[50.1%] h-full bg-[#030303] border-l border-white/10 z-10"></div>
+             {/* The heavy brutalist walls pulling apart in tension - added will-change */}
+             <div className="chap2-tension-left absolute top-0 left-0 w-[50.1%] h-full bg-[#030303] border-r border-white/10 z-10 will-change-transform"></div>
+             <div className="chap2-tension-right absolute top-0 right-0 w-[50.1%] h-full bg-[#030303] border-l border-white/10 z-10 will-change-transform"></div>
           </div>
 
           <p className="absolute top-1/4 left-10 md:left-20 lg:left-32 font-mono text-xs tracking-[0.4em] uppercase text-[#D4AF37] z-20">Manifesto . 02</p>
