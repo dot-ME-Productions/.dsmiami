@@ -31,7 +31,7 @@ export default function MenuSearch({ onNavigate }) {
   };
 
   return (
-    <div className="relative w-full max-w-md mx-auto mb-12 pointer-events-auto z-50">
+    <div className="absolute top-24 md:top-32 left-1/2 -translate-x-1/2 w-full max-w-[85vw] md:max-w-md pointer-events-auto z-50">
       <div className={`relative flex items-center border-b transition-colors duration-500 ${isFocused ? 'border-[#C5A880]' : 'border-white/20'}`}>
         <svg className="w-4 h-4 text-white/50 mr-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         <input 
@@ -51,7 +51,7 @@ export default function MenuSearch({ onNavigate }) {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="absolute top-full left-0 w-full mt-2 bg-[#0C0F12]/90 backdrop-blur-xl border border-white/10 rounded-lg overflow-hidden shadow-2xl"
+            className="absolute top-full left-0 w-full mt-2 bg-[#0C0F12]/90 backdrop-blur-xl border border-white/10 rounded-lg overflow-y-auto max-h-[45vh] md:max-h-72 shadow-2xl"
           >
             {filtered.map((item, idx) => (
               <button 
