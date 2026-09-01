@@ -35,7 +35,7 @@ export default function BrochureSection() {
           {/* Mockup Image */}
           <div className="w-full md:w-1/2 relative aspect-[4/3] rounded-sm overflow-hidden shadow-2xl">
             <Image 
-              src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?q=80&w=2874&auto=format&fit=crop" 
+              src="https://ds-miami.com/wp-content/uploads/2026/04/guide-design.png" 
               alt="Design Solutions Brochure"
               fill
               className="object-cover"

@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   { 
     id: 1, title: 'THE GLASS HOUSE', subtitle: 'Where light is treated as the primary architectural material.', 
-    img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2940&auto=format&fit=crop',
+    img: 'https://ds-miami.com/wp-content/uploads/2026/06/ds-bayview-dining-room-city-view.webp',
     client: 'Private Tech Executive', year: '2025', 
     materials: ['Obsidian Glass', 'Italian Marble', 'Brushed Bronze'], sqft: '12,500 sq ft', timeline: '18 Months',
     challenge: 'The client required a massive cantilevered structure that could withstand Category 5 hurricanes without obstructing the panoramic ocean views.',
@@ -18,7 +18,7 @@ const projects = [
   },
   { 
     id: 2, title: 'OBSIDIAN VILLA', subtitle: 'A brutalist monolith carved into the Miami coastline.', 
-    img: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2900&auto=format&fit=crop',
+    img: 'https://ds-miami.com/wp-content/uploads/2026/06/great-room-round-mirror-suede-armchairs-gallery-wall-scaled.webp',
     client: 'Anonymous Gallery Owner', year: '2024', 
     materials: ['Board-Formed Concrete', 'Smoked Oak', 'Raw Steel'], sqft: '9,200 sq ft', timeline: '24 Months',
     challenge: 'Designing a fortress capable of protecting a  private art collection from UV degradation while maintaining an open, breathable residential feel.',
@@ -26,7 +26,7 @@ const projects = [
   },
   { 
     id: 3, title: 'CASA DEL SOL', subtitle: 'Redefining tropical modernism through organic textures.', 
-    img: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2940&auto=format&fit=crop',
+    img: 'https://ds-miami.com/wp-content/uploads/2026/05/gran_paraiso_residences_living_reduced.webp',
     client: 'International Athlete', year: '2023', 
     materials: ['Travertine', 'Teak', 'Woven Cane'], sqft: '14,000 sq ft', timeline: '14 Months',
     challenge: 'The client found stark modernism too cold and sterile, but despised traditional ornate design.',
@@ -34,7 +34,7 @@ const projects = [
   },
   { 
     id: 4, title: 'LUMINA ESTATE', subtitle: 'Turnkey perfection down to the finest micro-detail.', 
-    img: 'https://images.unsplash.com/photo-1600210491369-e753d80a41f3?q=80&w=2874&auto=format&fit=crop',
+    img: 'https://ds-miami.com/wp-content/uploads/2026/05/optimized_modern_kitchen_livingroom-scaled.webp',
     client: 'Venture Capital Firm', year: '2024', 
     materials: ['Limestone', 'Platinum', 'Polished Plaster'], sqft: '18,500 sq ft', timeline: '32 Months',
     challenge: 'An extreme exercise in turnkey luxury for a corporate retreat that required immediate occupancy with zero client friction.',

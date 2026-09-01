@@ -75,8 +75,11 @@ export default function NextGenFooter() {
           </div>
 
           <div className="flex flex-col gap-2 font-mono text-xs tracking-widest uppercase text-right text-white/50">
-            <p>Miami</p>
-            
+            <p className="mb-4">Miami</p>
+            <a href="https://instagram.com/designsolutionsmiami" target="_blank" className="hover:text-[#C5A880] transition-colors">Instagram</a>
+            <a href="https://www.pinterest.com/dsmiami/" target="_blank" className="hover:text-[#C5A880] transition-colors">Pinterest</a>
+            <a href="https://www.houzz.com/pro/designsolutionsmiami" target="_blank" className="hover:text-[#C5A880] transition-colors">Houzz</a>
+            <a href="https://www.facebook.com/designsolutionsmiami" target="_blank" className="hover:text-[#C5A880] transition-colors">Facebook</a>
           </div>
         </div>
 

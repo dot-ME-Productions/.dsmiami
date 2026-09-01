@@ -7,9 +7,9 @@ import { useGSAP } from '@gsap/react';
 import Image from 'next/image';
 
 const menuData = [
-  { name: 'Manifesto', path: '/', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop' },
-  { name: 'Archive', path: '/archive', img: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800&auto=format&fit=crop' },
-  { name: 'Contact', path: '/contact', img: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop' }
+  { name: 'Manifesto', path: '/', img: 'https://ds-miami.com/wp-content/uploads/2026/06/asia-brickell-key-living-room-figurative-art-glass-shelving.webp' },
+  { name: 'Archive', path: '/archive', img: 'https://ds-miami.com/wp-content/uploads/2026/06/merrick-bedroom-grey-headboard-pendant-lights.webp' },
+  { name: 'Contact', path: '/contact', img: 'https://ds-miami.com/wp-content/uploads/2026/06/new-build-cocoplum-home-living-tv-sectional.webp' }
 ];
 
 const subLinks = [
