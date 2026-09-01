@@ -170,6 +170,42 @@ class SoundEngine {
     osc.start(t);
     osc.stop(t + 1.2);
   }
+  // 4. Action Swell (For massive CTA buttons like INITIATE and BOOK CONSULTATION)
+  // Deep, slow, luxurious ambient chord
+  async playActionSwell() {
+    const canPlay = await this._ensureContext();
+    if (!canPlay) return;
+    
+    const t = this.ctx.currentTime;
+    
+    const osc1 = this.ctx.createOscillator();
+    const gain1 = this.ctx.createGain();
+    osc1.type = 'sine';
+    osc1.frequency.setValueAtTime(261.63, t); // C4
+    
+    gain1.gain.setValueAtTime(0, t);
+    gain1.gain.linearRampToValueAtTime(0.2, t + 0.3); // Very slow 300ms attack
+    gain1.gain.exponentialRampToValueAtTime(0.001, t + 3.0);
+    
+    const osc2 = this.ctx.createOscillator();
+    const gain2 = this.ctx.createGain();
+    osc2.type = 'sine';
+    osc2.frequency.setValueAtTime(392.00, t); // G4
+    
+    gain2.gain.setValueAtTime(0, t);
+    gain2.gain.linearRampToValueAtTime(0.1, t + 0.4); 
+    gain2.gain.exponentialRampToValueAtTime(0.001, t + 2.5);
+
+    osc1.connect(gain1);
+    osc2.connect(gain2);
+    gain1.connect(this.masterGain);
+    gain2.connect(this.masterGain);
+    
+    osc1.start(t);
+    osc2.start(t);
+    osc1.stop(t + 3.0);
+    osc2.stop(t + 3.0);
+  }
 }
 
 const soundEngine = new SoundEngine();
