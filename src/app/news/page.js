@@ -1,6 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import SmoothScroll from '@/components/SmoothScroll';
+import CustomCursor from '@/components/CustomCursor';
 import Navigation from '@/components/Navigation';
 import NextGenFooter from '@/components/NextGenFooter';
 import soundEngine from '@/lib/SoundEngine';
@@ -42,6 +43,7 @@ const articles = [
 export default function News() {
   return (
     <SmoothScroll>
+      <CustomCursor />
       <Navigation />
       
       <main className="w-full min-h-screen pt-40 px-6 md:px-16 text-[#F9F9F7] bg-transparent pb-32">
