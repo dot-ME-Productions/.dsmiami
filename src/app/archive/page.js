@@ -7,16 +7,822 @@ import CustomCursor from '@/components/CustomCursor';
 import Image from 'next/image';
 
 const archiveData = [
-  { url: 'https://ds-miami.com/wp-content/uploads/2026/06/asia-brickell-key-living-room-figurative-art-glass-shelving.webp', title: 'ASIA BRICKELL KEY', award: 'HONOREE - INTERIOR DESIGN BOY', category: 'Residential', description: 'A serene living space overlooking the bay, featuring figurative art, bespoke glass shelving, and carefully curated contemporary furniture that enhances the panoramic views.', shapeClass: 'aspect-[4/3] rounded-tl-[150px] rounded-br-[150px]' },
-  { url: 'https://ds-miami.com/wp-content/uploads/2026/06/continuum-south-beach-master-bedroom-neutral-tones-black-lamps.webp', title: 'CONTINUUM SOUTH BEACH', award: 'NOMINEE - ARCHDAILY BUILDING OF THE YEAR', category: 'Residential', description: 'A master bedroom defined by perfect neutrality. The space blends soft beige tones with striking matte black accents to create a tranquil yet fiercely modern sanctuary.', shapeClass: 'aspect-square rounded-[30px]' },
-  { url: 'https://ds-miami.com/wp-content/uploads/2026/06/merrick-bedroom-grey-headboard-pendant-lights.webp', title: 'MERRICK MANOR', award: 'WINNER - FLORIDA DESIGN AWARDS', category: 'Residential', description: 'An exercise in texture and mood. This bedroom features an oversized grey upholstered headboard, paired with dramatic pendant lighting to craft a deeply cinematic atmosphere.', shapeClass: 'aspect-[16/9] rounded-none' },
-  { url: 'https://ds-miami.com/wp-content/uploads/2026/06/trump-towers-living-tv-grasscloth-wall-ocean-view.webp', title: 'TRUMP TOWERS', award: 'SHORTLISTED - INTERNATIONAL ARCHITECTURE', category: 'Residential', description: 'Oceanfront luxury elevated through materiality. The living room is anchored by custom grasscloth wallcoverings that reflect the golden hour light spilling from the balcony.', shapeClass: 'aspect-[4/5] rounded-t-[200px]' },
-  { url: 'https://ds-miami.com/wp-content/uploads/2026/06/new-build-cocoplum-home-living-tv-sectional.webp', title: 'COCOPLUM ESTATE', award: 'FEATURED - ARCHITECTURAL DIGEST', category: 'Residential', description: 'A sweeping new-build modernist home. The expansive living room features a custom modular sectional designed to accommodate both grand entertaining and intimate family living.', shapeClass: 'aspect-[3/4] rounded-[50%]' },
-  { url: 'https://ds-miami.com/wp-content/uploads/2026/06/oceanfront-murano-portofino-balcony-terrace-skyline-port-view-scaled.webp', title: 'MURANO PORTOFINO', award: 'WINNER - RESTAURANT & BAR DESIGN AWARDS', category: 'Residential', description: 'A sprawling outdoor terrace engineered to withstand coastal elements while offering uninterrupted views of the Miami skyline and port, blurring the indoor-outdoor boundary.', shapeClass: 'aspect-[4/3] rounded-tl-[100px] rounded-br-[100px] rounded-tr-[20px] rounded-bl-[20px]' },
-  { url: 'https://ds-miami.com/wp-content/uploads/2026/05/optimized_modern_kitchen_livingroom-scaled.webp', title: 'LUMINA ESTATE', award: 'HONOREE - FRAME AWARDS', category: 'Residential', description: 'An open-concept architectural marvel where the kitchen and living spaces dissolve into one another. Features monolithic stone islands and concealed custom cabinetry.', shapeClass: 'aspect-[16/9] rounded-b-full' },
-  { url: 'https://ds-miami.com/wp-content/uploads/2026/06/great-room-round-mirror-suede-armchairs-gallery-wall-scaled.webp', title: 'OBSIDIAN VILLA', award: 'WINNER - LUXE RED AWARDS', category: 'Residential', description: 'A brutalist yet plush interior featuring suede armchairs, an oversized round mirror, and a meticulously curated gallery wall that acts as the focal point of the great room.', shapeClass: 'aspect-[4/5] rounded-tr-[250px]' },
-  { url: 'https://ds-miami.com/wp-content/uploads/2026/06/ds-bayview-dining-room-city-view.webp', title: 'BAYVIEW RESIDENCE', award: 'FEATURED - ELLE DECOR', category: 'Residential', description: 'An elegant dining space perched above the bay, utilizing reflective surfaces and dramatic lighting to maximize the panoramic city views without feeling over-exposed.', shapeClass: 'aspect-square rounded-tl-[100px]' },
-  { url: 'https://ds-miami.com/wp-content/uploads/2026/05/gran_paraiso_residences_living_reduced.webp', title: 'GRAN PARAISO', award: 'HONOREE - AIA MIAMI', category: 'Residential', description: 'Minimalist luxury at its finest. This residence employs a restrained color palette and organic textures like woven cane and raw linen to create a serene coastal escape.', shapeClass: 'aspect-[3/4] rounded-bl-[150px] rounded-tr-[150px]' }
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/ritz-carlton-residences-dining-room-oval-table-ocean-view-highres.webp",
+    "title": "RITZ CARLTON RESIDENCES DINING...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-square rounded-[30px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/04/silva-02.webp",
+    "title": "SILVA 02",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[16/9] rounded-none"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/residences-by-armani-casa-terrace-panoramic-ocean-view.webp",
+    "title": "RESIDENCES BY ARMANI CASA TERR...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/5] rounded-t-[200px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/sls_lux_brickell_living_room.webp",
+    "title": "SLS LUX BRICKELL LIVING ROOM",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[3/4] rounded-[50%]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/trump-towers-interior.webp",
+    "title": "TRUMP TOWERS INTERIOR",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/3] rounded-tl-[100px] rounded-br-[100px] rounded-tr-[20px] rounded-bl-[20px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/oceana_bal_harbor_clean.webp",
+    "title": "OCEANA BAL HARBOR CLEAN",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[16/9] rounded-b-full"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/ChatGPT-Image-26-de-mai.-de-2026-08_39_08.png",
+    "title": "CHATGPT IMAGE 26 DE MAI",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/5] rounded-tr-[250px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/turnberry-ocean-club-living-room-circular-niche-artwork-close.webp",
+    "title": "TURNBERRY OCEAN CLUB LIVING RO...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-square rounded-tl-[100px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/06/great-room-round-mirror-suede-armchairs-gallery-wall-scaled.webp",
+    "title": "GREAT ROOM ROUND MIRROR SUEDE ...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[3/4] rounded-bl-[150px] rounded-tr-[150px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/eighty_01_hero.png",
+    "title": "EIGHTY 01 HERO",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-square rounded-[30px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/optimized_interior_image.webp",
+    "title": "OPTIMIZED INTERIOR IMAGE",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[16/9] rounded-none"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/06/modern-living-room-high-resolution.webp",
+    "title": "MODERN LIVING ROOM HIGH RESOLU...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/5] rounded-t-[200px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/fendi_chateau_art_living_room.webp",
+    "title": "FENDI CHATEAU ART LIVING ROOM",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[3/4] rounded-[50%]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/06/continuum-south-beach-master-bedroom-neutral-tones-black-lamps.webp",
+    "title": "CONTINUUM SOUTH BEACH MASTER B...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/3] rounded-tl-[100px] rounded-br-[100px] rounded-tr-[20px] rounded-bl-[20px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/optimized_modern_kitchen_livingroom-scaled.webp",
+    "title": "OPTIMIZED MODERN KITCHEN LIVIN...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[16/9] rounded-b-full"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/06/Interior-design-tratata.png",
+    "title": "INTERIOR DESIGN TRATATA",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/5] rounded-tr-[250px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/merrick-park-highres.webp",
+    "title": "MERRICK PARK HIGHRES",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-square rounded-tl-[100px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/luxury-living-room-restored-highres-1.webp",
+    "title": "LUXURY LIVING ROOM RESTORED HI...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[3/4] rounded-bl-[150px] rounded-tr-[150px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/oceanfront-armani-casa-terrace-lounge-chairs.webp",
+    "title": "OCEANFRONT ARMANI CASA TERRACE...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-square rounded-[30px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/key-biscayne-house-living-room-red-artwork-wood-shelving-garden.webp",
+    "title": "KEY BISCAYNE HOUSE LIVING ROOM...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[16/9] rounded-none"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/murano-portofino.png",
+    "title": "MURANO PORTOFINO",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/5] rounded-t-[200px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/06/new-build-cocoplum-home-living-tv-sectional.webp",
+    "title": "NEW BUILD COCOPLUM HOME LIVING...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[3/4] rounded-[50%]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/04/Design-Solutions-Bhalla-Residence_14-scaled.webp",
+    "title": "DESIGN SOLUTIONS BHALLA RESIDE...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/3] rounded-tl-[100px] rounded-br-[100px] rounded-tr-[20px] rounded-bl-[20px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/04/ds-living-room-wood-wall-art-1.webp",
+    "title": "DS LIVING ROOM WOOD WALL ART 1",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[16/9] rounded-b-full"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/04/ds-entrance-hall-wood-panels-1.webp",
+    "title": "DS ENTRANCE HALL WOOD PANELS 1",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/5] rounded-tr-[250px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/living_room_tv_panel_optimized.webp",
+    "title": "LIVING ROOM TV PANEL OPTIMIZED",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-square rounded-tl-[100px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/04/Design-Solutions-Ponce-Davis-Residence_10.webp",
+    "title": "DESIGN SOLUTIONS PONCE DAVIS R...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[3/4] rounded-bl-[150px] rounded-tr-[150px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/Hi-Res-DS-Dilido-1.png",
+    "title": "HI RES DS DILIDO 1",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-square rounded-[30px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/living-room-highres1.webp",
+    "title": "LIVING ROOM HIGHRES1",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[16/9] rounded-none"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/04/03-LIVING-ROOM-2.webp",
+    "title": "03 LIVING ROOM 2",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/5] rounded-t-[200px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/oceanfront_living_room_highres.webp",
+    "title": "OCEANFRONT LIVING ROOM HIGHRES",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[3/4] rounded-[50%]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/06/asia-brickell-key-curved-wood-lounge-chairs-city-view.webp",
+    "title": "ASIA BRICKELL KEY CURVED WOOD ...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/3] rounded-tl-[100px] rounded-br-[100px] rounded-tr-[20px] rounded-bl-[20px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/ChatGPT-Image-26-de-mai.-de-2026-08_35_07.png",
+    "title": "CHATGPT IMAGE 26 DE MAI",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[16/9] rounded-b-full"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/full-remodeling-coconut-grove-home-living-room-tv-wall-full-view.webp",
+    "title": "FULL REMODELING COCONUT GROVE ...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/5] rounded-tr-[250px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/04/shaugnessy-residence-garden-fire-pit.webp",
+    "title": "SHAUGNESSY RESIDENCE GARDEN FI...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-square rounded-tl-[100px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/project-one-thousand-museum.png",
+    "title": "PROJECT ONE THOUSAND MUSEUM",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[3/4] rounded-bl-[150px] rounded-tr-[150px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/fisher_08_left_kitchen.jpg",
+    "title": "FISHER 08 LEFT KITCHEN",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-square rounded-[30px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/oceanview-living-room-highres.webp",
+    "title": "OCEANVIEW LIVING ROOM HIGHRES",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[16/9] rounded-none"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/04/Design-Solutions-Nagumo-Residence-Armani-Casa_02.webp",
+    "title": "DESIGN SOLUTIONS NAGUMO RESIDE...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/5] rounded-t-[200px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/06/trump-towers-living-tv-grasscloth-wall-ocean-view.webp",
+    "title": "TRUMP TOWERS LIVING TV GRASSCL...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[3/4] rounded-[50%]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/06/oceanfront-murano-portofino-balcony-terrace-skyline-port-view-scaled.webp",
+    "title": "OCEANFRONT MURANO PORTOFINO BA...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/3] rounded-tl-[100px] rounded-br-[100px] rounded-tr-[20px] rounded-bl-[20px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/tequesta_02_left_dining.jpg",
+    "title": "TEQUESTA 02 LEFT DINING",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[16/9] rounded-b-full"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/continuum-south-beach.webp",
+    "title": "CONTINUUM SOUTH BEACH",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/5] rounded-tr-[250px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/ritz-carlton-residences-integrated-living-dining-kitchen-full-view-highres.webp",
+    "title": "RITZ CARLTON RESIDENCES INTEGR...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-square rounded-tl-[100px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/04/Design-Solutions-Bhalla-Residence_04.webp",
+    "title": "DESIGN SOLUTIONS BHALLA RESIDE...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[3/4] rounded-bl-[150px] rounded-tr-[150px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/Design-Solutions-Hasen-Residence-Foyer_01B.jpg",
+    "title": "DESIGN SOLUTIONS HASEN RESIDEN...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-square rounded-[30px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/projet-tequesta.png",
+    "title": "PROJET TEQUESTA",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[16/9] rounded-none"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/modern_house_optimized-scaled.webp",
+    "title": "MODERN HOUSE OPTIMIZED SCALED",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/5] rounded-t-[200px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/bayfront_park_grove_living_room.webp",
+    "title": "BAYFRONT PARK GROVE LIVING ROO...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[3/4] rounded-[50%]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/04/shaugnessy-residence-front-door-arched.webp",
+    "title": "SHAUGNESSY RESIDENCE FRONT DOO...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/3] rounded-tl-[100px] rounded-br-[100px] rounded-tr-[20px] rounded-bl-[20px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/04/02-LIVING-ROOM-1.webp",
+    "title": "02 LIVING ROOM 1",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[16/9] rounded-b-full"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/04/Design-Solutions-Siddons-Residence_21.webp",
+    "title": "DESIGN SOLUTIONS SIDDONS RESID...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/5] rounded-tr-[250px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/optimized_modern_hallway-scaled.webp",
+    "title": "OPTIMIZED MODERN HALLWAY SCALE...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-square rounded-tl-[100px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/06/merrick-bedroom-grey-headboard-pendant-lights.webp",
+    "title": "MERRICK BEDROOM GREY HEADBOARD...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[3/4] rounded-bl-[150px] rounded-tr-[150px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/04/Design-Solutions-Hasen-Residence_19.webp",
+    "title": "DESIGN SOLUTIONS HASEN RESIDEN...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-square rounded-[30px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/outdoor_lounge_optimized.webp",
+    "title": "OUTDOOR LOUNGE OPTIMIZED",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[16/9] rounded-none"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/04/Design-Solutions-Peretsman-Residence_06B.webp",
+    "title": "DESIGN SOLUTIONS PERETSMAN RES...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/5] rounded-t-[200px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/oceana_bal_harbor_hallway.webp",
+    "title": "OCEANA BAL HARBOR HALLWAY",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[3/4] rounded-[50%]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/turnberry-ocean-club-living-room-white-sofas-1.webp",
+    "title": "TURNBERRY OCEAN CLUB LIVING RO...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/3] rounded-tl-[100px] rounded-br-[100px] rounded-tr-[20px] rounded-bl-[20px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/04/kirstein-residence-family-room-shelving.webp",
+    "title": "KIRSTEIN RESIDENCE FAMILY ROOM...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[16/9] rounded-b-full"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/gran_paraiso_residences_living_reduced.webp",
+    "title": "GRAN PARAISO RESIDENCES LIVING...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/5] rounded-tr-[250px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/04/Design-Solutions-Peretsman-Residence_05.webp",
+    "title": "DESIGN SOLUTIONS PERETSMAN RES...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-square rounded-tl-[100px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/key-biscayne-house-restored-highres.webp",
+    "title": "KEY BISCAYNE HOUSE RESTORED HI...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[3/4] rounded-bl-[150px] rounded-tr-[150px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/modern-lounge-restored-highres.webp",
+    "title": "MODERN LOUNGE RESTORED HIGHRES",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-square rounded-[30px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/06/MIB_1774-scaled.jpg",
+    "title": "MIB 1774 SCALED",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[16/9] rounded-none"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/eighty_02_left.jpg",
+    "title": "EIGHTY 02 LEFT",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/5] rounded-t-[200px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/turnberry-ocean-club-integrated-living-dining-room.webp",
+    "title": "TURNBERRY OCEAN CLUB INTEGRATE...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[3/4] rounded-[50%]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/hyde_midtown_miami_living.webp",
+    "title": "HYDE MIDTOWN MIAMI LIVING",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/3] rounded-tl-[100px] rounded-br-[100px] rounded-tr-[20px] rounded-bl-[20px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/06/MIB_0794-scaled.jpg",
+    "title": "MIB 0794 SCALED",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[16/9] rounded-b-full"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/04/Design-Solutions-Nagumo-Residence-Armani-Casa_06.webp",
+    "title": "DESIGN SOLUTIONS NAGUMO RESIDE...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/5] rounded-tr-[250px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/modern_hallway_highres.webp",
+    "title": "MODERN HALLWAY HIGHRES",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-square rounded-tl-[100px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/interior_scene.webp",
+    "title": "INTERIOR SCENE",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[3/4] rounded-bl-[150px] rounded-tr-[150px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/wide_modern_living_room_interior_scene_with_a_bri.webp",
+    "title": "WIDE MODERN LIVING ROOM INTERI...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-square rounded-[30px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/Hi-Res-DS-Dilido-2-1.png",
+    "title": "HI RES DS DILIDO 2 1",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[16/9] rounded-none"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/imagem_02.jpg",
+    "title": "IMAGEM 02",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/5] rounded-t-[200px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/06/ds-bayview-dining-room-city-view.webp",
+    "title": "DS BAYVIEW DINING ROOM CITY VI...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[3/4] rounded-[50%]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/jade-ocean-condo.webp",
+    "title": "JADE OCEAN CONDO",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/3] rounded-tl-[100px] rounded-br-[100px] rounded-tr-[20px] rounded-bl-[20px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/museum_02_left_living.jpg",
+    "title": "MUSEUM 02 LEFT LIVING",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[16/9] rounded-b-full"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/murano_02_left_living.jpg",
+    "title": "MURANO 02 LEFT LIVING",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/5] rounded-tr-[250px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/fendi_chateau_living_room.webp",
+    "title": "FENDI CHATEAU LIVING ROOM",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-square rounded-tl-[100px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/bayfront-venetian-islands.webp",
+    "title": "BAYFRONT VENETIAN ISLANDS",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[3/4] rounded-bl-[150px] rounded-tr-[150px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/hyde_midtown_tv_room_optimized.webp",
+    "title": "HYDE MIDTOWN TV ROOM OPTIMIZED",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-square rounded-[30px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/04/Design-Solutions-Chaoul-Residence_27-1.webp",
+    "title": "DESIGN SOLUTIONS CHAOUL RESIDE...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[16/9] rounded-none"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/4-bedroom-apartment-park-grove-dining-room-marble-pendant-lights-1.webp",
+    "title": "4 BEDROOM APARTMENT PARK GROVE...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/5] rounded-t-[200px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/echo_aventura_livingroom.webp",
+    "title": "ECHO AVENTURA LIVINGROOM",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[3/4] rounded-[50%]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/residences-by-armani-casa-kitchen-dining-room-island-ocean-view.webp",
+    "title": "RESIDENCES BY ARMANI CASA KITC...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/3] rounded-tl-[100px] rounded-br-[100px] rounded-tr-[20px] rounded-bl-[20px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/06/trump-towers-console-table-black-wall-sculpture-rattan-stools.webp",
+    "title": "TRUMP TOWERS CONSOLE TABLE BLA...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[16/9] rounded-b-full"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/modern_apartment_interior_optimized-1.webp",
+    "title": "MODERN APARTMENT INTERIOR OPTI...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/5] rounded-tr-[250px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/paraiso_bayviews_livingroom.webp",
+    "title": "PARAISO BAYVIEWS LIVINGROOM",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-square rounded-tl-[100px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/04/silva-15.webp",
+    "title": "SILVA 15",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[3/4] rounded-bl-[150px] rounded-tr-[150px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/artefacto-model-armani-casa-dining-room-rattan-chairs-ocean-view.webp",
+    "title": "ARTEFACTO MODEL ARMANI CASA DI...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-square rounded-[30px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/north_bay_road_villa_exterior.webp",
+    "title": "NORTH BAY ROAD VILLA EXTERIOR",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[16/9] rounded-none"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/artefacto-model-armani-casa-foyer-wood-door-close-up.webp",
+    "title": "ARTEFACTO MODEL ARMANI CASA FO...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/5] rounded-t-[200px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/bayfront_asia_brickell_key_optimized.webp",
+    "title": "BAYFRONT ASIA BRICKELL KEY OPT...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[3/4] rounded-[50%]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/modern_open_living_optimized.webp",
+    "title": "MODERN OPEN LIVING OPTIMIZED",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/3] rounded-tl-[100px] rounded-br-[100px] rounded-tr-[20px] rounded-bl-[20px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/06/bayfront-asia-brickell-key-dining-orange-chairs.webp",
+    "title": "BAYFRONT ASIA BRICKELL KEY DIN...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[16/9] rounded-b-full"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/luxury_living_room_ocean_view.webp",
+    "title": "LUXURY LIVING ROOM OCEAN VIEW",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/5] rounded-tr-[250px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/06/asia-brickell-key-living-room-figurative-art-glass-shelving.webp",
+    "title": "ASIA BRICKELL KEY LIVING ROOM ...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-square rounded-tl-[100px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/modern_living_room.webp",
+    "title": "MODERN LIVING ROOM",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[3/4] rounded-bl-[150px] rounded-tr-[150px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/fendi_chateau_living_room_optimized.webp",
+    "title": "FENDI CHATEAU LIVING ROOM OPTI...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-square rounded-[30px]"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/turnberry-ocean-club-dining-living-room-panoramic-ocean-view.webp",
+    "title": "TURNBERRY OCEAN CLUB DINING LI...",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[16/9] rounded-none"
+  },
+  {
+    "url": "https://ds-miami.com/wp-content/uploads/2026/05/projet-fisher.png",
+    "title": "PROJET FISHER",
+    "award": "DS MIAMI PORTFOLIO ARCHIVE",
+    "category": "Residential",
+    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
+    "shapeClass": "aspect-[4/5] rounded-t-[200px]"
+  }
 ];
 
 export default function Archive() {
