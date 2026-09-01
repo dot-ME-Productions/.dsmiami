@@ -65,3 +65,19 @@ html.lenis, html.lenis body {
 /* HIDE SCROLLBAR GLOBALLY */
 ::-webkit-scrollbar { display: none; }
 * { scrollbar-width: none; }
+/* Luxury Custom Scrollbar */
+.luxury-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.luxury-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+}
+.luxury-scroll::-webkit-scrollbar-thumb {
+  background: rgba(197, 168, 128, 0.5); /* #C5A880 with opacity */
+  border-radius: 10px;
+}
+.luxury-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(197, 168, 128, 1);
+}
