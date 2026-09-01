@@ -210,12 +210,12 @@ export default function Showcase() {
             </div>
             
             {/* Right: Data */}
-            <div className="w-full md:w-[45%] h-[60vh] md:h-full p-8 md:p-16 overflow-y-auto">
-               <div className="flex flex-col min-h-full justify-start md:justify-center py-4">
-                 <p className="font-mono text-xs tracking-[0.4em] text-[#C5A880] mb-4 mt-8 md:mt-0">PROJECT DETAILS</p>
-                 <h2 className="text-4xl md:text-6xl font-serif uppercase tracking-tighter mb-8 leading-none">{activeProject.title}</h2>
+            <div className="w-full md:w-[45%] h-[60vh] md:h-full p-6 md:p-10 overflow-y-auto">
+               <div className="flex flex-col min-h-full justify-start md:justify-center py-2">
+                 <p className="font-mono text-[10px] tracking-[0.4em] text-[#C5A880] mb-2 mt-8 md:mt-0">PROJECT DETAILS</p>
+                 <h2 className="text-3xl md:text-5xl font-serif uppercase tracking-tighter mb-6 leading-none">{activeProject.title}</h2>
                  
-                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8 border-y border-white/10 py-8">
+                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6 border-y border-white/10 py-4 md:py-6">
                     <div>
                       <p className="font-mono text-[0.65rem] tracking-widest text-white/40 uppercase mb-2">Client</p>
                       <p className="font-serif text-sm md:text-base">{activeProject.client}</p>
@@ -234,20 +234,20 @@ export default function Showcase() {
                     </div>
                  </div>
 
-                 <div className="space-y-6 mb-12">
+                 <div className="space-y-4 mb-6 md:mb-8">
                    <div>
-                     <p className="font-mono text-[0.65rem] tracking-widest text-[#C5A880] uppercase mb-2">01 / The Challenge</p>
-                     <p className="font-light text-white/80 leading-relaxed text-sm md:text-base">{activeProject.challenge}</p>
+                     <p className="font-mono text-[10px] tracking-widest text-[#C5A880] uppercase mb-1 md:mb-2">01 / The Challenge</p>
+                     <p className="font-light text-white/80 leading-relaxed text-sm">{activeProject.challenge}</p>
                    </div>
                    <div>
-                     <p className="font-mono text-[0.65rem] tracking-widest text-[#C5A880] uppercase mb-2">02 / The Solution</p>
-                     <p className="font-light text-white/80 leading-relaxed text-sm md:text-base">{activeProject.solution}</p>
+                     <p className="font-mono text-[10px] tracking-widest text-[#C5A880] uppercase mb-1 md:mb-2">02 / The Solution</p>
+                     <p className="font-light text-white/80 leading-relaxed text-sm">{activeProject.solution}</p>
                    </div>
                  </div>
 
                  {/* Material Palette (DeepSeek Upgrade 2) */}
-                 <div className="mb-12 p-6 bg-white/5 border border-white/10 rounded-sm">
-                   <p className="font-mono text-[10px] tracking-[0.2em] text-white/50 uppercase mb-4">Material Palette Explorer</p>
+                 <div className="mb-6 md:mb-8 p-4 bg-white/5 border border-white/10 rounded-sm">
+                   <p className="font-mono text-[9px] tracking-[0.2em] text-white/50 uppercase mb-3">Material Palette Explorer</p>
                    <div className="flex flex-wrap gap-4">
                      {activeProject.materials.map((mat, i) => (
                        <div key={i} className="flex items-center gap-3 group cursor-pointer">
@@ -261,8 +261,8 @@ export default function Showcase() {
                    </div>
                  </div>
 
-                 <div className="flex flex-col xl:flex-row justify-between items-start xl:items-center gap-8 mt-auto">
-                   <button className="w-fit px-8 py-4 border border-[#C5A880] text-[#C5A880] font-mono text-xs tracking-widest uppercase hover:bg-[#C5A880] hover:text-[#0C0F12] transition-colors duration-300">
+                 <div className="flex flex-col xl:flex-row justify-between items-start xl:items-center gap-4 mt-auto pt-2">
+                   <button className="w-fit px-6 py-3 border border-[#C5A880] text-[#C5A880] font-mono text-[10px] tracking-widest uppercase hover:bg-[#C5A880] hover:text-[#0C0F12] transition-colors duration-300">
                      Request Case Study
                    </button>
                    
