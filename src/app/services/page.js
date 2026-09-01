@@ -16,13 +16,13 @@ const servicesList = [
     number: "01",
     title: "INTERIOR ARCHITECTURE",
     desc: "We alter spatial volumes, pushing walls and pulling ceilings to discover the ultimate flow and geometry of your environment.",
-    img: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2874&auto=format&fit=crop"
+    img: "https://ds-miami.com/wp-content/uploads/2026/06/continuum-south-beach-master-bedroom-neutral-tones-black-lamps.webp"
   },
   {
     number: "02",
     title: "BESPOKE FURNISHINGS",
     desc: "Custom monolithic pieces designed exclusively for the scale and physics of your specific room, crafted in Italy.",
-    img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2900&auto=format&fit=crop"
+    img: "https://ds-miami.com/wp-content/uploads/2026/06/merrick-bedroom-grey-headboard-pendant-lights.webp"
   },
   {
     number: "03",

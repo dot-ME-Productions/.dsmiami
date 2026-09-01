@@ -7,6 +7,12 @@ const nextConfig = {
         hostname: 'images.unsplash.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'ds-miami.com',
+        port: '',
+        pathname: '/**',
       }
     ],
     // DeepSeek Flaw #1: Enforce next-gen formats (AVIF/WebP) automatically via Vercel Edge Image Optimization

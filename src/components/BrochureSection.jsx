@@ -35,7 +35,7 @@ export default function BrochureSection() {
           {/* Mockup Image */}
           <div className="w-full md:w-1/2 relative aspect-[4/3] rounded-sm overflow-hidden shadow-2xl">
             <Image 
-              src="https://ds-miami.com/wp-content/uploads/2026/04/guide-design.png" 
+              src="https://ds-miami.com/wp-content/uploads/2026/06/ds-bayview-dining-room-city-view.webp" 
               alt="Design Solutions Brochure"
               fill
               className="object-cover"
@@ -53,7 +53,7 @@ export default function BrochureSection() {
           {/* Text Content */}
           <div className="w-full md:w-1/2 flex flex-col items-start text-left">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight leading-none mb-6">
-              Your Guide to<br/>Elevated Design
+              The Master<br/>Design Brochure
             </h2>
             <p className="font-light text-black/60 text-base md:text-lg max-w-md mb-12 leading-relaxed">
               Download the Design Solutions master brochure to experience the craftsmanship, philosophy, and architectural vision behind our most iconic projects.

@@ -22,7 +22,7 @@ export const metadata = {
     siteName: "DS Miami",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2874&auto=format&fit=crop",
+        url: "https://ds-miami.com/wp-content/uploads/2026/06/asia-brickell-key-living-room-figurative-art-glass-shelving.webp",
         width: 1200,
         height: 630,
         alt: "DS Miami Luxury Architecture",
@@ -35,7 +35,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "DS Miami | Luxury Interiors",
     description: "Turnkey luxury interior design and architecture solutions.",
-    images: ["https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2874&auto=format&fit=crop"],
+    images: ["https://ds-miami.com/wp-content/uploads/2026/06/asia-brickell-key-living-room-figurative-art-glass-shelving.webp"],
   },
 };
 

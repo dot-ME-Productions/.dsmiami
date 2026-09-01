@@ -10,36 +10,7 @@ import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
-  { title: "Venetian Islands", category: "Architecture", img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2940&auto=format&fit=crop" },
-  { title: "Architectural Digest", category: "Featured Publication", img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2900&auto=format&fit=crop", isAward: true },
-  { title: "Ponce Davis", category: "Turnkey Interior", img: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2940&auto=format&fit=crop" },
-  { title: "Forbes & Elle Decor", category: "International Recognition", img: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2874&auto=format&fit=crop", isAward: true }
-];
-
-export default function Section2() {
-  const containerRef = useRef(null);
-  const scrollWrapperRef = useRef(null);
-  const titleRef = useRef(null);
-
-  useGSAP(() => {
-    const scrollWidth = scrollWrapperRef.current.scrollWidth;
-    const windowWidth = window.innerWidth;
-
-    // Horizontal Scroll
-    gsap.to(scrollWrapperRef.current, {
-      x: -(scrollWidth - windowWidth),
-      ease: "none",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top top",
-        end: () => `+=${scrollWidth}`,
-        pin: true,
-        scrub: 1,
-        refreshPriority: 0
-      }
-    });
-
-    // Fade out title so it doesn't overlap
+  { title: "Venetian Islands", category: "Architecture", img: "https://ds-miami.com/wp-content/uploads/2026/06/ds-bayview-dining-room-city-view.webp't overlap
     gsap.to(titleRef.current, {
       opacity: 0,
       y: -50,

@@ -52,7 +52,7 @@ export default function Section3() {
       
       {/* Hidden Architectural Blueprint Layer - Made brighter */}
       <div className="absolute inset-0 opacity-40 pointer-events-none" style={{
-        backgroundImage: 'url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=3000&auto=format&fit=crop")',
+        backgroundImage: 'url("https://ds-miami.com/wp-content/uploads/2026/05/optimized_modern_kitchen_livingroom-scaled.webp")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         filter: 'invert(1)'
