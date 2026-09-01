@@ -6,12 +6,12 @@ import CustomCursor from '@/components/CustomCursor';
 import Image from 'next/image';
 
 const awardsData = [
-  { year: "2023", title: "Architectural Digest AD100", category: "Top Interior Design Firms", result: "Winner", img: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800&auto=format&fit=crop" },
-  { year: "2023", title: "Luxe RED Awards", category: "Contemporary Interior Design", result: "Winner", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" },
-  { year: "2022", title: "Dezeen Awards", category: "Interior Designer of the Year", result: "Shortlisted", img: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=800&auto=format&fit=crop" },
-  { year: "2021", title: "Elle Decor A-List", category: "Residential Interiors", result: "Winner", img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800&auto=format&fit=crop" },
-  { year: "2020", title: "AIA Miami", category: "Excellence in Interior Architecture", result: "Winner", img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop" },
-  { year: "2019", title: "World Architecture Festival", category: "Best Residential Interior", result: "Nominee", img: "https://images.unsplash.com/photo-1600210491369-e753d80a41f3?q=80&w=800&auto=format&fit=crop" },
+  { year: "2023", title: "Architectural Digest AD100", category: "Top Interior Design Firms", result: "Winner", img: "https://ds-miami.com/wp-content/uploads/2026/06/asia-brickell-key-living-room-figurative-art-glass-shelving.webp" },
+  { year: "2023", title: "Luxe RED Awards", category: "Contemporary Interior Design", result: "Winner", img: "https://ds-miami.com/wp-content/uploads/2026/06/continuum-south-beach-master-bedroom-neutral-tones-black-lamps.webp" },
+  { year: "2022", title: "Dezeen Awards", category: "Interior Designer of the Year", result: "Shortlisted", img: "https://ds-miami.com/wp-content/uploads/2026/06/merrick-bedroom-grey-headboard-pendant-lights.webp" },
+  { year: "2021", title: "Elle Decor A-List", category: "Residential Interiors", result: "Winner", img: "https://ds-miami.com/wp-content/uploads/2026/06/trump-towers-living-tv-grasscloth-wall-ocean-view.webp" },
+  { year: "2020", title: "AIA Miami", category: "Excellence in Interior Architecture", result: "Winner", img: "https://ds-miami.com/wp-content/uploads/2026/06/new-build-cocoplum-home-living-tv-sectional.webp" },
+  { year: "2019", title: "World Architecture Festival", category: "Best Residential Interior", result: "Nominee", img: "https://ds-miami.com/wp-content/uploads/2026/06/oceanfront-murano-portofino-balcony-terrace-skyline-port-view-scaled.webp" },
 ];
 
 export default function Awards() {

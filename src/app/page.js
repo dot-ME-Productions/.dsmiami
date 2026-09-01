@@ -16,6 +16,8 @@ import NextGenFooter from '@/components/NextGenFooter';
 import AwardsMarquee from '@/components/AwardsMarquee';
 import PressLogos from '@/components/PressLogos';
 import BrochureSection from '@/components/BrochureSection';
+import FeaturedVideo from '@/components/FeaturedVideo';
+import InstagramFeed from '@/components/InstagramFeed';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,6 +61,8 @@ export default function Home() {
         </div>
         
         <Testimonial />
+        <FeaturedVideo />
+        <InstagramFeed />
         <BrochureSection />
         <AwardsMarquee />
         <NextGenFooter />
