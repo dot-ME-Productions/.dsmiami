@@ -1,5 +1,6 @@
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
+import CinematicBackground from '@/components/CinematicBackground';
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -42,8 +43,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning className={`${playfair.variable} ${inter.variable}`}>
       <body suppressHydrationWarning className="overflow-x-hidden bg-[#0C0F12] text-[#F9F9F7] font-sans antialiased selection:bg-[#C5A880] selection:text-[#0C0F12] overflow-x-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#C5A880]">
+        <CinematicBackground />
         {children}
-                <div className="fixed inset-0 pointer-events-none z-50 opacity-[0.03] mix-blend-difference" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/stardust.png')" }}></div>
+                
         
         {/* DeepSeek Flaw #3: Lead Capture Mechanism */}
         <a 
