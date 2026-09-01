@@ -23,6 +23,16 @@ const subLinks = [
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [audioEnabled, setAudioEnabled] = useState(false);
+
+  // Keep audio state in sync with SoundEngine
+  useEffect(() => {
+    const checkAudio = () => {
+      if (soundEngine.isUnlocked) setAudioEnabled(true);
+    };
+    window.addEventListener('click', checkAudio);
+    return () => window.removeEventListener('click', checkAudio);
+  }, []);
   const pathname = usePathname();
   
   const containerRef = useRef(null);
