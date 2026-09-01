@@ -28,7 +28,7 @@ export default function Principal() {
         {/* The Architect Profile Video Teaser (DeepSeek Upgrade 5) */}
         <div className="w-full md:w-1/2 aspect-[3/4] relative overflow-hidden group cursor-pointer">
           <Image 
-            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2776&auto=format&fit=crop" 
+            src="https://images.unsplash.com/photo-1583195764036-6dc248ac07d9?q=80&w=2776&auto=format&fit=crop" 
             alt="Luciana Fragali - Principal Architect" 
             fill 
             className="principal-img object-cover group-hover:scale-110 transition-transform duration-1000" 

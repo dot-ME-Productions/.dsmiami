@@ -11,8 +11,11 @@ import Hero from '@/components/Hero';
 import Showcase from '@/components/Showcase';
 import Philosophy from '@/components/Philosophy';
 import Principal from '@/components/Principal';
+import Testimonial from '@/components/Testimonial';
 import NextGenFooter from '@/components/NextGenFooter';
 import AwardsMarquee from '@/components/AwardsMarquee';
+import PressLogos from '@/components/PressLogos';
+import BrochureSection from '@/components/BrochureSection';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,6 +48,7 @@ export default function Home() {
         <Navigation />
         <div id="hero-target"><Hero /></div>
         
+        <PressLogos />
         <Showcase />
         
         {/* Anchor for Skip Button and Background Color trigger */}
@@ -54,6 +58,8 @@ export default function Home() {
       <Principal />
         </div>
         
+        <Testimonial />
+        <BrochureSection />
         <AwardsMarquee />
         <NextGenFooter />
       </main>

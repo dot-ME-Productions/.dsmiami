@@ -3,14 +3,15 @@ import { motion } from 'framer-motion';
 import SmoothScroll from '@/components/SmoothScroll';
 import Navigation from '@/components/Navigation';
 import CustomCursor from '@/components/CustomCursor';
+import Image from 'next/image';
 
 const awardsData = [
-  { year: "2023", title: "Architectural Digest AD100", category: "Top Interior Design Firms", result: "Winner" },
-  { year: "2023", title: "Luxe RED Awards", category: "Contemporary Interior Design", result: "Winner" },
-  { year: "2022", title: "Dezeen Awards", category: "Interior Designer of the Year", result: "Shortlisted" },
-  { year: "2021", title: "Elle Decor A-List", category: "Residential Interiors", result: "Winner" },
-  { year: "2020", title: "AIA Miami", category: "Excellence in Interior Architecture", result: "Winner" },
-  { year: "2019", title: "World Architecture Festival", category: "Best Residential Interior", result: "Nominee" },
+  { year: "2023", title: "Architectural Digest AD100", category: "Top Interior Design Firms", result: "Winner", img: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800&auto=format&fit=crop" },
+  { year: "2023", title: "Luxe RED Awards", category: "Contemporary Interior Design", result: "Winner", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" },
+  { year: "2022", title: "Dezeen Awards", category: "Interior Designer of the Year", result: "Shortlisted", img: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=800&auto=format&fit=crop" },
+  { year: "2021", title: "Elle Decor A-List", category: "Residential Interiors", result: "Winner", img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800&auto=format&fit=crop" },
+  { year: "2020", title: "AIA Miami", category: "Excellence in Interior Architecture", result: "Winner", img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop" },
+  { year: "2019", title: "World Architecture Festival", category: "Best Residential Interior", result: "Nominee", img: "https://images.unsplash.com/photo-1600210491369-e753d80a41f3?q=80&w=800&auto=format&fit=crop" },
 ];
 
 export default function Awards() {
@@ -47,10 +48,16 @@ export default function Awards() {
                 {/* Hover Background Sweep */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#C5A880]/0 via-[#C5A880]/5 to-[#C5A880]/0 opacity-0 scale-y-0 group-hover:opacity-100 group-hover:scale-y-100 origin-bottom transition-all duration-700 pointer-events-none"></div>
 
-                <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-16 relative z-10 w-full md:w-3/4">
+                <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-12 relative z-10 w-full flex-1">
                   <span className="font-mono text-sm tracking-widest text-white/40 group-hover:text-[#C5A880] transition-colors duration-500 w-16">
                     {award.year}
                   </span>
+                  
+                  {/* Image Reveal on Hover (Desktop only) */}
+                  <div className="hidden md:block w-0 opacity-0 group-hover:w-48 group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden rounded-sm relative aspect-[4/3] shrink-0">
+                    <Image src={award.img} alt={award.title} fill className="object-cover scale-110 group-hover:scale-100 transition-transform duration-700" />
+                  </div>
+
                   <div className="flex flex-col">
                     <h3 className="text-3xl md:text-5xl font-serif tracking-tight group-hover:italic group-hover:text-[#C5A880] transition-all duration-500">
                       {award.title}
@@ -61,7 +68,7 @@ export default function Awards() {
                   </div>
                 </div>
 
-                <div className="mt-6 md:mt-0 relative z-10 text-left md:text-right">
+                <div className="mt-6 md:mt-0 relative z-10 text-left md:text-right shrink-0 ml-auto">
                   <span className={`px-4 py-2 rounded-full border text-[0.6rem] font-bold tracking-[0.2em] uppercase ${award.result === 'Winner' ? 'border-[#C5A880] text-[#C5A880]' : 'border-white/20 text-white/50 group-hover:border-white/50'}`}>
                     {award.result}
                   </span>
