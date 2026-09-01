@@ -16,7 +16,7 @@ const menuData = [
 const subLinks = [
   { name: 'Awards', path: '/awards' },
   { name: 'Services', path: '/services' },
-  { name: 'Studio', path: '/studio' },
+  { name: 'News', path: '/news' },
   { name: 'Who we are', path: '/who-we-are' }
 ];
 
