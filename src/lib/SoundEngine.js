@@ -6,6 +6,36 @@ class SoundEngine {
     this.isMuted = false;
   }
 
+  init() {
+    if (typeof window === 'undefined' || this.ctx) return;
+    try {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      this.ctx = new AudioContext();
+      this.masterGain = this.ctx.createGain();
+      
+      // Dynamics Compressor to prevent clipping
+      this.compressor = this.ctx.createDynamicsCompressor();
+      this.compressor.threshold.value = -20;
+      this.compressor.knee.value = 30;
+      this.compressor.ratio.value = 12;
+      this.compressor.attack.value = 0;
+      this.compressor.release.value = 0.25;
+
+      // Global Lowpass Filter to inherently muffle everything for a relaxing vibe
+      this.globalFilter = this.ctx.createBiquadFilter();
+      this.globalFilter.type = 'lowpass';
+      this.globalFilter.frequency.value = 800; // Cuts off high harsh frequencies
+      
+      this.masterGain.gain.value = 0.35; // Lower overall volume
+      
+      this.masterGain.connect(this.globalFilter);
+      this.globalFilter.connect(this.compressor);
+      this.compressor.connect(this.ctx.destination);
+    } catch(e) {
+      console.warn("Web Audio API not supported in this browser");
+    }
+  }
+
   mute() {
     this.isMuted = true;
     if (this.masterGain && this.ctx) {
@@ -16,31 +46,7 @@ class SoundEngine {
   unmute() {
     this.isMuted = false;
     if (this.masterGain && this.ctx) {
-      this.masterGain.gain.setTargetAtTime(0.6, this.ctx.currentTime, 0.05);
-    }
-  }
-
-  init() {
-    if (typeof window === 'undefined' || this.ctx) return;
-    try {
-      const AudioContext = window.AudioContext || window.webkitAudioContext;
-      this.ctx = new AudioContext();
-      this.masterGain = this.ctx.createGain();
-      
-      // Add a master compressor to absolutely prevent any harsh clipping or "rough noise"
-      this.compressor = this.ctx.createDynamicsCompressor();
-      this.compressor.threshold.value = -10;
-      this.compressor.knee.value = 40;
-      this.compressor.ratio.value = 12;
-      this.compressor.attack.value = 0;
-      this.compressor.release.value = 0.25;
-
-      this.masterGain.gain.value = 0.6; // Reduced to prevent clipping
-      
-      this.masterGain.connect(this.compressor);
-      this.compressor.connect(this.ctx.destination);
-    } catch(e) {
-      console.warn("Web Audio API not supported in this browser");
+      this.masterGain.gain.setTargetAtTime(0.35, this.ctx.currentTime, 0.05);
     }
   }
 
@@ -71,39 +77,35 @@ class SoundEngine {
     if (this.ctx && this.ctx.state === 'suspended') {
       try {
         await this.ctx.resume();
-      } catch (e) {
-        // Will fail if triggered by hover instead of click
-      }
+      } catch (e) {}
     }
     return this.ctx && this.ctx.state === 'running';
   }
 
-  // 1. Calm, relaxing hover chime (Glassy, luxurious, two-tone)
+  // 1. Calm, relaxing hover chime (Slower attack, muffled, softer)
   async playHoverChime() {
     const canPlay = await this._ensureContext();
     if (!canPlay) return;
     
     const t = this.ctx.currentTime;
     
-    // Fundamental tone (A5)
     const osc1 = this.ctx.createOscillator();
     const gain1 = this.ctx.createGain();
     osc1.type = 'sine';
-    osc1.frequency.setValueAtTime(880, t); 
+    osc1.frequency.setValueAtTime(523.25, t); // C5 - Lower pitch, more relaxing
     
     gain1.gain.setValueAtTime(0, t);
-    gain1.gain.linearRampToValueAtTime(0.3, t + 0.05); // Smooth attack
-    gain1.gain.exponentialRampToValueAtTime(0.001, t + 2.0); // Very long, relaxing tail
+    gain1.gain.linearRampToValueAtTime(0.15, t + 0.15); // Much slower swell (0.15s)
+    gain1.gain.exponentialRampToValueAtTime(0.001, t + 2.5); // Longer tail
     
-    // Harmonic tone (E6) for glassy elegance
     const osc2 = this.ctx.createOscillator();
     const gain2 = this.ctx.createGain();
     osc2.type = 'sine';
-    osc2.frequency.setValueAtTime(1318.51, t); 
+    osc2.frequency.setValueAtTime(783.99, t); // G5 - Perfect fifth harmony
     
     gain2.gain.setValueAtTime(0, t);
-    gain2.gain.linearRampToValueAtTime(0.1, t + 0.1); 
-    gain2.gain.exponentialRampToValueAtTime(0.001, t + 1.5);
+    gain2.gain.linearRampToValueAtTime(0.05, t + 0.2); 
+    gain2.gain.exponentialRampToValueAtTime(0.001, t + 2.0);
 
     osc1.connect(gain1);
     osc2.connect(gain2);
@@ -112,11 +114,11 @@ class SoundEngine {
     
     osc1.start(t);
     osc2.start(t);
-    osc1.stop(t + 2.0);
-    osc2.stop(t + 2.0);
+    osc1.stop(t + 2.5);
+    osc2.stop(t + 2.5);
   }
 
-  // 2. Extremely soft interface ping (Navigation hover) - Replaced rough triangle with pure sine
+  // 2. Extremely soft interface ping (Very muffled, low volume)
   async playSoftClick() {
     const canPlay = await this._ensureContext();
     if (!canPlay) return;
@@ -125,22 +127,21 @@ class SoundEngine {
     const osc = this.ctx.createOscillator();
     const gainNode = this.ctx.createGain();
     
-    // Pure sine is much smoother than triangle
     osc.type = 'sine';
-    osc.frequency.setValueAtTime(800, t); // High pitch but very quiet
+    osc.frequency.setValueAtTime(400, t); // Lower pitch ping
     
     gainNode.gain.setValueAtTime(0, t);
-    gainNode.gain.linearRampToValueAtTime(0.08, t + 0.01);
-    gainNode.gain.exponentialRampToValueAtTime(0.001, t + 0.2); // Soft ping
+    gainNode.gain.linearRampToValueAtTime(0.02, t + 0.02); // Barely audible, slow attack
+    gainNode.gain.exponentialRampToValueAtTime(0.001, t + 0.15); 
     
     osc.connect(gainNode);
     gainNode.connect(this.masterGain);
     
     osc.start(t);
-    osc.stop(t + 0.2);
+    osc.stop(t + 0.15);
   }
 
-  // 3. Deep cinematic thud - Smoothed out with lowpass filter
+  // 3. Deep cinematic thud (Super muffled heartbeat style)
   async playDeepThud() {
     const canPlay = await this._ensureContext();
     if (!canPlay) return;
@@ -151,23 +152,23 @@ class SoundEngine {
     const filter = this.ctx.createBiquadFilter();
     
     osc.type = 'sine';
-    osc.frequency.setValueAtTime(150, t);
-    osc.frequency.exponentialRampToValueAtTime(30, t + 0.4);
+    osc.frequency.setValueAtTime(100, t);
+    osc.frequency.exponentialRampToValueAtTime(20, t + 0.5); // Slower drop
     
-    // Filter out any accidental high-frequency clipping noise
+    // Very aggressive lowpass filter to remove all click/pop
     filter.type = 'lowpass';
-    filter.frequency.setValueAtTime(300, t);
+    filter.frequency.setValueAtTime(120, t); 
     
     gainNode.gain.setValueAtTime(0, t);
-    gainNode.gain.linearRampToValueAtTime(0.6, t + 0.02);
-    gainNode.gain.exponentialRampToValueAtTime(0.001, t + 1.0);
+    gainNode.gain.linearRampToValueAtTime(0.4, t + 0.05); // Slower attack
+    gainNode.gain.exponentialRampToValueAtTime(0.001, t + 1.2);
     
     osc.connect(filter);
     filter.connect(gainNode);
     gainNode.connect(this.masterGain);
     
     osc.start(t);
-    osc.stop(t + 1.0);
+    osc.stop(t + 1.2);
   }
 }
 

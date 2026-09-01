@@ -100,6 +100,7 @@ export default function Navigation() {
   };
 
   const handleMouseEnterLink = (idx) => {
+    soundEngine.playSoftClick();
     setHoveredIndex(idx);
     gsap.to(floatingImgRef.current, { 
       scale: 1, 
@@ -126,7 +127,7 @@ export default function Navigation() {
       
       {/* Top Header Bar */}
       <header className="fixed top-0 left-0 w-full z-40 bg-transparent py-5 px-6 md:px-16 flex justify-between items-center mix-blend-difference pointer-events-none">
-        <Link href="/" onClick={() => setIsOpen(false)} className="flex flex-col uppercase group pointer-events-auto text-[#F9F9F7]">
+        <Link href="/" onClick={() => { setIsOpen(false); soundEngine.playDeepThud(); }} className="flex flex-col uppercase group pointer-events-auto text-[#F9F9F7]">
           <div className="text-xl md:text-2xl font-serif tracking-[0.2em] font-medium flex items-center gap-1 group-hover:text-[#C5A880] group-hover:italic transition-all duration-500">
             <span>DESIGN</span>
             <span className="opacity-40 font-light text-2xl mx-1 not-italic">/</span>
@@ -137,7 +138,7 @@ export default function Navigation() {
           </div>
         </Link>
         <div className="flex items-center gap-6 pointer-events-auto">
-          {/* Subtle Audio Toggle */}
+          {/* Subtle Audio Toggle with Icon */}
           <button 
             onClick={() => {
               if (!audioEnabled) {
@@ -150,9 +151,24 @@ export default function Navigation() {
                 setAudioEnabled(false);
               }
             }}
-            className="flex items-center font-mono text-[10px] tracking-widest text-[#F9F9F7]/50 hover:text-[#C5A880] transition-colors"
+            className="flex items-center justify-center w-10 h-10 rounded-full bg-[#F9F9F7]/5 text-[#F9F9F7]/70 hover:text-[#C5A880] hover:bg-[#F9F9F7]/10 transition-all backdrop-blur-md border border-[#F9F9F7]/10"
+            aria-label="Toggle Sound"
           >
-            SOUND [{audioEnabled ? 'ON' : 'OFF'}]
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              {audioEnabled ? (
+                <>
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                  <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                </>
+              ) : (
+                <>
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                  <line x1="23" y1="9" x2="17" y2="15"></line>
+                  <line x1="17" y1="9" x2="23" y2="15"></line>
+                </>
+              )}
+            </svg>
           </button>
 
           {/* Hamburger Menu */}
@@ -187,7 +203,7 @@ export default function Navigation() {
 
         {/* Menu Content */}
         <div className="absolute top-6 right-6 md:top-8 md:right-16 z-[70] pointer-events-auto">
-          <button onClick={() => setIsOpen(false)} className="px-6 py-3 border border-white/10 rounded-full text-xs font-mono tracking-widest uppercase hover:bg-white hover:text-black transition-colors duration-300">
+          <button onClick={() => { setIsOpen(false); soundEngine.playDeepThud(); }} className="px-6 py-3 border border-white/10 rounded-full text-xs font-mono tracking-widest uppercase hover:bg-white hover:text-black transition-colors duration-300">
             CLOSE [X]
           </button>
         </div>
@@ -204,7 +220,7 @@ export default function Navigation() {
               >
                 <Link 
                   href={link.path} 
-                  onClick={() => setIsOpen(false)} 
+                  onClick={() => { setIsOpen(false); soundEngine.playDeepThud(); }} 
                   ref={el => linksRef.current[idx] = el} 
                   className="inline-block text-[14vw] md:text-[9vw] font-serif uppercase leading-[0.85] tracking-tighter hover:italic hover:text-[#C5A880] transition-all duration-300"
                 >
@@ -222,7 +238,7 @@ export default function Navigation() {
                 <div key={idx} className="overflow-hidden">
                   <Link 
                     href={link.path} 
-                    onClick={() => setIsOpen(false)} 
+                    onClick={() => { setIsOpen(false); soundEngine.playDeepThud(); }} 
                     ref={el => subLinksRef.current[idx] = el} 
                     className="text-xs md:text-sm font-mono tracking-widest uppercase opacity-50 hover:opacity-100 hover:text-[#C5A880] transition-colors"
                   >
