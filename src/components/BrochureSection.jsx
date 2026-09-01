@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
+import soundEngine from '@/lib/SoundEngine';
 
 export default function BrochureSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -59,7 +60,7 @@ export default function BrochureSection() {
               Download the Design Solutions master brochure to experience the craftsmanship, philosophy, and architectural vision behind our most iconic projects.
             </p>
             <button 
-              onClick={() => setIsModalOpen(true)}
+              onClick={() => { setIsModalOpen(true); soundEngine.playDeepThud(); }}
               className="px-8 py-4 bg-[#0C0F12] text-[#F4F0EA] rounded-full font-mono text-xs tracking-widest uppercase hover:bg-[#C5A880] hover:text-[#0C0F12] transition-colors duration-300"
             >
               Access Now
@@ -112,7 +113,7 @@ export default function BrochureSection() {
                     className="w-full bg-transparent border-b border-white/20 py-3 outline-none focus:border-[#C5A880] transition-colors font-light placeholder:text-white/30"
                   />
                   <button 
-                    type="submit"
+                    type="submit" onClick={() => soundEngine.playHoverChime()}
                     className="mt-4 w-full py-4 bg-[#C5A880] text-[#0C0F12] font-mono text-xs tracking-widest uppercase font-bold hover:bg-white transition-colors"
                   >
                     Download Brochure

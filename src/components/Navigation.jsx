@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import Image from 'next/image';
+import soundEngine from '@/lib/SoundEngine';
 
 const menuData = [
   { name: 'Manifesto', path: '/', img: 'https://ds-miami.com/wp-content/uploads/2026/06/asia-brickell-key-living-room-figurative-art-glass-shelving.webp' },
