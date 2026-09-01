@@ -21,15 +21,15 @@ export default function AwardsMarquee() {
     <section ref={marqueeRef} className="w-full py-24 md:py-32 bg-[#0C0F12] text-[#C5A880] overflow-hidden flex flex-col justify-center border-t border-white/5 relative z-10">
       
       {/* Background Image of Awards/Trophies */}
-      <div className="absolute inset-0 w-full h-full z-0 opacity-20">
+      <div className="absolute inset-0 w-full h-full z-0 opacity-40">
         <Image 
-          src="https://ds-miami.com/wp-content/uploads/2026/04/Best-Interior-Design-Companies-1-1200x1368.jpg" 
+          src="https://ds-miami.com/wp-content/uploads/2026/05/luxury-condo-living-room-waterfront-view-miami-scaled.webp" 
           alt="DS Miami Awards and Trophies" 
           fill 
-          className="object-cover mix-blend-luminosity"
+          className="object-cover grayscale"
         />
-        {/* Gradient overlay to ensure text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0C0F12] via-[#0C0F12]/80 to-[#0C0F12]"></div>
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0C0F12] via-transparent to-[#0C0F12]"></div>
       </div>
 
       <div className="w-full px-8 md:px-16 mb-8 flex flex-col items-center gap-4 relative z-10">
