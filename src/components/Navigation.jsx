@@ -213,7 +213,7 @@ export default function Navigation() {
           
           <MenuSearch onNavigate={() => setIsOpen(false)} />
 
-          <nav className="flex flex-col items-center gap-0 w-full pointer-events-auto z-10">
+          <nav className="flex flex-col items-center gap-0 w-full pointer-events-auto z-10 -mt-16 md:-mt-24">
             {menuData.map((link, idx) => (
               <div 
                 key={idx} 
