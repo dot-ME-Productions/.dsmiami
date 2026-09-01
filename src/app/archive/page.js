@@ -17,7 +17,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/04/silva-02.webp",
-    "title": "SILVA 02",
+    "title": "SILVA",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -49,19 +49,11 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/oceana_bal_harbor_clean.webp",
-    "title": "OCEANA BAL HARBOR CLEAN",
+    "title": "OCEANA BAL HARBOR",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
     "shapeClass": "aspect-[16/9] rounded-b-full"
-  },
-  {
-    "url": "https://ds-miami.com/wp-content/uploads/2026/05/ChatGPT-Image-26-de-mai.-de-2026-08_39_08.png",
-    "title": "CHATGPT IMAGE 26 DE MAI",
-    "award": "DS MIAMI PORTFOLIO ARCHIVE",
-    "category": "Residential",
-    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
-    "shapeClass": "aspect-[4/5] rounded-tr-[250px]"
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/turnberry-ocean-club-living-room-circular-niche-artwork-close.webp",
@@ -81,7 +73,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/eighty_01_hero.png",
-    "title": "EIGHTY 01 HERO",
+    "title": "EIGHTY",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -89,7 +81,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/optimized_interior_image.webp",
-    "title": "OPTIMIZED INTERIOR IMAGE",
+    "title": "INTERIOR IMAGE",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -121,7 +113,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/optimized_modern_kitchen_livingroom-scaled.webp",
-    "title": "OPTIMIZED MODERN KITCHEN LIVIN...",
+    "title": "MODERN KITCHEN LIVIN...",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -137,7 +129,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/merrick-park-highres.webp",
-    "title": "MERRICK PARK HIGHRES",
+    "title": "MERRICK PARK",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -209,7 +201,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/living_room_tv_panel_optimized.webp",
-    "title": "LIVING ROOM TV PANEL OPTIMIZED",
+    "title": "LIVING ROOM TV PANEL",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -225,7 +217,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/Hi-Res-DS-Dilido-1.png",
-    "title": "HI RES DS DILIDO 1",
+    "title": "DS DILIDO 1",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -241,7 +233,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/04/03-LIVING-ROOM-2.webp",
-    "title": "03 LIVING ROOM 2",
+    "title": "LIVING ROOM 2",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -249,7 +241,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/oceanfront_living_room_highres.webp",
-    "title": "OCEANFRONT LIVING ROOM HIGHRES",
+    "title": "OCEANFRONT LIVING ROOM",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -262,14 +254,6 @@ const archiveData = [
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
     "shapeClass": "aspect-[4/3] rounded-tl-[100px] rounded-br-[100px] rounded-tr-[20px] rounded-bl-[20px]"
-  },
-  {
-    "url": "https://ds-miami.com/wp-content/uploads/2026/05/ChatGPT-Image-26-de-mai.-de-2026-08_35_07.png",
-    "title": "CHATGPT IMAGE 26 DE MAI",
-    "award": "DS MIAMI PORTFOLIO ARCHIVE",
-    "category": "Residential",
-    "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
-    "shapeClass": "aspect-[16/9] rounded-b-full"
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/full-remodeling-coconut-grove-home-living-room-tv-wall-full-view.webp",
@@ -297,7 +281,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/fisher_08_left_kitchen.jpg",
-    "title": "FISHER 08 LEFT KITCHEN",
+    "title": "FISHER KITCHEN",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -305,7 +289,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/oceanview-living-room-highres.webp",
-    "title": "OCEANVIEW LIVING ROOM HIGHRES",
+    "title": "OCEANVIEW LIVING ROOM",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -337,7 +321,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/tequesta_02_left_dining.jpg",
-    "title": "TEQUESTA 02 LEFT DINING",
+    "title": "TEQUESTA DINING",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -385,7 +369,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/modern_house_optimized-scaled.webp",
-    "title": "MODERN HOUSE OPTIMIZED SCALED",
+    "title": "MODERN HOUSE",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -409,7 +393,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/04/02-LIVING-ROOM-1.webp",
-    "title": "02 LIVING ROOM 1",
+    "title": "LIVING ROOM 1",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -425,7 +409,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/optimized_modern_hallway-scaled.webp",
-    "title": "OPTIMIZED MODERN HALLWAY SCALE...",
+    "title": "MODERN HALLWAY SCALE...",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -449,7 +433,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/outdoor_lounge_optimized.webp",
-    "title": "OUTDOOR LOUNGE OPTIMIZED",
+    "title": "OUTDOOR LOUNGE",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -513,7 +497,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/modern-lounge-restored-highres.webp",
-    "title": "MODERN LOUNGE RESTORED HIGHRES",
+    "title": "MODERN LOUNGE RESTORED",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -521,7 +505,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/06/MIB_1774-scaled.jpg",
-    "title": "MIB 1774 SCALED",
+    "title": "MIAMI ESTATE 1774",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -529,7 +513,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/eighty_02_left.jpg",
-    "title": "EIGHTY 02 LEFT",
+    "title": "EIGHTY",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -553,7 +537,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/06/MIB_0794-scaled.jpg",
-    "title": "MIB 0794 SCALED",
+    "title": "MIAMI ESTATE 0794",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -569,7 +553,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/modern_hallway_highres.webp",
-    "title": "MODERN HALLWAY HIGHRES",
+    "title": "MODERN HALLWAY",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -593,7 +577,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/Hi-Res-DS-Dilido-2-1.png",
-    "title": "HI RES DS DILIDO 2 1",
+    "title": "DS DILIDO 2 1",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -601,7 +585,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/imagem_02.jpg",
-    "title": "IMAGEM 02",
+    "title": "RESIDENCE",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -625,7 +609,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/museum_02_left_living.jpg",
-    "title": "MUSEUM 02 LEFT LIVING",
+    "title": "MUSEUM LIVING",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -633,7 +617,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/murano_02_left_living.jpg",
-    "title": "MURANO 02 LEFT LIVING",
+    "title": "MURANO LIVING",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -657,7 +641,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/hyde_midtown_tv_room_optimized.webp",
-    "title": "HYDE MIDTOWN TV ROOM OPTIMIZED",
+    "title": "HYDE MIDTOWN TV ROOM",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -721,7 +705,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/04/silva-15.webp",
-    "title": "SILVA 15",
+    "title": "SILVA",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
@@ -761,7 +745,7 @@ const archiveData = [
   },
   {
     "url": "https://ds-miami.com/wp-content/uploads/2026/05/modern_open_living_optimized.webp",
-    "title": "MODERN OPEN LIVING OPTIMIZED",
+    "title": "MODERN OPEN LIVING",
     "award": "DS MIAMI PORTFOLIO ARCHIVE",
     "category": "Residential",
     "description": "An exclusive look into the materials, textures, and bespoke architecture defining this interior space.",
