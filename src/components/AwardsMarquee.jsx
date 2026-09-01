@@ -31,32 +31,32 @@ export default function AwardsMarquee() {
       <div className="flex w-[200vw] text-4xl md:text-6xl font-serif uppercase tracking-widest whitespace-nowrap">
         <div className="marquee-content flex gap-12 px-6">
           <span>ARCHITECTURAL DIGEST AD100</span>
-          <span className="opacity-30">â€¢</span>
+          <span className="opacity-40 text-[#C5A880] mx-4 md:mx-8 text-3xl md:text-5xl">&#10022;</span>
           <span>AIA MIAMI WINNER</span>
-          <span className="opacity-30">â€¢</span>
+          <span className="opacity-40 text-[#C5A880] mx-4 md:mx-8 text-3xl md:text-5xl">&#10022;</span>
           <span>ELLE DECOR A-LIST</span>
-          <span className="opacity-30">â€¢</span>
+          <span className="opacity-40 text-[#C5A880] mx-4 md:mx-8 text-3xl md:text-5xl">&#10022;</span>
           <span>DEZEEN SHORTLISTED</span>
-          <span className="opacity-30">â€¢</span>
+          <span className="opacity-40 text-[#C5A880] mx-4 md:mx-8 text-3xl md:text-5xl">&#10022;</span>
           <span>LUXE RED AWARDS</span>
-          <span className="opacity-30">â€¢</span>
+          <span className="opacity-40 text-[#C5A880] mx-4 md:mx-8 text-3xl md:text-5xl">&#10022;</span>
           <span>WORLD ARCHITECTURE FESTIVAL</span>
-          <span className="opacity-30">â€¢</span>
+          <span className="opacity-40 text-[#C5A880] mx-4 md:mx-8 text-3xl md:text-5xl">&#10022;</span>
         </div>
         {/* Duplicate for seamless looping */}
         <div className="marquee-content flex gap-12 px-6">
           <span>ARCHITECTURAL DIGEST AD100</span>
-          <span className="opacity-30">â€¢</span>
+          <span className="opacity-40 text-[#C5A880] mx-4 md:mx-8 text-3xl md:text-5xl">&#10022;</span>
           <span>AIA MIAMI WINNER</span>
-          <span className="opacity-30">â€¢</span>
+          <span className="opacity-40 text-[#C5A880] mx-4 md:mx-8 text-3xl md:text-5xl">&#10022;</span>
           <span>ELLE DECOR A-LIST</span>
-          <span className="opacity-30">â€¢</span>
+          <span className="opacity-40 text-[#C5A880] mx-4 md:mx-8 text-3xl md:text-5xl">&#10022;</span>
           <span>DEZEEN SHORTLISTED</span>
-          <span className="opacity-30">â€¢</span>
+          <span className="opacity-40 text-[#C5A880] mx-4 md:mx-8 text-3xl md:text-5xl">&#10022;</span>
           <span>LUXE RED AWARDS</span>
-          <span className="opacity-30">â€¢</span>
+          <span className="opacity-40 text-[#C5A880] mx-4 md:mx-8 text-3xl md:text-5xl">&#10022;</span>
           <span>WORLD ARCHITECTURE FESTIVAL</span>
-          <span className="opacity-30">â€¢</span>
+          <span className="opacity-40 text-[#C5A880] mx-4 md:mx-8 text-3xl md:text-5xl">&#10022;</span>
         </div>
       </div>
     </section>

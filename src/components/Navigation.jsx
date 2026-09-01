@@ -80,8 +80,8 @@ export default function Navigation() {
   const handleMouseMove = (e) => {
     if(xTo.current && yTo.current) {
       // Offset by half width/height so mouse is centered
-      xTo.current(e.clientX - 175); 
-      yTo.current(e.clientY - 225);
+      xTo.current(e.clientX - 130); 
+      yTo.current(e.clientY - 170);
     }
   };
 
@@ -97,6 +97,7 @@ export default function Navigation() {
   };
 
   const handleMouseLeaveLink = () => {
+    setHoveredIndex(null);
     gsap.to(floatingImgRef.current, { 
       scale: 0.5, 
       opacity: 0, 
@@ -138,11 +139,11 @@ export default function Navigation() {
         {/* Floating Image Follower */}
         <div 
           ref={floatingImgRef}
-          className="fixed top-0 left-0 w-[350px] h-[450px] pointer-events-none z-0 opacity-0 scale-50 origin-center will-change-transform rounded-sm overflow-hidden shadow-2xl hidden md:block"
+          className="fixed top-0 left-0 w-[260px] h-[340px] pointer-events-none z-0 opacity-0 scale-50 origin-center will-change-transform rounded-sm overflow-hidden shadow-2xl hidden md:block"
         >
           {menuData.map((link, idx) => (
             <div key={idx} className={`absolute inset-0 transition-opacity duration-500 ${hoveredIndex === idx ? 'opacity-100' : 'opacity-0'}`}>
-              <Image src={link.img} alt="Preview" fill className="object-cover" sizes="350px" />
+              <Image src={link.img} alt="Preview" fill className="object-cover" sizes="260px" />
             </div>
           ))}
           {/* Glass overlay on the image for premium feel */}
@@ -178,9 +179,10 @@ export default function Navigation() {
             ))}
           </nav>
 
-          <div className="absolute bottom-8 left-6 md:left-16 right-6 md:right-16 flex flex-col md:flex-row justify-between items-end md:items-center w-[calc(100%-3rem)] md:w-[calc(100%-8rem)] pointer-events-auto border-t border-white/10 pt-6">
+          <div className="absolute bottom-6 left-6 md:left-16 right-6 md:right-16 flex flex-col pointer-events-auto border-t border-white/10 pt-6 gap-6">
             
-            <nav className="flex gap-6 md:gap-8 w-full md:w-auto mb-6 md:mb-0">
+            <div className="flex justify-between items-center w-full">
+              <nav className="flex justify-between w-full gap-4">
               {subLinks.map((link, idx) => (
                 <div key={idx} className="overflow-hidden">
                   <Link 
@@ -194,9 +196,11 @@ export default function Navigation() {
                 </div>
               ))}
             </nav>
+            </div>
 
-            <div className="flex flex-col font-mono text-[10px] md:text-[0.6rem] tracking-[0.3em] uppercase opacity-40 text-left md:text-right w-full md:w-auto">
-              <a href="mailto:info@designsolutionsmiami.com" className="hover:text-[#C5A880] transition-colors mb-1">hello@designsolutions.com</a>
+            {/* Hidden Contact Info in bottom since we spread the nav full width */}
+            <div className="hidden md:flex justify-between w-full font-mono text-[9px] md:text-[0.55rem] tracking-[0.3em] uppercase opacity-30">
+              <a href="mailto:info@designsolutionsmiami.com" className="hover:text-[#C5A880] transition-colors">hello@designsolutions.com</a>
               <a href="tel:+17862244923" className="hover:text-[#C5A880] transition-colors">+1 (786) 224-4923</a>
             </div>
 
