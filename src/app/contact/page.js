@@ -157,15 +157,20 @@ export default function Contact() {
             <div>
               <p className="font-mono text-[10px] tracking-widest uppercase text-white/40 mb-6">Global Headquarters</p>
               <h3 className="text-2xl font-serif mb-2">Miami, Florida</h3>
-              <p className="font-light text-white/60 text-sm leading-relaxed mb-6">
-                1000 Brickell Avenue<br/>
-                Suite 5500<br/>
-                Miami, FL 33131
-              </p>
+              <a 
+                href="https://maps.google.com/?q=2900+SW+28th+Terrace+%23402,+Miami,+FL+33133" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="block font-light text-white/60 text-sm leading-relaxed mb-6 hover:text-white transition-colors"
+              >
+                2900 SW 28th Terrace<br/>
+                Suite #402<br/>
+                Miami, FL 33133
+              </a>
               <LiveClock timeZone="America/New_York" label="EST" />
               
               <div className="mt-8 pt-8 border-t border-white/10">
-                <a href="https://maps.google.com/?q=1000+Brickell+Ave,+Miami,+FL+33131" target="_blank" rel="noreferrer" className="inline-block border border-white/20 px-6 py-3 font-mono text-[10px] tracking-widest uppercase hover:bg-white hover:text-black transition-colors">
+                <a href="https://maps.google.com/?q=2900+SW+28th+Terrace+%23402,+Miami,+FL+33133" target="_blank" rel="noreferrer" className="inline-block border border-white/20 px-6 py-3 font-mono text-[10px] tracking-widest uppercase hover:bg-white hover:text-black transition-colors">
                   View on Map
                 </a>
               </div>
