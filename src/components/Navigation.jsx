@@ -136,10 +136,31 @@ export default function Navigation() {
             Turnkey Luxury Interiors
           </div>
         </Link>
-        <button onClick={() => setIsOpen(true)} className="flex flex-col gap-[6px] group p-4 -mr-4 pointer-events-auto">
-          <div className="w-8 h-[1px] bg-[#F9F9F7] origin-right transition-transform duration-500 group-hover:scale-x-75"></div>
-          <div className="w-8 h-[1px] bg-[#F9F9F7] origin-right transition-transform duration-500 group-hover:scale-x-50"></div>
-        </button>
+        <div className="flex items-center gap-6 pointer-events-auto">
+          {/* Subtle Audio Toggle */}
+          <button 
+            onClick={() => {
+              if (!audioEnabled) {
+                soundEngine.unlock();
+                soundEngine.unmute();
+                setTimeout(() => soundEngine.playSoftClick(), 50);
+                setAudioEnabled(true);
+              } else {
+                soundEngine.mute();
+                setAudioEnabled(false);
+              }
+            }}
+            className="flex items-center font-mono text-[10px] tracking-widest text-[#F9F9F7]/50 hover:text-[#C5A880] transition-colors"
+          >
+            SOUND [{audioEnabled ? 'ON' : 'OFF'}]
+          </button>
+
+          {/* Hamburger Menu */}
+          <button onClick={() => setIsOpen(true)} className="flex flex-col gap-[6px] group p-4 -mr-4">
+            <div className="w-8 h-[1px] bg-[#F9F9F7] origin-right transition-transform duration-500 group-hover:scale-x-75"></div>
+            <div className="w-8 h-[1px] bg-[#F9F9F7] origin-right transition-transform duration-500 group-hover:scale-x-50"></div>
+          </button>
+        </div>
       </header>
 
       {/* The Fullscreen Glass Menu */}
