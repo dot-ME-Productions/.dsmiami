@@ -28,9 +28,12 @@ export default function Navigation() {
   // Keep audio state in sync with SoundEngine
   useEffect(() => {
     const checkAudio = () => {
-      if (soundEngine.isUnlocked) setAudioEnabled(true);
+      if (soundEngine.isUnlocked && !soundEngine.isMuted) {
+        setAudioEnabled(true);
+      }
     };
-    window.addEventListener('click', checkAudio);
+    // Only check once on the first interaction to sync the visual state
+    window.addEventListener('click', checkAudio, { once: true });
     return () => window.removeEventListener('click', checkAudio);
   }, []);
   const pathname = usePathname();

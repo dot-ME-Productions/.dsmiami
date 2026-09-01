@@ -3,6 +3,21 @@ class SoundEngine {
     this.ctx = null;
     this.masterGain = null;
     this.isUnlocked = false;
+    this.isMuted = false;
+  }
+
+  mute() {
+    this.isMuted = true;
+    if (this.masterGain && this.ctx) {
+      this.masterGain.gain.setTargetAtTime(0, this.ctx.currentTime, 0.05);
+    }
+  }
+
+  unmute() {
+    this.isMuted = false;
+    if (this.masterGain && this.ctx) {
+      this.masterGain.gain.setTargetAtTime(0.6, this.ctx.currentTime, 0.05);
+    }
   }
 
   init() {
