@@ -127,7 +127,7 @@ export default function Contact() {
                         <label className="absolute left-0 top-0 text-white/40 font-mono text-xs tracking-widest uppercase transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-placeholder-shown:font-serif peer-focus:top-0 peer-focus:text-xs peer-focus:font-mono peer-focus:text-[#C5A880]">Briefly describe your vision</label>
                       </div>
 
-                      <button type="submit" className="mt-8 w-fit flex items-center justify-center p-8 bg-[#C5A880] text-black font-mono text-xs tracking-widest uppercase rounded-full hover:scale-105 transition-transform">
+                      <button type="submit" onMouseEnter={() => soundEngine.playHoverChime()} onClick={() => soundEngine.playDeepThud()} className="mt-8 w-fit flex items-center justify-center p-8 bg-[#C5A880] text-black font-mono text-xs tracking-widest uppercase rounded-full hover:scale-105 transition-transform">
                         Submit Inquiry
                       </button>
                     </form>

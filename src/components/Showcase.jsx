@@ -133,7 +133,7 @@ export default function Showcase() {
               
               {/* Added onClick here to open modal */}
               <div 
-                onClick={() => setActiveProject(proj)}
+                onClick={() => { setActiveProject(proj); soundEngine.playDeepThud(); }} onMouseEnter={() => soundEngine.playHoverChime()}
                 className="cursor-explore w-full max-w-5xl aspect-[4/5] md:aspect-[21/9] relative overflow-hidden group rounded-sm md:rounded-none"
               >
                 <Image src={proj.img} alt={proj.title} fill sizes="(max-width: 768px) 100vw, 80vw" priority={i === 0} className="proj-img object-cover transform md:scale-110 opacity-100 transition-all duration-700" />
@@ -164,7 +164,7 @@ export default function Showcase() {
                 window.lenis.scrollTo(target, { duration: 2.5, easing: (t) => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2 });
               }
             }}
-            aria-label="Skip up to Hero section"
+            onMouseEnter={() => soundEngine.playSoftClick()} aria-label="Skip up to Hero section"
             className="font-mono text-[10px] tracking-[0.3em] text-white/50 hover:text-white uppercase transition-colors"
           >
             &#8593; Skip to Hero
@@ -178,7 +178,7 @@ export default function Showcase() {
                 window.lenis.scrollTo(target, { duration: 2.5, easing: (t) => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2 });
               }
             }}
-            aria-label="Skip down to Philosophy section"
+            onMouseEnter={() => soundEngine.playSoftClick()} aria-label="Skip down to Philosophy section"
             className="font-mono text-[10px] tracking-[0.3em] text-[#C5A880] hover:text-white uppercase transition-colors"
           >
             Skip Showcase &#8595;
@@ -192,14 +192,14 @@ export default function Showcase() {
           <div className="w-full max-w-[1400px] h-full max-h-[90vh] bg-[#0A0A0A] border border-white/10 flex flex-col md:flex-row relative overflow-hidden shadow-2xl">
             
             <div className="absolute top-6 right-6 z-50 flex items-center gap-4 bg-[#0A0A0A]/80 backdrop-blur-md p-2 rounded-full md:bg-transparent">
-              <button onClick={handlePrev} className="text-white/50 hover:text-[#C5A880] font-mono text-xs tracking-widest transition-colors px-2">
+              <button onMouseEnter={() => soundEngine.playSoftClick()} onClick={(e) => { handlePrev(e); soundEngine.playDeepThud(); }} className="text-white/50 hover:text-[#C5A880] font-mono text-xs tracking-widest transition-colors px-2">
                 &#8592; PREV
               </button>
-              <button onClick={handleNext} className="text-white/50 hover:text-[#C5A880] font-mono text-xs tracking-widest transition-colors px-2">
+              <button onMouseEnter={() => soundEngine.playSoftClick()} onClick={(e) => { handleNext(e); soundEngine.playDeepThud(); }} className="text-white/50 hover:text-[#C5A880] font-mono text-xs tracking-widest transition-colors px-2">
                 NEXT &#8594;
               </button>
               <div className="w-px h-4 bg-white/20"></div>
-              <button onClick={() => setActiveProject(null)} className="text-white hover:text-[#C5A880] font-mono text-xs tracking-widest transition-colors px-2 font-bold">
+              <button onMouseEnter={() => soundEngine.playSoftClick()} onClick={() => { setActiveProject(null); soundEngine.playDeepThud(); }} className="text-white hover:text-[#C5A880] font-mono text-xs tracking-widest transition-colors px-2 font-bold">
                 CLOSE [X]
               </button>
             </div>

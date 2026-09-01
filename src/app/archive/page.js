@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import soundEngine from '@/lib/SoundEngine';
 import SmoothScroll from '@/components/SmoothScroll';
 import Navigation from '@/components/Navigation';
 import CustomCursor from '@/components/CustomCursor';
@@ -53,7 +54,7 @@ export default function Archive() {
                 
                 {/* Project Image */}
                 <div className="w-full md:w-1/2 relative group perspective-1000">
-                  <div className={`relative overflow-hidden w-full ${project.shapeClass} will-change-transform transition-transform duration-1000 group-hover:rotate-y-[-5deg] group-hover:rotate-x-[5deg] shadow-2xl`}>
+                  <div onMouseEnter={() => soundEngine.playSoftClick()} className={`relative overflow-hidden w-full ${project.shapeClass} will-change-transform transition-transform duration-1000 group-hover:rotate-y-[-5deg] group-hover:rotate-x-[5deg] shadow-2xl cursor-pointer`}>
                     <Image 
                       src={project.url} 
                       alt={project.title} 
