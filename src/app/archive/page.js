@@ -827,7 +827,7 @@ export default function Archive() {
           >
             <h1 className="text-[12vw] md:text-[9vw] font-serif leading-[0.85] tracking-tighter uppercase relative z-10 text-[#F9F9F7]">
               MASTER <br/>
-              <span className="italic">ARCHIVE</span>
+              <span className="italic text-[#C5A880]">ARCHIVE</span>
             </h1>
           </motion.div>
 
@@ -859,7 +859,7 @@ export default function Archive() {
 
                 {/* Project Details */}
                 <div className={`w-full md:w-1/2 flex flex-col ${index % 2 === 0 ? 'items-start text-left' : 'items-end text-right'}`}>
-                  <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#F9F9F7]/40 mb-4">
+                  <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#C5A880] mb-4">
                     {project.category}
                   </p>
                   
