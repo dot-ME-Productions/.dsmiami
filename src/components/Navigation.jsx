@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import Image from 'next/image';
+import MenuSearch from './MenuSearch';
 import soundEngine from '@/lib/SoundEngine';
 
 const menuData = [
@@ -210,6 +211,8 @@ export default function Navigation() {
 
         <div className="relative z-20 w-full h-full px-6 md:px-16 flex flex-col items-center justify-center pointer-events-none">
           
+          <MenuSearch onNavigate={() => setIsOpen(false)} />
+
           <nav className="flex flex-col items-center gap-0 w-full pointer-events-auto z-10">
             {menuData.map((link, idx) => (
               <div 

@@ -3,7 +3,7 @@ class SoundEngine {
     this.ctx = null;
     this.masterGain = null;
     this.isUnlocked = false;
-    this.isMuted = false;
+    this.isMuted = true;
   }
 
   init() {
@@ -26,7 +26,7 @@ class SoundEngine {
       this.globalFilter.type = 'lowpass';
       this.globalFilter.frequency.value = 800; // Cuts off high harsh frequencies
       
-      this.masterGain.gain.value = 0.35; // Lower overall volume
+      this.masterGain.gain.value = 0; // Lower overall volume
       
       this.masterGain.connect(this.globalFilter);
       this.globalFilter.connect(this.compressor);
@@ -84,6 +84,7 @@ class SoundEngine {
 
   // 1. Calm, relaxing hover chime (Slower attack, muffled, softer)
   async playHoverChime() {
+    if (this.isMuted) return;
     const canPlay = await this._ensureContext();
     if (!canPlay) return;
     
@@ -120,6 +121,7 @@ class SoundEngine {
 
   // 2. Extremely soft interface ping (Very muffled, low volume)
   async playSoftClick() {
+    if (this.isMuted) return;
     const canPlay = await this._ensureContext();
     if (!canPlay) return;
     
@@ -143,6 +145,7 @@ class SoundEngine {
 
   // 3. Deep cinematic thud (Super muffled heartbeat style)
   async playDeepThud() {
+    if (this.isMuted) return;
     const canPlay = await this._ensureContext();
     if (!canPlay) return;
     
@@ -173,6 +176,7 @@ class SoundEngine {
   // 4. Action Swell (For massive CTA buttons like INITIATE and BOOK CONSULTATION)
   // Deep, slow, luxurious ambient chord
   async playActionSwell() {
+    if (this.isMuted) return;
     const canPlay = await this._ensureContext();
     if (!canPlay) return;
     
