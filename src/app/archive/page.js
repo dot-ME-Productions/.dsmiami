@@ -831,7 +831,7 @@ export default function Archive() {
       <CustomCursor />
       <Navigation />
       
-      <main className="min-h-screen w-full bg-[#F4F0EA] text-[#0C0F12] flex flex-col pt-32 pb-24 px-6 md:px-16 selection:bg-[#C5A880] selection:text-[#0C0F12]">
+      <main className="min-h-screen w-full bg-transparent text-[#F9F9F7] flex flex-col pt-32 pb-24 px-6 md:px-16 selection:bg-[#C5A880] selection:text-[#F9F9F7]">
         
         <div className="w-full max-w-[1400px] mx-auto flex flex-col mt-16">
           
@@ -841,7 +841,7 @@ export default function Archive() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="mb-24 md:mb-40"
           >
-            <h1 className="text-[12vw] md:text-[9vw] font-serif leading-[0.85] tracking-tighter uppercase relative z-10 mix-blend-difference text-white">
+            <h1 className="text-[12vw] md:text-[9vw] font-serif leading-[0.85] tracking-tighter uppercase relative z-10 text-[#F9F9F7]">
               MASTER <br/>
               <span className="italic">ARCHIVE</span>
             </h1>
@@ -875,7 +875,7 @@ export default function Archive() {
 
                 {/* Project Details */}
                 <div className={`w-full md:w-1/2 flex flex-col ${index % 2 === 0 ? 'items-start text-left' : 'items-end text-right'}`}>
-                  <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#0C0F12]/40 mb-4">
+                  <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#F9F9F7]/40 mb-4">
                     {project.category}
                   </p>
                   
@@ -883,11 +883,11 @@ export default function Archive() {
                     {project.title}
                   </h2>
                   
-                  <p className={`font-light text-[#0C0F12]/70 text-sm md:text-base max-w-md mb-10 leading-relaxed ${index % 2 === 0 ? 'text-left' : 'text-right'}`}>
+                  <p className={`font-light text-[#F9F9F7]/70 text-sm md:text-base max-w-md mb-10 leading-relaxed ${index % 2 === 0 ? 'text-left' : 'text-right'}`}>
                     {project.description}
                   </p>
 
-                  <div className="px-5 py-2 border border-[#0C0F12]/20 rounded-full font-mono text-[9px] tracking-widest uppercase text-[#0C0F12]/60 hover:bg-[#C5A880] hover:text-[#0C0F12] hover:border-[#C5A880] transition-colors duration-300 cursor-default">
+                  <div className="px-5 py-2 border border-white/20 rounded-full font-mono text-[9px] tracking-widest uppercase text-[#F9F9F7]/60 hover:bg-[#C5A880] hover:text-[#F9F9F7] hover:border-[#C5A880] transition-colors duration-300 cursor-default">
                     {project.award}
                   </div>
                 </div>

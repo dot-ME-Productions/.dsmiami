@@ -233,10 +233,10 @@ export default function Navigation() {
             ))}
           </nav>
 
-          <div className="absolute bottom-6 left-6 md:left-16 right-6 md:right-16 flex flex-col pointer-events-auto border-t border-white/10 pt-6 gap-6">
+          <div className="absolute bottom-6 left-6 md:left-16 right-6 md:right-16 flex flex-col pointer-events-auto border-t border-white/10 pt-6 gap-6 pr-24 md:pr-48">
             
             <div className="flex justify-between items-center w-full">
-              <nav className="flex justify-between w-full gap-4">
+              <nav className="flex flex-wrap justify-start w-full gap-6 md:gap-12">
               {subLinks.map((link, idx) => (
                 <div key={idx} className="overflow-hidden">
                   <Link 
