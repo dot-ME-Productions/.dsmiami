@@ -43,13 +43,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning className={`${playfair.variable} ${inter.variable}`}>
-      <body suppressHydrationWarning className="overflow-x-hidden bg-[#0C0F12] text-[#F9F9F7] font-sans antialiased selection:bg-[#C5A880] selection:text-[#0C0F12] overflow-x-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#C5A880]">
-        <CinematicBackground />
-        {children}
+      <body suppressHydrationWarning className="bg-[#0C0F12] text-[#F9F9F7] font-sans antialiased selection:bg-[#C5A880] selection:text-[#0C0F12] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#C5A880]">
+        <div className="relative w-full max-w-[100vw] overflow-x-hidden flex flex-col min-h-screen">
+          <CinematicBackground />
+          {children}
                 
         
-        {/* DeepSeek Flaw #3: Lead Capture Mechanism */}
-        <BookConsultationBtn />
+          {/* DeepSeek Flaw #3: Lead Capture Mechanism */}
+          <BookConsultationBtn />
+        </div>
       </body>
     </html>
   );

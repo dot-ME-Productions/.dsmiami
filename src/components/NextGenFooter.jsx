@@ -101,9 +101,9 @@ export default function NextGenFooter() {
         </div>
 
         <div className="w-full flex justify-center my-12">
-          <Link href="/contact" ref={buttonRef} onMouseEnter={() => soundEngine.playActionSwell()} onClick={() => soundEngine.playDeepThud()} className="group relative inline-flex items-center justify-center px-24 py-12 border border-[#C5A880] rounded-full overflow-hidden cursor-pointer">
+          <Link href="/contact" ref={buttonRef} onMouseEnter={() => soundEngine.playActionSwell()} onClick={() => soundEngine.playDeepThud()} className="group relative inline-flex items-center justify-center px-12 py-6 md:px-24 md:py-12 border border-[#C5A880] rounded-full overflow-hidden cursor-pointer">
             <div className="absolute inset-0 bg-[#C5A880] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"></div>
-            <span ref={textRef} className="relative z-10 font-serif text-3xl tracking-[0.2em] text-[#C5A880] group-hover:text-[#0C0F12] uppercase transition-colors duration-500 pointer-events-none">
+            <span ref={textRef} className="relative z-10 font-serif text-xl md:text-3xl tracking-[0.2em] text-[#C5A880] group-hover:text-[#0C0F12] uppercase transition-colors duration-500 pointer-events-none">
               INITIATE
             </span>
           </Link>
