@@ -9,36 +9,36 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   { 
-    id: 1, title: 'THE GLASS HOUSE', subtitle: 'Where light is treated as the primary architectural material.', 
+    id: 1, title: 'BAYVIEW RESIDENCE', subtitle: 'An elegant dining space perched above the bay.', 
     img: 'https://ds-miami.com/wp-content/uploads/2026/06/ds-bayview-dining-room-city-view.webp',
-    client: 'Private Tech Executive', year: '2025', 
-    materials: ['Obsidian Glass', 'Italian Marble', 'Brushed Bronze'], sqft: '12,500 sq ft', timeline: '18 Months',
-    challenge: 'The client required a massive cantilevered structure that could withstand Category 5 hurricanes without obstructing the panoramic ocean views.',
-    solution: 'We engineered a seamless structural glass facade using marine-grade obsidian glazing, completely eliminating internal non-load-bearing walls for fluid atmospheric flow.'
+    client: 'Private Executive', year: '2025', 
+    materials: ['Italian Marble', 'Smoked Oak', 'Brushed Bronze'], sqft: '12,500 sq ft', timeline: '18 Months',
+    challenge: 'The client required a dining space that maximized the panoramic city views without feeling exposed.',
+    solution: 'We engineered a layout with reflective surfaces and strategic lighting to blur the line between interior and exterior, providing a seamless atmospheric flow.'
   },
   { 
-    id: 2, title: 'OBSIDIAN VILLA', subtitle: 'A brutalist monolith carved into the Miami coastline.', 
-    img: 'https://ds-miami.com/wp-content/uploads/2026/06/great-room-round-mirror-suede-armchairs-gallery-wall-scaled.webp',
-    client: 'Anonymous Gallery Owner', year: '2024', 
-    materials: ['Board-Formed Concrete', 'Smoked Oak', 'Raw Steel'], sqft: '9,200 sq ft', timeline: '24 Months',
-    challenge: 'Designing a fortress capable of protecting a  private art collection from UV degradation while maintaining an open, breathable residential feel.',
-    solution: 'We poured massive brutalist concrete shells to block direct light, utilizing precisely engineered zenithal skylights to wash the walls in soft, diffuse, UV-filtered light.'
+    id: 2, title: 'MURANO PORTOFINO', subtitle: 'Oceanfront balcony terrace overlooking the skyline.', 
+    img: 'https://ds-miami.com/wp-content/uploads/2026/06/oceanfront-murano-portofino-balcony-terrace-skyline-port-view-scaled.webp',
+    client: 'International Client', year: '2024', 
+    materials: ['Teak Wood', 'Limestone', 'Marine Glass'], sqft: '9,200 sq ft', timeline: '24 Months',
+    challenge: 'Designing an outdoor living space capable of withstanding coastal weather while maintaining luxury comfort.',
+    solution: 'We utilized marine-grade materials and custom low-profile furniture to preserve the view while providing maximum durability against the elements.'
   },
   { 
-    id: 3, title: 'CASA DEL SOL', subtitle: 'Redefining tropical modernism through organic textures.', 
+    id: 3, title: 'GRAN PARAISO', subtitle: 'Tropical modernism through organic textures.', 
     img: 'https://ds-miami.com/wp-content/uploads/2026/05/gran_paraiso_residences_living_reduced.webp',
-    client: 'International Athlete', year: '2023', 
-    materials: ['Travertine', 'Teak', 'Woven Cane'], sqft: '14,000 sq ft', timeline: '14 Months',
+    client: 'Anonymous Gallery Owner', year: '2023', 
+    materials: ['Travertine', 'Woven Cane', 'Linen'], sqft: '14,000 sq ft', timeline: '14 Months',
     challenge: 'The client found stark modernism too cold and sterile, but despised traditional ornate design.',
     solution: 'We utilized heavily textured, porous organic materials sourced directly from South America. The raw tactile feedback grounds the space in the earth, rejecting sterile perfection.'
   },
   { 
-    id: 4, title: 'LUMINA ESTATE', subtitle: 'Turnkey perfection down to the finest micro-detail.', 
-    img: 'https://ds-miami.com/wp-content/uploads/2026/05/optimized_modern_kitchen_livingroom-scaled.webp',
+    id: 4, title: 'TRUMP TOWERS', subtitle: 'Ocean-view living with grasscloth walls.', 
+    img: 'https://ds-miami.com/wp-content/uploads/2026/06/trump-towers-living-tv-grasscloth-wall-ocean-view.webp',
     client: 'Venture Capital Firm', year: '2024', 
-    materials: ['Limestone', 'Platinum', 'Polished Plaster'], sqft: '18,500 sq ft', timeline: '32 Months',
-    challenge: 'An extreme exercise in turnkey luxury for a corporate retreat that required immediate occupancy with zero client friction.',
-    solution: 'We controlled every variable: architecture, custom furniture fabrication, curating the library, and stocking the wine cellar. Absolute, total atmospheric control.'
+    materials: ['Grasscloth', 'Polished Plaster', 'Raw Steel'], sqft: '18,500 sq ft', timeline: '32 Months',
+    challenge: 'An exercise in turnkey luxury for a coastal retreat that required immediate occupancy.',
+    solution: 'We controlled every variable: custom furniture fabrication, premium grasscloth wallcoverings, and absolute atmospheric control.'
   },
 ];
 
@@ -191,12 +191,18 @@ export default function Showcase() {
         <div className="fixed inset-0 z-[99999] bg-[#0C0F12]/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-12 animate-in fade-in duration-500">
           <div className="w-full max-w-[1400px] h-full max-h-[90vh] bg-[#0A0A0A] border border-white/10 flex flex-col md:flex-row relative overflow-hidden shadow-2xl">
             
-            <button 
-              onClick={() => setActiveProject(null)} 
-              className="absolute top-6 right-6 text-white/50 hover:text-[#C5A880] font-mono text-xs tracking-widest z-50 transition-colors bg-[#0A0A0A] p-2 rounded-full md:bg-transparent"
-            >
-              CLOSE [X]
-            </button>
+            <div className="absolute top-6 right-6 z-50 flex items-center gap-4 bg-[#0A0A0A]/80 backdrop-blur-md p-2 rounded-full md:bg-transparent">
+              <button onClick={handlePrev} className="text-white/50 hover:text-[#C5A880] font-mono text-xs tracking-widest transition-colors px-2">
+                &#8592; PREV
+              </button>
+              <button onClick={handleNext} className="text-white/50 hover:text-[#C5A880] font-mono text-xs tracking-widest transition-colors px-2">
+                NEXT &#8594;
+              </button>
+              <div className="w-px h-4 bg-white/20"></div>
+              <button onClick={() => setActiveProject(null)} className="text-white hover:text-[#C5A880] font-mono text-xs tracking-widest transition-colors px-2 font-bold">
+                CLOSE [X]
+              </button>
+            </div>
             
             {/* Left: Image */}
             <div className="w-full md:w-[55%] h-[40vh] md:h-full relative">
@@ -260,15 +266,7 @@ export default function Showcase() {
                      Request Case Study
                    </button>
                    
-                   {/* Next/Prev Navigation */}
-                   <div className="flex items-center gap-4">
-                     <button onClick={handlePrev} className="p-4 border border-white/20 hover:border-[#C5A880] hover:text-[#C5A880] transition-all rounded-full flex items-center justify-center group">
-                       <span className="font-mono text-xs tracking-widest uppercase group-hover:-translate-x-1 transition-transform">&#8592; PREV</span>
-                     </button>
-                     <button onClick={handleNext} className="p-4 border border-white/20 hover:border-[#C5A880] hover:text-[#C5A880] transition-all rounded-full flex items-center justify-center group">
-                       <span className="font-mono text-xs tracking-widest uppercase group-hover:translate-x-1 transition-transform">NEXT &#8594;</span>
-                     </button>
-                   </div>
+
                  </div>
                </div>
             </div>
